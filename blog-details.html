@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Fix | Article Details</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23E63946' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%23111827' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        .article-hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(to right, var(--brand-indigo) 0%, #1e293b 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .article-content {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .article-content h3 {
+            color: var(--text-primary);
+            margin: 40px 0 20px;
+        }
+        
+        .article-content p {
+            margin-bottom: 25px;
+        }
+        
+        .reading-progress {
+            position: fixed;
+            top: var(--header-height);
+            left: 0;
+            height: 4px;
+            background: var(--brand-indigo);
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.1s;
+        }
+        
+        /* Infographics */
+        .infographic-wrapper {
+            margin: 50px 0;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* Related Posts */
+        .related-card {
+            background: var(--bg-primary);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: transform 0.4s;
+            transform-style: preserve-3d;
+        }
+        .related-card:hover {
+            transform: rotateY(5deg) rotateX(5deg) translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--brand-cyan-muted);
+        }
+        
+        .author-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23E63946' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%23111827' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body>
+
+    <div class="reading-progress" id="progress-bar"></div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                Auto <span>Fix</span>
+            </a>
+
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link active">Home 1</a>
+                <a href="index-2.html" class="nav-link">Home 2</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+            
+                <div class="mobile-only-actions d-xl-none d-flex gap-3 align-items-center mt-3 pt-3 border-top border-secondary">
+                    <button class="icon-btn theme-toggle-btn" title="Toggle Theme">
+                        <i class="bi bi-moon"></i>
+                    </button>
+                    <button class="icon-btn rtl-toggle-btn" title="Toggle RTL">
+                        <i class="bi bi-arrow-left-right"></i>
+                    </button>
+                    <a href="signup.html" class="btn-premium primary w-100 text-center">Sign Up</a>
+                </div>
+            </nav>
+
+            <div class="header-actions">
+                <button class="icon-btn theme-toggle-btn d-none d-xl-flex" title="Toggle Theme">
+                    <i class="bi bi-moon"></i>
+                </button>
+                <button class="icon-btn rtl-toggle-btn d-none d-xl-flex" title="Toggle RTL">
+                    <i class="bi bi-arrow-left-right"></i>
+                </button>
+                <a href="signup.html" class="btn-premium primary d-none d-xl-flex">Sign Up</a>
+                <button class="icon-btn mobile-toggle">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. Hero -->
+    <section class="article-hero">
+        <div class="container" data-aos="fade-up">
+            <span class="badge bg-indigo text-navy px-3 py-2 mb-4">Maintenance Advice</span>
+            <h1 class="display-4 fw-bold mb-4 mx-auto" style="max-width: 900px;">Why Regular Oil Changes Are the Secret to Engine Longevity</h1>
+            
+            <div class="author-box">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=150&q=80" alt="Author" class="author-img">
+                <div class="text-start">
+                    <h6 class="mb-0 text-white">Jonathan Reed, Lead Mechanic</h6>
+                    <small class="text-indigo">Oct 12, 2026 • 5 min read</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Article Content -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="article-content">
+                <p class="lead fw-medium" data-aos="fade-up">It's the most common piece of advice any mechanic will give you, yet it's often the most ignored: change your oil regularly. Let's explore exactly why this simple service is the backbone of your vehicle's health.</p>
+                
+                <div data-aos="fade-up" data-aos-offset="100">
+                    <h3>The Core Issue: Friction and Heat</h3>
+                    <p>Your engine consists of hundreds of moving parts operating at high speeds. This generates an enormous amount of friction and heat. Motor oil acts as a lubricant, reducing this friction and carrying heat away from the engine block.</p>
+                    <p>Over time, this oil breaks down due to the intense thermal environment. It also collects dirt, metal shavings, and combustion byproducts, turning from a smooth amber fluid into a thick, abrasive sludge.</p>
+                </div>
+                
+                <!-- 3. Infographics -->
+                <div class="infographic-wrapper" data-aos="zoom-in" data-aos-offset="200">
+                    <img src="https://images.unsplash.com/photo-1518984950348-12d4586d1123?auto=format&fit=crop&w=1000&q=80" alt="Oil Change" class="img-fluid w-100">
+                </div>
+                
+                <div data-aos="fade-up" data-aos-offset="100">
+                    <h3>What This Means for Your Engine</h3>
+                    <p>If you skip oil changes, the dirty oil stops lubricating and starts acting like liquid sandpaper, wearing down engine components prematurely. This can lead to catastrophic engine failure.</p>
+                    <p>At Auto Fix, we advise our customers to:</p>
+                    <ul class="mb-4">
+                        <li>Check oil levels monthly using the dipstick.</li>
+                        <li>Follow the manufacturer's recommended service intervals.</li>
+                        <li>Consider synthetic oil for better extreme-temperature performance and longer lifespan.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Related Posts -->
+    <section class="section-padding bg-secondary">
+        <div class="container">
+            <h2 class="mb-5 text-center" data-aos="fade-up">Continue Reading</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="related-card h-100">
+                        <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=600&q=80" alt="EV" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                        <div class="p-4">
+                            <h5 class="mb-3">New Guidelines for EV Battery Care</h5>
+                            <a href="#" class="text-indigo fw-bold">Read Article &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="related-card h-100">
+                        <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=600&q=80" alt="Diagnostics" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                        <div class="p-4">
+                            <h5 class="mb-3">Understanding Warning Lights</h5>
+                            <a href="#" class="text-indigo fw-bold">Read Article &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="related-card h-100">
+                        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=600&q=80" alt="Dashboard" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                        <div class="p-4">
+                            <h5 class="mb-3">Predictive Maintenance Tracking</h5>
+                            <a href="#" class="text-indigo fw-bold">Read Article &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CTA -->
+    <section class="section-padding text-center">
+        <div class="container" data-aos="zoom-in">
+            <h2 class="mb-4">Need Service?</h2>
+            <p class="lead text-secondary mb-4 mx-auto" style="max-width: 600px;">Our technicians can perform a comprehensive oil change and multi-point inspection.</p>
+            <a href="booking.html" class="btn-premium primary">Schedule an Appointment</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4 footer-widget">
+                    <div class="mb-4 d-inline-block">
+                        <a href="index.html" class="logo">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            Auto <span>Fix</span>
+                        </a>
+                    </div>
+                    <p class="mb-4">Premium auto repair services combining specialized mechanics with a customer dashboard. Keep your vehicle healthy effortlessly.</p>
+                    <div class="d-flex gap-3 footer-social">
+                        <a href="#" class="fs-5"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="fs-5"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="fs-5"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 footer-widget">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="gallery.html">Our Gallery</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 footer-widget">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="login.html">Customer Dashboard</a></li>
+                        <li><a href="blog.html">Maintenance Tips</a></li>
+                        <li><a href="#">Service Guide</a></li>
+                        <li><a href="booking.html">Book Appointment</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 footer-widget">
+                    <h4>Newsletter</h4>
+                    <p class="mb-3">Subscribe for the latest car maintenance tips and exclusive offers.</p>
+                    <form class="d-flex position-relative footer-form">
+                        <input type="email" class="form-control rounded-pill py-3 px-4 w-100 border-color shadow-none"
+                            placeholder="Email address" required style="background: rgba(128,128,128,0.05);">
+                        <button type="submit"
+                            class="btn-premium primary rounded-pill position-absolute end-0 top-0 bottom-0 m-1 px-4 border-0">Subscribe</button>
+                    </form>
+                    <div class="mt-4 d-flex gap-2 flex-wrap">
+                        <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
+                                class="bi bi-wrench-adjustable-circle text-indigo me-1"></i> ASE Certified</span>
+                        <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
+                                class="bi bi-lock-fill text-indigo me-1"></i> Secure Booking</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 Auto Fix Repair Center. All rights reserved.</div>
+                <div class="d-flex gap-4">
+                    <a href="#" class="text-decoration-none hover-white fs-4" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"><i class="bi bi-arrow-up-circle-fill"></i></a>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Reading Progress Bar
+        window.addEventListener('scroll', () => {
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = (window.scrollY / docHeight) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Fix | Our Services</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23E63946' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%23111827' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .service-hero {
+            padding: 180px 0 100px;
+            background: url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1200&q=80') center/cover;
+            position: relative;
+        }
+
+        .service-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(2, 6, 23, 0.85);
+        }
+
+        .service-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .svc-block {
+            padding: 100px 0;
+        }
+
+
+        .svc-img {
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.5s;
+        }
+
+        .svc-img:hover {
+            transform: scale(1.02);
+        }
+
+        .svc-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            border-radius: 16px;
+            transition: all var(--transition-normal);
+        }
+
+        .svc-card:hover {
+            box-shadow: var(--shadow-premium);
+            border-color: var(--brand-indigo);
+        }
+
+        .check-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .check-list i {
+            color: var(--brand-indigo);
+            font-size: 1.2rem;
+        }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23E63946' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%23111827' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                Auto <span>Fix</span>
+            </a>
+
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link active">Home 1</a>
+                <a href="index-2.html" class="nav-link">Home 2</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+            
+                <div class="mobile-only-actions d-xl-none d-flex gap-3 align-items-center mt-3 pt-3 border-top border-secondary">
+                    <button class="icon-btn theme-toggle-btn" title="Toggle Theme">
+                        <i class="bi bi-moon"></i>
+                    </button>
+                    <button class="icon-btn rtl-toggle-btn" title="Toggle RTL">
+                        <i class="bi bi-arrow-left-right"></i>
+                    </button>
+                    <a href="signup.html" class="btn-premium primary w-100 text-center">Sign Up</a>
+                </div>
+            </nav>
+
+            <div class="header-actions">
+                <button class="icon-btn theme-toggle-btn d-none d-xl-flex" title="Toggle Theme">
+                    <i class="bi bi-moon"></i>
+                </button>
+                <button class="icon-btn rtl-toggle-btn d-none d-xl-flex" title="Toggle RTL">
+                    <i class="bi bi-arrow-left-right"></i>
+                </button>
+                <a href="signup.html" class="btn-premium primary d-none d-xl-flex">Sign Up</a>
+                <button class="icon-btn mobile-toggle">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. Hero -->
+    <section class="service-hero text-center text-white">
+        <div class="container" data-aos="zoom-in">
+            <h1 class="display-3 fw-bold mb-4 text-white">Our Services</h1>
+            <p class="lead mx-auto text-light opacity-75" style="max-width: 700px;">Comprehensive auto repair and maintenance to keep your vehicle running smoothly and safely on the road.</p>
+        </div>
+    </section>
+
+    <!-- 2. Oil Change -->
+    <section class="svc-block">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=800&q=80" alt="Oil Change"
+                        class="img-fluid svc-img">
+                </div>
+                <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
+                    <div class="text-indigo mb-3"><i class="bi bi-droplet-fill fs-2"></i></div>
+                    <h2 class="mb-4">Premium Oil Change</h2>
+                    <p class="text-secondary mb-4">Extend your engine's life with our comprehensive oil and filter change services. We use high-quality synthetic and conventional oils suited for your vehicle.</p>
+                    <ul class="list-unstyled check-list mb-5">
+                        <li><i class="bi bi-check-circle-fill"></i> Full Synthetic Oil Options</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Oil Filter Replacement</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Fluid Level Checks</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Multipoint Inspection</li>
+                    </ul>
+                    <a href="service-details.html" class="btn-premium outline">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Brake Repair -->
+    <section class="svc-block">
+        <div class="container">
+            <div class="row align-items-center flex-lg-row-reverse">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=800&q=80" alt="Brake Repair"
+                        class="img-fluid svc-img">
+                </div>
+                <div class="col-lg-6 pe-lg-5" data-aos="fade-right">
+                    <div class="text-indigo mb-3"><i class="bi bi-shield-fill-check fs-2"></i></div>
+                    <h2 class="mb-4">Brake Repair & Service</h2>
+                    <p class="text-secondary mb-4">Ensure your safety on the road with our expert brake services. From pad replacements to full rotor resurfacing, we have you covered.</p>
+                    <ul class="list-unstyled check-list mb-5">
+                        <li><i class="bi bi-check-circle-fill"></i> Brake Pad & Shoe Replacement</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Rotor Resurfacing & Replacement</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Brake Fluid Exchange</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Comprehensive Brake System Diagnosis</li>
+                    </ul>
+                    <a href="service-details.html" class="btn-premium outline">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. AC Service -->
+    <section class="svc-block">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="zoom-in">
+                    <div class="svc-card text-center">
+                        <i class="bi bi-snow display-1 text-indigo mb-4"></i>
+                        <h3>AC Service & Repair</h3>
+                        <p class="text-secondary mt-3">Stay cool in the summer and warm in the winter. Our technicians are certified to diagnose, repair, and recharge your vehicle's air conditioning system.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 ps-lg-5" data-aos="fade-up">
+                    <h2 class="mb-4">Climate Control Systems</h2>
+                    <p class="text-secondary">We inspect for leaks, replace worn components, and recharge refrigerant to factory specifications to ensure your comfort all year round.</p>
+                    <a href="service-details.html" class="text-indigo fw-bold mt-3 d-inline-block">Learn more about
+                        AC Service &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4.1 Tyre Rotation -->
+    <section class="svc-block">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&w=800&q=80" alt="Tyre Rotation"
+                        class="img-fluid svc-img rounded-4" style="object-fit: cover; height: 400px; width: 100%;">
+                </div>
+                <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
+                    <div class="text-indigo mb-3"><i class="bi bi-record-circle-fill fs-2"></i></div>
+                    <h2 class="mb-4">Tyre Rotation & Alignment</h2>
+                    <p class="text-secondary mb-4">Maximize tyre life and improve fuel efficiency with regular tyre rotation and precision alignment services.</p>
+                    <ul class="list-unstyled check-list mb-5">
+                        <li><i class="bi bi-check-circle-fill"></i> Computerized Wheel Alignment</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Tyre Rotation & Balancing</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Tread Wear Inspection</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Tyre Replacement Services</li>
+                    </ul>
+                    <a href="service-details.html" class="btn-premium outline">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4.2 Engine Diagnostics -->
+    <section class="svc-block">
+        <div class="container">
+            <div class="row align-items-center flex-lg-row-reverse">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1632733711679-529326f6db12?auto=format&fit=crop&w=800&q=80"
+                        alt="Engine Diagnostics" class="img-fluid svc-img rounded-4"
+                        style="object-fit: cover; height: 400px; width: 100%;">
+                </div>
+                <div class="col-lg-6 pe-lg-5" data-aos="fade-right">
+                    <div class="text-indigo mb-3"><i class="bi bi-speedometer2 fs-2"></i></div>
+                    <h2 class="mb-4">Engine Diagnostics</h2>
+                    <p class="text-secondary mb-4">Check engine light on? Our advanced diagnostic equipment pinpoints the exact issue to get you back on the road quickly.</p>
+                    <ul class="list-unstyled check-list mb-5">
+                        <li><i class="bi bi-check-circle-fill"></i> OBD-II Scanner Analysis</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Emission System Checks</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Sensor Calibration</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Engine Performance Tuning</li>
+                    </ul>
+                    <a href="service-details.html" class="btn-premium outline">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Vehicle Management -->
+    <section class="svc-block">
+        <div class="container text-center">
+            <div data-aos="fade-up">
+                <h2 class="mb-3">Strategic Vehicle Maintenance</h2>
+                <p class="mx-auto text-secondary mb-5" style="max-width: 600px;">Leverage our proprietary Client
+                    Dashboard to track service history, view upcoming maintenance schedules, and book appointments.</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="p-5 rounded-4 border border-gold" style="background: var(--bg-primary);">
+                        <i class="bi bi-laptop display-3 text-indigo mb-4"></i>
+                        <h4>The Auto Fix Dashboard</h4>
+                        <p class="text-secondary mb-4">A single pane of glass for all your vehicle maintenance records.
+                            Built for total transparency and convenience.</p>
+                        <a href="signup.html" class="btn-premium primary">Create Client Account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4 footer-widget">
+                    <div class="mb-4 d-inline-block">
+                        <a href="index.html" class="logo">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            Auto <span>Fix</span>
+                        </a>
+                    </div>
+                    <p class="mb-4">Premium auto repair services combining specialized mechanics with a customer dashboard. Keep your vehicle healthy effortlessly.</p>
+                    <div class="d-flex gap-3 footer-social">
+                        <a href="#" class="fs-5"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="fs-5"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="fs-5"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 footer-widget">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="gallery.html">Our Gallery</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 footer-widget">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="login.html">Customer Dashboard</a></li>
+                        <li><a href="blog.html">Maintenance Tips</a></li>
+                        <li><a href="#">Service Guide</a></li>
+                        <li><a href="booking.html">Book Appointment</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 footer-widget">
+                    <h4>Newsletter</h4>
+                    <p class="mb-3">Subscribe for the latest car maintenance tips and exclusive offers.</p>
+                    <form class="d-flex position-relative footer-form">
+                        <input type="email" class="form-control rounded-pill py-3 px-4 w-100 border-color shadow-none"
+                            placeholder="Email address" required style="background: rgba(128,128,128,0.05);">
+                        <button type="submit"
+                            class="btn-premium primary rounded-pill position-absolute end-0 top-0 bottom-0 m-1 px-4 border-0">Subscribe</button>
+                    </form>
+                    <div class="mt-4 d-flex gap-2 flex-wrap">
+                        <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
+                                class="bi bi-wrench-adjustable-circle text-indigo me-1"></i> ASE Certified</span>
+                        <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
+                                class="bi bi-lock-fill text-indigo me-1"></i> Secure Booking</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 Auto Fix Repair Center. All rights reserved.</div>
+                <div class="d-flex gap-4">
+                    <a href="#" class="text-decoration-none hover-white fs-4" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"><i class="bi bi-arrow-up-circle-fill"></i></a>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
