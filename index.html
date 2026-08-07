@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Service | Expert Auto Repair & Maintenance</title>
-    <meta name="description"
-        content="Top-Tier Auto Repair & Maintenance.">
+    <meta name="description" content="Top-Tier Auto Repair & Maintenance.">
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23E63946' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%23111827' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23E63946' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%23111827' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -491,9 +491,9 @@
             border: 1px solid var(--border-color);
             border-radius: 20px;
             padding: 30px;
-            margin-bottom: 24px;
             break-inside: avoid;
-            display: inline-block;
+            display: flex;
+            flex-direction: column;
             width: 100%;
         }
 
@@ -563,10 +563,13 @@
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="logo">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    style="margin-right: 8px;">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
                 Auto <span>Fix</span>
             </a>
 
@@ -580,15 +583,16 @@
                 <a href="contact.html" class="nav-link">Contact</a>
                 <a href="dashboard.html" class="nav-link">Dashboard</a>
 
-                <div
-                    class="mobile-only-actions d-xl-none d-flex gap-3 align-items-center mt-3 pt-3 border-top border-secondary">
-                    <button class="icon-btn theme-toggle-btn" title="Toggle Theme">
-                        <i class="bi bi-moon"></i>
-                    </button>
-                    <button class="icon-btn rtl-toggle-btn" title="Toggle RTL">
-                        <i class="bi bi-arrow-left-right"></i>
-                    </button>
+                <div class="mobile-only-actions d-xl-none d-flex flex-column gap-3 mt-3 pt-3 border-top border-secondary">
                     <a href="signup.html" class="btn-premium primary w-100 text-center">Sign Up</a>
+                    <div class="d-flex gap-3 justify-content-center">
+                        <button class="icon-btn theme-toggle-btn" title="Toggle Theme">
+                            <i class="bi bi-moon"></i>
+                        </button>
+                        <button class="icon-btn rtl-toggle-btn" title="Toggle RTL">
+                            <i class="bi bi-arrow-left-right"></i>
+                        </button>
+                    </div>
                 </div>
             </nav>
 
@@ -621,7 +625,8 @@
                         <i class="bi bi-star-fill"></i> Top-Tier Auto Repair & Maintenance
                     </div>
                     <h1 class="mb-4">Keep Your Vehicle <span class="text-gradient">Running smoothly.</span></h1>
-                    <p class="lead mb-5">Premium auto repair services combining specialized mechanics with a customer dashboard. Keep your vehicle healthy effortlessly.
+                    <p class="lead mb-5">Premium auto repair services combining specialized mechanics with a customer
+                        dashboard. Keep your vehicle healthy effortlessly.
                     </p>
                     <div class="d-flex gap-3 flex-wrap">
                         <a href="contact.html" class="btn-premium primary">Book an Appointment</a>
@@ -682,7 +687,8 @@
         <div class="container">
             <div class="text-center mb-5 pb-2" data-aos="fade-up">
                 <h2 class="display-6">Comprehensive Auto Repair Solutions</h2>
-                <p class="text-secondary mx-auto mt-3" style="max-width: 700px;">Protecting your vehicle through strategic maintenance and repair expertise.</p>
+                <p class="text-secondary mx-auto mt-3" style="max-width: 700px;">Protecting your vehicle through
+                    strategic maintenance and repair expertise.</p>
             </div>
 
             <div class="row g-4">
@@ -693,7 +699,8 @@
                             alt="Oil Change" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
                         <div class="p-4 d-flex flex-column flex-grow-1">
                             <h3 class="h5 mb-3">Oil Change</h3>
-                            <p class="text-secondary small mb-4 flex-grow-1">Keep your engine running smoothly and efficiently with our quick and clean oil change services.</p>
+                            <p class="text-secondary small mb-4 flex-grow-1">Keep your engine running smoothly and
+                                efficiently with our quick and clean oil change services.</p>
                             <a href="services.html"
                                 class="text-accent fw-bold mt-auto d-inline-flex align-items-center gap-2">Learn More <i
                                     class="bi bi-arrow-right"></i></a>
@@ -704,12 +711,12 @@
                 <!-- Card 2 -->
                 <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="200">
                     <div class="premium-card p-0 h-100 d-flex flex-column border-color">
-                        <img src="https://images.unsplash.com/photo-1632732959827-0b16262b9a71?auto=format&fit=crop&w=600&q=80"
-                            alt="Brake Repair" class="img-fluid w-100"
-                            style="height: 200px; object-fit: cover;">
+                        <img src="https://images.pexels.com/photos/6870300/pexels-photo-6870300.jpeg" alt="Brake Repair"
+                            class="img-fluid w-100" style="height: 200px; object-fit: cover;">
                         <div class="p-4 d-flex flex-column flex-grow-1">
                             <h3 class="h5 mb-3">Brake Repair</h3>
-                            <p class="text-secondary small mb-4 flex-grow-1">Ensure your safety on the road with our comprehensive brake inspection and repair services.</p>
+                            <p class="text-secondary small mb-4 flex-grow-1">Ensure your safety on the road with our
+                                comprehensive brake inspection and repair services.</p>
                             <a href="services.html"
                                 class="text-accent fw-bold mt-auto d-inline-flex align-items-center gap-2">Learn More <i
                                     class="bi bi-arrow-right"></i></a>
@@ -720,12 +727,12 @@
                 <!-- Card 3 -->
                 <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="300">
                     <div class="premium-card p-0 h-100 d-flex flex-column border-color">
-                        <img src="https://images.unsplash.com/photo-1627916942118-2041db9fb9cd?auto=format&fit=crop&w=600&q=80"
-                            alt="AC Service" class="img-fluid w-100"
-                            style="height: 200px; object-fit: cover;">
+                        <img src="https://images.pexels.com/photos/30684554/pexels-photo-30684554.jpeg" alt="AC Service"
+                            class="img-fluid w-100" style="height: 200px; object-fit: cover;">
                         <div class="p-4 d-flex flex-column flex-grow-1">
                             <h3 class="h5 mb-3">AC Service</h3>
-                            <p class="text-secondary small mb-4 flex-grow-1">Stay cool during the summer with our professional AC inspection and recharge services.</p>
+                            <p class="text-secondary small mb-4 flex-grow-1">Stay cool during the summer with our
+                                professional AC inspection and recharge services.</p>
                             <a href="services.html"
                                 class="text-accent fw-bold mt-auto d-inline-flex align-items-center gap-2">Learn More <i
                                     class="bi bi-arrow-right"></i></a>
@@ -736,12 +743,12 @@
                 <!-- Card 4 -->
                 <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="400">
                     <div class="premium-card p-0 h-100 d-flex flex-column border-color">
-                        <img src="https://images.unsplash.com/photo-1508353348842-8c9096700c28?auto=format&fit=crop&w=600&q=80"
-                            alt="Tyre Rotation" class="img-fluid w-100"
-                            style="height: 200px; object-fit: cover;">
+                        <img src="https://images.pexels.com/photos/3806249/pexels-photo-3806249.jpeg"
+                            alt="Tyre Rotation" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
                         <div class="p-4 d-flex flex-column flex-grow-1">
                             <h3 class="h5 mb-3">Tyre Rotation</h3>
-                            <p class="text-secondary small mb-4 flex-grow-1">Maximize the life of your tires and improve vehicle handling with our tyre rotation service.</p>
+                            <p class="text-secondary small mb-4 flex-grow-1">Maximize the life of your tires and improve
+                                vehicle handling with our tyre rotation service.</p>
                             <a href="services.html"
                                 class="text-accent fw-bold mt-auto d-inline-flex align-items-center gap-2">Learn More <i
                                     class="bi bi-arrow-right"></i></a>
@@ -757,18 +764,20 @@
         <div class="container">
             <div class="text-center mb-5 pb-2" data-aos="fade-up">
                 <h2 class="display-6">Expertise Across <span class="text-gradient">All Auto Services</span></h2>
-                <p class="text-secondary mx-auto mt-3" style="max-width: 600px;">We provide end-to-end car repair services tailored for everyday drivers, enthusiasts, and commercial fleets.</p>
+                <p class="text-secondary mx-auto mt-3" style="max-width: 600px;">We provide end-to-end car repair
+                    services tailored for everyday drivers, enthusiasts, and commercial fleets.</p>
             </div>
 
             <div class="row g-4 justify-content-center">
                 <!-- Item 1 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="bento-item h-100">
-                        <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=600&q=80"
+                        <img src="https://images.pexels.com/photos/13065689/pexels-photo-13065689.jpeg"
                             alt="Engine Diagnostics" class="img-fluid rounded-4 mb-4"
                             style="height: 180px; width: 100%; object-fit: cover; box-shadow: var(--shadow-sm);">
                         <h3 class="h5">Engine Diagnostics</h3>
-                        <p class="text-secondary small">Meticulous diagnostics by technical experts ensuring maximum engine performance and longevity.</p>
+                        <p class="text-secondary small">Meticulous diagnostics by technical experts ensuring maximum
+                            engine performance and longevity.</p>
                         <a href="service-details.html"
                             class="text-accent fw-bold mt-auto d-inline-flex align-items-center gap-2">Details <i
                                 class="bi bi-arrow-right"></i></a>
@@ -782,7 +791,8 @@
                             alt="Transmission Repair" class="img-fluid rounded-4 mb-4"
                             style="height: 180px; width: 100%; object-fit: cover; box-shadow: var(--shadow-sm);">
                         <h3 class="h5">Transmission Repair</h3>
-                        <p class="text-secondary small">Streamlined transmission repair and fluid changes to keep your gears shifting smoothly.</p>
+                        <p class="text-secondary small">Streamlined transmission repair and fluid changes to keep your
+                            gears shifting smoothly.</p>
                         <a href="service-details.html"
                             class="text-accent fw-bold mt-auto d-inline-flex align-items-center gap-2">Details <i
                                 class="bi bi-arrow-right"></i></a>
@@ -842,7 +852,8 @@
                     <div class="premium-card bg-primary p-4 p-md-5">
                         <h4 class="mb-3 text-white">Repair & Handover</h4>
                         <p class="text-white opacity-75 mb-0">Our expert mechanics execute precise repairs and detailed
-                            quality checks. After your review and approval, we handle the final handover with a full service history record.</p>
+                            quality checks. After your review and approval, we handle the final handover with a full
+                            service history record.</p>
                     </div>
                 </div>
             </div>
@@ -894,8 +905,8 @@
 
             <div class="row g-4">
                 <!-- Testimonial 1 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="testimonial-card h-100" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-4 col-md-6 d-flex flex-column">
+                    <div class="testimonial-card flex-grow-1" data-aos="fade-up" data-aos-delay="100">
                         <div class="text-accent mb-3 fs-5">
                             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                                 class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
@@ -915,8 +926,8 @@
                 </div>
 
                 <!-- Testimonial 2 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="testimonial-card h-100" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-4 col-md-6 d-flex flex-column">
+                    <div class="testimonial-card flex-grow-1" data-aos="fade-up" data-aos-delay="200">
                         <div class="text-accent mb-3 fs-5">
                             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                                 class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
@@ -936,8 +947,8 @@
                 </div>
 
                 <!-- Testimonial 3 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="testimonial-card h-100" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-lg-4 col-md-6 d-flex flex-column">
+                    <div class="testimonial-card flex-grow-1" data-aos="fade-up" data-aos-delay="300">
                         <div class="text-accent mb-3 fs-5">
                             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                                 class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
@@ -975,7 +986,7 @@
                 </p>
 
                 <div class="d-flex justify-content-center gap-4 flex-wrap position-relative z-2">
-                    <a href="signup.html" class="btn-premium" style="background:var(--brand-accent); color:#000;">Book
+                    <a href="signup.html" class="btn-premium accent-black">Book
                         Consultation</a>
                     <a href="contact.html" class="btn-premium outline text-white">Contact Firm</a>
                 </div>
@@ -990,14 +1001,18 @@
                 <div class="col-lg-4 footer-widget">
                     <div class="mb-4 d-inline-block">
                         <a href="index.html" class="logo">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
                             Auto <span>Fix</span>
                         </a>
                     </div>
-                    <p class="mb-4">Premium auto repair services combining specialized mechanics with a customer dashboard. Keep your vehicle healthy effortlessly.</p>
+                    <p class="mb-4">Premium auto repair services combining specialized mechanics with a customer
+                        dashboard. Keep your vehicle healthy effortlessly.</p>
                     <div class="d-flex gap-3 footer-social">
                         <a href="#" class="fs-5"><i class="bi bi-linkedin"></i></a>
                         <a href="#" class="fs-5"><i class="bi bi-twitter-x"></i></a>
@@ -1048,7 +1063,9 @@
             <div class="footer-bottom">
                 <div>&copy; 2026 Auto Fix Repair Center. All rights reserved.</div>
                 <div class="d-flex gap-4">
-                    <a href="#" class="text-decoration-none hover-white fs-4" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"><i class="bi bi-arrow-up-circle-fill"></i></a>
+                    <a href="#" class="text-decoration-none hover-white fs-4"
+                        onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"><i
+                            class="bi bi-arrow-up-circle-fill"></i></a>
 
                 </div>
             </div>
