@@ -82,6 +82,26 @@
   --footer-text: #94A3B8;
   --footer-heading: #F8FAFC;
   --footer-border: #1E293B;
+  
+  /* Bootstrap Table Overrides for Dark Mode */
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--text-primary);
+  --bs-table-border-color: var(--border-color);
+  --bs-table-hover-bg: rgba(255, 255, 255, 0.05);
+  --bs-table-hover-color: var(--text-primary);
+}
+
+[data-theme="dark"] .table,
+[data-theme="dark"] .table th,
+[data-theme="dark"] .table td {
+  background-color: transparent !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .table-hover tbody tr:hover td,
+[data-theme="dark"] .table-hover tbody tr:hover th {
+  background-color: rgba(255, 255, 255, 0.05) !important;
 }
 
 * {
@@ -160,7 +180,11 @@ a:hover {
   .section-padding { padding: 60px 0; }
 }
 
-/* Buttons */
+/* Buttons and Labels */
+.btn, .badge, .section-label {
+  border-radius: 50px !important;
+}
+
 .btn-premium {
   display: inline-flex;
   align-items: center;
@@ -180,14 +204,14 @@ a:hover {
 }
 
 .btn-premium.primary {
-  background: var(--brand-primary);
-  color: var(--bg-primary) !important;
+  background: var(--brand-accent);
+  color: #000000 !important;
   box-shadow: var(--shadow-md);
 }
 
 [data-theme="dark"] .btn-premium.primary {
   background: var(--brand-accent);
-  color: var(--bg-primary) !important;
+  color: #000000 !important;
 }
 
 .btn-premium.primary:hover {
@@ -433,6 +457,8 @@ a:hover {
   
   .mobile-toggle {
     display: flex;
+    position: relative;
+    z-index: 1000;
   }
 }
 
