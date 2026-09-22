@@ -60,9 +60,11 @@
         .hero-img-wrapper { position: relative; z-index: 2; }
         .hero-img { width: 100%; border-radius: 24px; box-shadow: var(--shadow-premium); border: 1px solid var(--border-color); position: relative; z-index: 2; }
         .hero-img-bg { position: absolute; top: 20px; right: -20px; width: 100%; height: 100%; background: var(--brand-accent); border-radius: 24px; z-index: 1; opacity: 0.12; }
-        .floating-stat { position: absolute; background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); padding: 20px; border-radius: 20px; display: flex; align-items: center; gap: 15px; box-shadow: var(--shadow-lg); animation: float 6s infinite ease-in-out alternate; z-index: 3; }
-        .fs-1 { top: 15%; left: -40px; }
-        .fs-2 { bottom: 20%; right: -30px; animation-delay: 1.5s; }
+        .floating-stat { position: absolute; background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); padding: 10px 16px; border-radius: 12px; display: flex; align-items: center; gap: 10px; box-shadow: var(--shadow-lg); animation: float 6s infinite ease-in-out alternate; z-index: 3; }
+        .floating-stat h6 { font-size: 0.85rem; line-height: 1.2; letter-spacing: 0.5px; }
+        .floating-stat p { font-size: 0.78rem; }
+        .fs-1 { top: 8%; left: -25px; }
+        .fs-2 { bottom: 8%; right: -25px; animation-delay: 1.5s; }
         @media (max-width: 991px) { .fs-1 { left: -10px; } .fs-2 { right: -10px; } }
         @media (max-width: 767px) { 
             .hero-img-wrapper { margin: 20px 0 0; } 
@@ -70,8 +72,8 @@
             .floating-stat { 
                 position: static; 
                 width: 100%; 
-                margin-top: 12px; 
-                padding: 14px 16px; 
+                margin-top: 10px; 
+                padding: 10px 14px; 
                 animation: none; 
                 box-shadow: var(--shadow-sm); 
             } 
@@ -82,8 +84,15 @@
                 bottom: auto; 
             } 
         }
-        .stat-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--brand-primary); color: var(--brand-accent); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
+        .stat-icon { width: 34px; height: 34px; border-radius: 8px; background: var(--brand-primary); color: var(--brand-accent); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
         [data-theme="dark"] .stat-icon { background: var(--brand-primary-muted); color: var(--brand-accent); border: 1px solid var(--border-color); }
+        @media (max-width: 1199px) {
+            .chamber-innov-card { padding: 22px 16px; }
+            .chamber-innov-card h3 { font-size: 1.12rem; }
+            .chamber-innov-card .badge { font-size: 0.72rem; padding: 3px 6px !important; }
+            .chamber-innov-card a { font-size: 0.8rem !important; }
+            .bento-item h3 { font-size: 1.15rem; }
+        }
         .timeline { position: relative; max-width: 800px; margin: 0 auto; }
         .timeline::before { content: ''; position: absolute; top: 0; left: 40px; height: 100%; width: 2px; background: var(--border-color); }
         .timeline-item { position: relative; margin-bottom: 60px; padding-left: 100px; }
@@ -228,7 +237,7 @@
             </div>
 
             <div class="row g-4">
-                <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-xl-3 col-lg-6 col-md-6 col-12" data-aos="fade-up" data-aos-delay="100">
                     <div class="premium-card car-hover-card p-0 h-100 d-flex flex-column border-color">
                         <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=600&q=80" alt="Enclosed Vehicle Transport" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
                         <div class="p-4 d-flex flex-column flex-grow-1">
@@ -239,7 +248,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-xl-3 col-lg-6 col-md-6 col-12" data-aos="fade-up" data-aos-delay="200">
                     <div class="premium-card car-hover-card p-0 h-100 d-flex flex-column border-color">
                         <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80" alt="Open Carrier Logistics" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
                         <div class="p-4 d-flex flex-column flex-grow-1">
@@ -250,7 +259,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-xl-3 col-lg-6 col-md-6 col-12" data-aos="fade-up" data-aos-delay="300">
                     <div class="premium-card car-hover-card p-0 h-100 d-flex flex-column border-color">
                         <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=600&q=80" alt="Climate-Controlled Storage" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
                         <div class="p-4 d-flex flex-column flex-grow-1">
@@ -261,7 +270,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="400">
+                <div class="col-xl-3 col-lg-6 col-md-6 col-12" data-aos="fade-up" data-aos-delay="400">
                     <div class="premium-card car-hover-card p-0 h-100 d-flex flex-column border-color">
                         <img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=600&q=80" alt="Condition & Inspection Reports" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
                         <div class="p-4 d-flex flex-column flex-grow-1">
@@ -285,28 +294,28 @@
 
             <div class="row g-4 justify-content-center">
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="bento-item h-100">
+                    <div class="bento-item h-100 d-flex flex-column">
                         <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=600&q=80" alt="Live GPS Fleet Tracking" class="img-fluid rounded-4 mb-4" style="height: 180px; width: 100%; object-fit: cover; box-shadow: var(--shadow-sm);">
                         <h3 class="h5">Live GPS Fleet Tracking</h3>
-                        <p class="text-secondary small">Real-time driver location tracking, milestone notifications, and accurate pickup/delivery appointment windows via your customer portal.</p>
+                        <p class="text-secondary small mb-4 flex-grow-1">Real-time driver location tracking, milestone notifications, and accurate pickup/delivery appointment windows via your customer portal.</p>
                         <a href="dashboard.html" class="text-accent fw-bold mt-auto d-inline-flex align-items-center gap-2">Track Shipment <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="bento-item h-100">
+                    <div class="bento-item h-100 d-flex flex-column">
                         <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80" alt="Concierge Battery & Tire Cycling" class="img-fluid rounded-4 mb-4" style="height: 180px; width: 100%; object-fit: cover; box-shadow: var(--shadow-sm);">
                         <h3 class="h5">Battery & Tire Maintenance</h3>
-                        <p class="text-secondary small">Continuous micro-processor battery tending, scheduled tire pressure calibration, and gentle wheel rotation to prevent flat spots during storage.</p>
+                        <p class="text-secondary small mb-4 flex-grow-1">Continuous micro-processor battery tending, scheduled tire pressure calibration, and gentle wheel rotation to prevent flat spots during storage.</p>
                         <a href="services.html" class="text-accent fw-bold mt-auto d-inline-flex align-items-center gap-2">Learn More <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="bento-item h-100">
+                    <div class="bento-item h-100 d-flex flex-column">
                         <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=600&q=80" alt="Customer Management Portal" class="img-fluid rounded-4 mb-4" style="height: 180px; width: 100%; object-fit: cover; box-shadow: var(--shadow-sm);">
                         <h3 class="h5">Client Portal & Payment Center</h3>
-                        <p class="text-secondary small">Book transport requests with one click, review inspection photos, view pickup and delivery windows, and manage storage billing in one place.</p>
+                        <p class="text-secondary small mb-4 flex-grow-1">Book transport requests with one click, review inspection photos, view pickup and delivery windows, and manage storage billing in one place.</p>
                         <a href="dashboard.html" class="text-accent fw-bold mt-auto d-inline-flex align-items-center gap-2">Open Portal <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
@@ -441,8 +450,8 @@
                         <h3 class="h5 fw-bold mb-2">Zero-Angle Enclosed Haulers</h3>
                         <p class="text-secondary small mb-4">Custom pneumatic hydraulic liftgates that maintain a genuine 0° approach angle, preventing underbody scrape on ultra-low supercars and vintage race machinery.</p>
                         <div class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top border-color">
-                            <span class="badge text-secondary border border-color px-2 py-1 small">Air-Ride Suspension</span>
-                            <a href="services.html" class="text-accent fw-bold small text-decoration-none">Explore Fleet &rarr;</a>
+                            <span class="badge text-secondary border border-color px-2 py-1 small text-nowrap">Air-Ride Spec</span>
+                            <a href="services.html" class="text-accent fw-bold small text-decoration-none text-nowrap">Explore Fleet &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -455,8 +464,8 @@
                         <h3 class="h5 fw-bold mb-2">Private Collector Vault Suites</h3>
                         <p class="text-secondary small mb-4">Partitioned glass-enclosed suites with individual biometric credentials, custom museum lighting, dedicated lounge access, and private detailing wash bays.</p>
                         <div class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top border-color">
-                            <span class="badge text-secondary border border-color px-2 py-1 small">VIP Keycard Access</span>
-                            <a href="pricing.html" class="text-accent fw-bold small text-decoration-none">View Suites &rarr;</a>
+                            <span class="badge text-secondary border border-color px-2 py-1 small text-nowrap">VIP Keycard</span>
+                            <a href="pricing.html" class="text-accent fw-bold small text-decoration-none text-nowrap">View Suites &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -469,8 +478,8 @@
                         <h3 class="h5 fw-bold mb-2">2-Hour Rapid Concierge Dispatch</h3>
                         <p class="text-secondary small mb-4">Need your vehicle for a weekend tour or auction? Request through the app and our team performs tire calibration, exterior wash, and delivered directly to your destination.</p>
                         <div class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top border-color">
-                            <span class="badge text-secondary border border-color px-2 py-1 small">White-Glove Ready</span>
-                            <a href="contact.html" class="text-accent fw-bold small text-decoration-none">Contact Dispatch &rarr;</a>
+                            <span class="badge text-secondary border border-color px-2 py-1 small text-nowrap">White-Glove</span>
+                            <a href="contact.html" class="text-accent fw-bold small text-decoration-none text-nowrap">Dispatch &rarr;</a>
                         </div>
                     </div>
                 </div>

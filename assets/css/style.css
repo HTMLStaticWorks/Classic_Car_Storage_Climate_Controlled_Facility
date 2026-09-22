@@ -337,6 +337,26 @@ a:hover {
   transform: scale(1.05);
 }
 
+/* Accent Links & Action Buttons */
+a.text-accent {
+  transition: color var(--transition-fast), gap var(--transition-fast), transform var(--transition-fast);
+  text-decoration: none;
+}
+
+a.text-accent:hover {
+  color: var(--brand-accent-hover) !important;
+  text-decoration: none;
+}
+
+a.text-accent i {
+  transition: transform var(--transition-fast);
+  display: inline-block;
+}
+
+a.text-accent:hover i {
+  transform: translateX(5px);
+}
+
 /* ==========================================================
    HEADER & NAVIGATION
 ========================================================== */
@@ -495,6 +515,34 @@ a:hover {
   color: #06090E;
   transform: rotate(5deg) scale(1.08);
   box-shadow: var(--shadow-glow);
+}
+
+/* ==========================================================
+   CTA SECTION & CALLOUT BOXES
+========================================================== */
+.cta-section {
+  background: var(--bg-secondary);
+  padding: 90px 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.cta-box {
+  background: var(--brand-primary);
+  border-radius: 32px;
+  padding: 80px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-premium);
+  margin: 0 auto;
+  width: 100%;
+}
+
+[data-theme="dark"] .cta-box {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
 }
 
 /* ==========================================================

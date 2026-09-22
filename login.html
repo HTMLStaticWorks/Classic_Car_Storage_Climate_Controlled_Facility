@@ -31,6 +31,31 @@
             transform: translateY(-2px);
             box-shadow: var(--shadow-sm);
         }
+        .glass-card a.text-accent {
+            transition: all var(--transition-fast);
+            text-decoration: none;
+            display: inline-block;
+        }
+        .glass-card a.text-accent:hover {
+            color: var(--brand-accent-hover) !important;
+            text-decoration: underline !important;
+            text-underline-offset: 3px;
+            transform: translateY(-1px);
+        }
+        @media (max-width: 767px) {
+            .auth-form-side {
+                padding: 75px 16px 40px;
+            }
+            .auth-toggles {
+                top: 16px;
+                right: 16px;
+                gap: 10px;
+            }
+            .glass-card {
+                padding: 35px 20px;
+                border-radius: 20px;
+            }
+        }
     </style>
 </head>
 <body>
