@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Fix | Contact Us</title>
+    <title>VaultX | Contact Facility & Logistics Dispatch</title>
+    <meta name="description" content="Contact VaultX 24/7 vehicle transport dispatch hotline, schedule a facility walkthrough in Scottsdale or Greenwich, or request a custom quote.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23D4AF37' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%230F172A' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23E63946' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%23111827' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,600&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -17,150 +18,124 @@
     <style>
         .contact-hero {
             padding: 160px 0 100px;
-            background: linear-gradient(rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.85)), url('https://images.unsplash.com/photo-1503376712351-1b2d49c09c33?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(7, 12, 22, 0.85), rgba(7, 12, 22, 0.85)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
             color: white;
             text-align: center;
         }
         
-        /* Floating Labels Form */
-        .form-floating > .form-control,
-        .form-floating > .form-control-plaintext,
-        .form-floating > .form-select {
-            height: calc(3.5rem + 2px);
-            line-height: 1.25;
-            background: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-        }
-        .form-floating > .form-control:focus {
-            border-color: var(--brand-indigo);
-            box-shadow: none;
-        }
-        .form-floating > label {
-            color: var(--text-secondary);
-        }
-        .form-floating > .form-control:focus ~ label,
-        .form-floating > .form-control:not(:placeholder-shown) ~ label,
-        .form-floating > .form-select ~ label {
-            color: var(--brand-indigo);
-            transform: scale(.85) translateY(-.5rem) translateX(.15rem);
-        }
-        .form-floating > label::after {
-            background-color: transparent !important;
-        }
-        .form-floating > .form-select {
-            padding-top: 1.625rem;
-            padding-bottom: 0.625rem;
-        }
         .contact-form-box {
             background: var(--bg-primary);
             padding: 40px;
-            border-radius: 16px;
+            border-radius: 20px;
             box-shadow: var(--shadow-lg);
             border: 1px solid var(--border-color);
         }
         
-        /* Info Cards */
         .info-card {
             background: var(--bg-secondary);
-            padding: 30px;
-            border-radius: 12px;
+            padding: 28px;
+            border-radius: 16px;
             border: 1px solid var(--border-color);
             display: flex;
             align-items: flex-start;
-            gap: 20px;
+            gap: 18px;
+            height: 100%;
+            transition: all var(--transition-normal);
         }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--brand-accent);
+            box-shadow: var(--shadow-md);
+        }
+        
         .info-icon {
-            font-size: 2rem;
-            color: var(--brand-indigo);
+            font-size: 1.85rem;
+            color: var(--brand-accent);
+            flex-shrink: 0;
         }
-        
-        /* Map Reveal */
-        .map-container {
-            height: 400px;
-            border-radius: 16px;
-            overflow: hidden;
+
+        .contact-social-icons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .contact-social-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: var(--bg-primary);
             border: 1px solid var(--border-color);
-            position: relative;
-        }
-        .map-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--brand-indigo);
-            display: flex;
-            align-items: center; justify-content: center;
-            color: white;
-            cursor: pointer;
-            transition: all 0.5s;
-            z-index: 2;
-        }
-        .map-container.revealed .map-overlay {
-            opacity: 0;
-            pointer-events: none;
-        }
-        .map-placeholder {
-            width: 100%; height: 100%;
-            border: 0;
-        }
-        
-        .social-card {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-        }
-        .social-card a {
+            color: var(--text-primary);
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: var(--bg-secondary);
-            color: var(--brand-indigo);
-            font-size: 1.2rem;
-            border: 1px solid var(--border-color);
-            transition: all var(--transition-normal);
+            font-size: 1.15rem;
+            transition: all var(--transition-fast);
             text-decoration: none;
         }
-        .social-card a:hover {
-            background: var(--brand-indigo);
-            color: white;
+
+        .contact-social-btn:hover {
+            background: var(--brand-accent);
+            color: #06090E !important;
+            border-color: var(--brand-accent);
             transform: translateY(-3px);
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-glow);
         }
-        
-        /* Accordion */
-        .accordion-item {
-            background: transparent;
-            border: 1px solid var(--border-color);
-            border-radius: 8px !important;
-            margin-bottom: 15px;
+
+        .map-section {
+            position: relative;
             overflow: hidden;
         }
-        .accordion-button {
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-            font-weight: 600;
-            box-shadow: none !important;
-            padding: 20px;
+
+        .map-wrapper {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-premium);
+            height: 480px;
+            background: var(--bg-tertiary);
         }
-        .accordion-button:not(.collapsed) {
-            background: var(--bg-primary);
-            color: var(--brand-indigo);
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
-        .accordion-button::after {
-            filter: grayscale(1);
+
+        [data-theme="dark"] .map-wrapper iframe {
+            filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%);
         }
-        [data-theme="dark"] .accordion-button::after {
-            filter: invert(1) grayscale(1);
+
+        .map-floating-card {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            padding: 24px;
+            border-radius: 18px;
+            max-width: 380px;
+            z-index: 5;
+            box-shadow: var(--shadow-lg);
         }
-        .accordion-body {
-            color: var(--text-secondary);
-            background: var(--bg-primary);
-            padding: 20px;
+
+        @media (max-width: 767px) {
+            .map-floating-card {
+                position: static;
+                max-width: 100%;
+                margin-top: 20px;
+                border-radius: 16px;
+            }
+            .map-wrapper {
+                height: 350px;
+            }
         }
     </style>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23E63946' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%23111827' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 </head>
 <body>
 
@@ -172,39 +147,41 @@
     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
-                Auto <span>Fix</span>
+                Vault<span>X</span>
             </a>
 
             <nav class="main-nav">
-                <a href="index.html" class="nav-link active">Home 1</a>
+                <a href="index.html" class="nav-link">Home 1</a>
                 <a href="index-2.html" class="nav-link">Home 2</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="services.html" class="nav-link">Services</a>
-                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
                 <a href="blog.html" class="nav-link">Blog</a>
-                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
                 <a href="dashboard.html" class="nav-link">Dashboard</a>
-            
-                <div class="mobile-only-actions d-xl-none d-flex gap-3 align-items-center mt-3 pt-3 border-top border-secondary">
-                    <button class="icon-btn theme-toggle-btn" title="Toggle Theme">
-                        <i class="bi bi-moon"></i>
-                    </button>
-                    <button class="icon-btn rtl-toggle-btn" title="Toggle RTL">
-                        <i class="bi bi-arrow-left-right"></i>
-                    </button>
-                    <a href="signup.html" class="btn-premium primary w-100 text-center">Sign Up</a>
+
+                <div class="mobile-only-actions d-xl-none d-flex flex-column gap-3 mt-3 pt-3 border-top border-secondary">
+                    <a href="login.html" class="btn-premium primary w-100 text-center">Login</a>
+                    <div class="d-flex gap-3 justify-content-center">
+                        <button class="icon-btn theme-toggle-btn" title="Toggle Theme" aria-label="Toggle theme">
+                            <i class="bi bi-moon"></i>
+                        </button>
+                        <button class="icon-btn rtl-toggle-btn" title="Toggle RTL" aria-label="Toggle text direction">
+                            <i class="bi bi-arrow-left-right"></i>
+                        </button>
+                    </div>
                 </div>
             </nav>
 
             <div class="header-actions">
-                <button class="icon-btn theme-toggle-btn d-none d-xl-flex" title="Toggle Theme">
+                <button class="icon-btn theme-toggle-btn d-none d-xl-flex" title="Toggle Theme" aria-label="Toggle theme">
                     <i class="bi bi-moon"></i>
                 </button>
-                <button class="icon-btn rtl-toggle-btn d-none d-xl-flex" title="Toggle RTL">
+                <button class="icon-btn rtl-toggle-btn d-none d-xl-flex" title="Toggle RTL" aria-label="Toggle text direction">
                     <i class="bi bi-arrow-left-right"></i>
                 </button>
-                <a href="signup.html" class="btn-premium primary d-none d-xl-flex">Sign Up</a>
-                <button class="icon-btn mobile-toggle">
+                <a href="login.html" class="btn-premium primary d-none d-xl-flex">Login</a>
+                <button class="icon-btn mobile-toggle" aria-label="Toggle navigation">
                     <i class="bi bi-list"></i>
                 </button>
             </div>
@@ -212,203 +189,151 @@
     </header>
 
     <!-- 1. Hero -->
-    <section class="contact-hero text-center text-white">
+    <section class="contact-hero">
         <div class="container" data-aos="zoom-in">
-            <h1 class="display-4 fw-bold mb-4 text-white">Get in Touch</h1>
-            <p class="lead opacity-75 mx-auto text-light" style="max-width: 600px;">Our local team of certified mechanics is ready to get your vehicle back in shape. Reach out to schedule an appointment.</p>
+            <span class="badge bg-warning text-dark badge-nitro px-3 py-2 rounded-pill fw-bold mb-3">24/7 Logistics Coordination</span>
+            <h1 class="display-3 fw-bold mb-4 text-white">Contact Facility & Dispatch</h1>
+            <p class="lead text-light opacity-75 mx-auto" style="max-width: 650px;">Our classic car logistics specialists are on call 24/7 for carrier tracking, rate quotes, and facility visitation appointments.</p>
         </div>
     </section>
 
-    <!-- 2 & 3. Info & Form -->
-    <section class="section-padding" style="margin-top: -50px;">
-        <div class="container position-relative z-2">
-            <div class="row g-5">
-                
-                <div class="col-lg-5" data-aos="fade-right">
-                    <h3 class="mb-4">Direct Contact</h3>
-                    <p class="text-secondary mb-5">For urgent towing services or immediate assistance regarding an engine light, please call our main line.</p>
-                    
-                    <div class="info-card mb-3">
-                        <i class="bi bi-telephone-fill info-icon"></i>
-                        <div>
-                            <h5 class="mb-1">Phone</h5>
-                            <p class="text-secondary mb-0">+1 (800) 555-0199<br>+1 (800) 555-0200 (Towing)</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-card mb-3">
-                        <i class="bi bi-envelope-fill info-icon"></i>
-                        <div>
-                            <h5 class="mb-1">Email</h5>
-                            <p class="text-secondary mb-0">info@autofix.com<br>service@autofix.com</p>
-                        </div>
-                    </div>
-                    
+    <!-- 2. Info Cards -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row g-4 mb-5 justify-content-center">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="info-card">
-                        <i class="bi bi-geo-alt-fill info-icon"></i>
+                        <div class="info-icon"><i class="bi bi-telephone-outbound-fill"></i></div>
                         <div>
-                            <h5 class="mb-1">Main Garage</h5>
-                            <p class="text-secondary mb-0">100 Motor Way<br>Suite 500<br>Detroit, MI 48201</p>
+                            <h5 class="fw-bold mb-2">24/7 Hotline</h5>
+                            <p class="text-secondary small mb-2">Direct line for active carriers, driver tracking, and urgent quotes.</p>
+                            <a href="tel:18005552277" class="fw-bold text-accent fs-6">1-800-555-CARS</a>
                         </div>
-                    </div>
-                    
-                    <div class="social-card">
-                        <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" title="Twitter"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" title="YouTube"><i class="bi bi-youtube"></i></a>
-                        <a href="#" title="Facebook"><i class="bi bi-facebook"></i></a>
                     </div>
                 </div>
-                
-                <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
+
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="info-card">
+                        <div class="info-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                        <div>
+                            <h5 class="fw-bold mb-2">Scottsdale Vault</h5>
+                            <p class="text-secondary small mb-1">7420 E Pinnacle Peak Rd, Scottsdale, AZ 85255</p>
+                            <span class="badge bg-success text-white small">Receiving 24/7</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="info-card">
+                        <div class="info-icon"><i class="bi bi-envelope-check-fill"></i></div>
+                        <div>
+                            <h5 class="fw-bold mb-2">Email Logistics</h5>
+                            <p class="text-secondary small mb-2">For custom vault inquiries and auction transport.</p>
+                            <a href="mailto:dispatch@vaultx.com" class="fw-bold text-accent fs-6">dispatch@vaultx.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="info-card">
+                        <div class="info-icon"><i class="bi bi-share-fill"></i></div>
+                        <div>
+                            <h5 class="fw-bold mb-1">Social Channels</h5>
+                            <p class="text-secondary small mb-2">Follow our live transport journeys & auctions.</p>
+                            <div class="contact-social-icons">
+                                <a href="https://linkedin.com" target="_blank" class="contact-social-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                <a href="https://twitter.com" target="_blank" class="contact-social-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                                <a href="https://youtube.com" target="_blank" class="contact-social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                                <a href="https://instagram.com" target="_blank" class="contact-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Row -->
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up">
                     <div class="contact-form-box">
-                        <h3 class="mb-4">Send a Message</h3>
-                        <form>
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4">
+                            <h3 class="mb-0">Send a Logistics or Storage Inquiry</h3>
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="text-secondary small">Connect:</span>
+                                <a href="#" class="contact-social-btn" style="width:34px;height:34px;font-size:0.95rem;" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" class="contact-social-btn" style="width:34px;height:34px;font-size:0.95rem;" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                                <a href="#" class="contact-social-btn" style="width:34px;height:34px;font-size:0.95rem;" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <form onsubmit="event.preventDefault(); alert('Thank you! A dedicated VaultX logistics coordinator will contact you within 15 minutes.');">
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="fname" placeholder="First Name">
-                                        <label for="fname">First Name</label>
-                                    </div>
+                                    <label class="form-label text-secondary small fw-bold">Full Name</label>
+                                    <input type="text" class="form-control" required placeholder="Alexander Vance">
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="lname" placeholder="Last Name">
-                                        <label for="lname">Last Name</label>
-                                    </div>
+                                    <label class="form-label text-secondary small fw-bold">Email Address</label>
+                                    <input type="email" class="form-control" required placeholder="alexander@example.com">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-secondary small fw-bold">Phone Number</label>
+                                    <input type="tel" class="form-control" placeholder="+1 (555) 000-0000">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-secondary small fw-bold">Inquiry Type</label>
+                                    <select class="form-select">
+                                        <option>Enclosed Transport Quote</option>
+                                        <option>Climate Vault Storage Reservation</option>
+                                        <option>Schedule Facility Walkthrough</option>
+                                        <option>Active Shipment Status Query</option>
+                                    </select>
                                 </div>
                                 <div class="col-12">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Email">
-                                        <label for="email">Corporate Email Address</label>
-                                    </div>
+                                    <label class="form-label text-secondary small fw-bold">Vehicle Details & Routing (Year, Make, Model, Origin & Destination)</label>
+                                    <textarea class="form-control" rows="4" placeholder="Tell us about your vehicle and timing requirements..."></textarea>
                                 </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <select class="form-select" id="inquiry">
-                                            <option>General Inquiry</option>
-                                            <option>Schedule Service</option>
-                                            <option>Dashboard Support</option>
-                                        </select>
-                                        <label for="inquiry">Subject</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Message" id="msg" style="height: 150px"></textarea>
-                                        <label for="msg">How can we help?</label>
-                                    </div>
-                                </div>
-                                <div class="col-12 mt-4">
-                                    <button type="submit" class="btn-premium primary w-100">Send Message</button>
+                                <div class="col-12 text-center mt-4">
+                                    <button type="submit" class="btn-premium primary px-5">Submit Inquiry</button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
-                
             </div>
         </div>
     </section>
 
-    <!-- 4. Locations (Map Reveal) -->
-    <section class="section-padding bg-secondary">
+    <!-- 3. Interactive Facility Map Section -->
+    <section class="map-section section-padding bg-secondary pt-0">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
-                <h2>Our Locations</h2>
-                <p class="text-secondary mx-auto" style="max-width: 600px;">Conveniently located branches to serve you better.</p>
+                <span class="badge bg-warning text-dark badge-nitro px-3 py-2 rounded-pill fw-bold mb-2">Vault Locations</span>
+                <h2 class="display-6">Flagship Facility & Receiving Hub</h2>
+                <p class="text-secondary mx-auto" style="max-width: 650px;">Visit our primary 50,000 sq ft climate chamber in Scottsdale, AZ or schedule enclosed carrier drop-off.</p>
             </div>
-            
-            <div class="row mb-5">
-                <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="100">
-                    <h5 class="text-indigo">Downtown (HQ)</h5>
-                    <p class="text-secondary small">Full Service & Collision</p>
-                </div>
-                <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="200">
-                    <h5 class="text-indigo">North Branch</h5>
-                    <p class="text-secondary small">Express Lube & Tires</p>
-                </div>
-                <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="300">
-                    <h5 class="text-indigo">South Branch</h5>
-                    <p class="text-secondary small">Diagnostics & Electrical</p>
-                </div>
-            </div>
-            
-            <div class="map-container" id="map-wrap" data-aos="zoom-in">
-                <div class="map-overlay" id="map-overlay">
-                    <div class="text-center">
-                        <i class="bi bi-map display-4 mb-3 d-block"></i>
-                        <h4>Click to Reveal Interactive Map</h4>
+
+            <div class="map-wrapper" data-aos="zoom-in">
+                <iframe 
+                    title="VaultX Facility Location Map" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106368.61864197475!2d-111.98688463583787!3d33.68412852277491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b75a6c38217bb%3A0x2dbce83416a96bc4!2sScottsdale%2C%20AZ!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+
+                <div class="map-floating-card">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <span class="badge bg-warning text-dark fw-bold">Primary Vault Hub</span>
+                        <span class="text-secondary small"><i class="bi bi-shield-check text-success"></i> Class-1 Secure</span>
                     </div>
-                </div>
-                <iframe class="map-placeholder" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.63929062107!2d-122.14301948469282!3d37.42199987982555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fba02425def45%3A0x183c5cb3a0e20ce9!2sPalo%20Alto%2C%20CA!5e0!3m2!1sen!2sus!4v1655381830604!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. FAQ Accordion -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2>Frequently Asked Questions</h2>
-            </div>
-            
-            <div class="row justify-content-center">
-                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
-                    <div class="accordion" id="faqAccordion">
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                                    Do I need an appointment for an oil change?
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    While we accept walk-ins for express services like oil changes, we highly recommend booking an appointment through your dashboard to guarantee minimal wait times.
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                                    How long does a diagnostic check take?
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    A standard computerized diagnostic check typically takes 30 to 60 minutes. We'll provide you with a full report and repair estimate immediately after.
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                                    Do you offer towing services?
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Yes, we offer 24/7 towing services within a 20-mile radius of our Downtown HQ. Call our dedicated towing line for immediate dispatch.
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
-                                    Do you provide warranties on repairs?
-                                </button>
-                            </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    We stand behind our work. All major repairs come with a standard 24-month/24,000-mile warranty on parts and labor. Please see our Service Terms for complete details.
-                                </div>
-                            </div>
-                        </div>
-                        
+                    <h5 class="fw-bold mb-1">VaultX Scottsdale Flagship</h5>
+                    <p class="text-secondary small mb-3">7420 E Pinnacle Peak Rd, Scottsdale, AZ 85255</p>
+                    <div class="d-flex gap-2 mb-3">
+                        <span class="badge border border-color text-secondary small py-1 px-2"><i class="bi bi-clock me-1 text-accent"></i> 24/7 Receiving</span>
+                        <span class="badge border border-color text-secondary small py-1 px-2"><i class="bi bi-thermometer me-1 text-accent"></i> 50% RH</span>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <a href="https://maps.google.com/?q=Scottsdale,AZ" target="_blank" class="btn-premium primary py-2 px-3 small w-100 text-center">Get Directions <i class="bi bi-arrow-up-right ms-1"></i></a>
+                        <a href="tel:18005552277" class="btn-premium outline py-2 px-3 small" aria-label="Call Dispatch"><i class="bi bi-telephone-fill"></i></a>
                     </div>
                 </div>
             </div>
@@ -426,75 +351,79 @@
     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
-                            Auto <span>Fix</span>
+                            Vault<span>X</span>
                         </a>
                     </div>
-                    <p class="mb-4">Premium auto repair services combining specialized mechanics with a customer dashboard. Keep your vehicle healthy effortlessly.</p>
+                    <p class="mb-4">The nation's premier climate-controlled classic car storage facility and enclosed transport logistics network. Protecting prized automotive heritage with white-glove precision and real-time client tracking.</p>
                     <div class="d-flex gap-3 footer-social">
-                        <a href="#" class="fs-5"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="fs-5"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="fs-5"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="fs-5" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="fs-5" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="fs-5" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="fs-5" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
 
                 <div class="col-lg-2 footer-widget">
-                    <h4>Quick Links</h4>
+                    <h4>Logistics & Facility</h4>
                     <ul class="footer-links">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Our Services</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="gallery.html">Our Gallery</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="about.html">About Facility</a></li>
+                        <li><a href="services.html">Enclosed Transport</a></li>
+                        <li><a href="services.html">Climate Storage</a></li>
+                        <li><a href="pricing.html">Storage Rates</a></li>
+                        <li><a href="services.html">Specialized Logistics</a></li>
+                        <li><a href="contact.html">Dispatch Hotline</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-2 footer-widget">
-                    <h4>Resources</h4>
+                    <h4>Customer Portal</h4>
                     <ul class="footer-links">
-                        <li><a href="login.html">Customer Dashboard</a></li>
-                        <li><a href="blog.html">Maintenance Tips</a></li>
-                        <li><a href="#">Service Guide</a></li>
-                        <li><a href="booking.html">Book Appointment</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="dashboard.html">Client Dashboard</a></li>
+                        <li><a href="contact.html">Request a Quote</a></li>
+                        <li><a href="dashboard.html">Live GPS Tracking</a></li>
+                        <li><a href="dashboard.html">Inspection Reports</a></li>
+                        <li><a href="blog.html">Collector Guides</a></li>
+                        <li><a href="login.html">Portal Login</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-4 footer-widget">
-                    <h4>Newsletter</h4>
-                    <p class="mb-3">Subscribe for the latest car maintenance tips and exclusive offers.</p>
-                    <form class="d-flex position-relative footer-form">
+                    <h4>Logistics Newsletter</h4>
+                    <p class="mb-3">Subscribe for climate preservation reports, enclosed transport updates, and auction schedules.</p>
+                    <form class="d-flex position-relative footer-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to VaultX updates.');">
                         <input type="email" class="form-control rounded-pill py-3 px-4 w-100 border-color shadow-none"
-                            placeholder="Email address" required style="background: rgba(128,128,128,0.05);">
+                            placeholder="Enter your email" required style="background: rgba(128,128,128,0.05);">
                         <button type="submit"
                             class="btn-premium primary rounded-pill position-absolute end-0 top-0 bottom-0 m-1 px-4 border-0">Subscribe</button>
                     </form>
                     <div class="mt-4 d-flex gap-2 flex-wrap">
                         <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
-                                class="bi bi-wrench-adjustable-circle text-indigo me-1"></i> ASE Certified</span>
+                                class="bi bi-shield-lock-fill text-indigo me-1"></i> $5M Cargo Insurance</span>
                         <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
-                                class="bi bi-lock-fill text-indigo me-1"></i> Secure Booking</span>
+                                class="bi bi-thermometer-half text-indigo me-1"></i> 50% RH Regulated</span>
+                        <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
+                                class="bi bi-geo-alt-fill text-indigo me-1"></i> 50-State Coverage</span>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <div>&copy; 2026 Auto Fix Repair Center. All rights reserved.</div>
+                <div>&copy; 2026 VaultX. All rights reserved. Nationwide Vehicle Transport Logistics.</div>
                 <div class="d-flex gap-4">
-                    <a href="#" class="text-decoration-none hover-white fs-4" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"><i class="bi bi-arrow-up-circle-fill"></i></a>
-
+                    <a href="#" class="text-decoration-none hover-white fs-4"
+                        onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" aria-label="Back to top"><i
+                            class="bi bi-arrow-up-circle-fill"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" aria-label="Back to Top"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
-    <script>
-        // Map Reveal Interaction
-        document.getElementById('map-overlay').addEventListener('click', function() {
-            document.getElementById('map-wrap').classList.add('revealed');
-        });
-    </script>
 </body>
 </html>

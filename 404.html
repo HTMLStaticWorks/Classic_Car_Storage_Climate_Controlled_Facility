@@ -3,43 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Fix | Page Not Found</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23E63946' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%23111827' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>VaultX | Page Not Found</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23D4AF37' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%230F172A' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,600&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    
     <style>
-        .error-layout {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--bg-primary);
-            text-align: center;
-            padding: 100px 20px;
-        }
-        
-        .error-code {
-            font-size: clamp(6rem, 15vw, 12rem);
-            font-weight: 800;
-            line-height: 1;
-            color: var(--brand-indigo);
-            text-shadow: 5px 5px 0 var(--brand-indigo);
-            margin-bottom: 20px;
-        }
-        
-        [data-theme="dark"] .error-code {
-            color: var(--text-primary);
-        }
+        .error-layout { min-height: calc(100vh - 160px); display: flex; align-items: center; justify-content: center; background: var(--bg-primary); text-align: center; padding: 100px 20px; }
+        .error-code { font-size: clamp(6rem, 15vw, 10rem); font-weight: 800; line-height: 1; font-family: var(--font-heading); color: var(--brand-accent); margin-bottom: 20px; }
     </style>
 </head>
 <body>
-
     <!-- Header -->
     <header class="site-header">
         <div class="container header-container">
@@ -48,7 +25,7 @@
     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
-                Auto <span>Fix</span>
+                Vault<span>X</span>
             </a>
 
             <nav class="main-nav">
@@ -56,49 +33,49 @@
                 <a href="index-2.html" class="nav-link">Home 2</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="services.html" class="nav-link">Services</a>
-                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
                 <a href="blog.html" class="nav-link">Blog</a>
                 <a href="contact.html" class="nav-link">Contact</a>
                 <a href="dashboard.html" class="nav-link">Dashboard</a>
-            
-                <div class="mobile-only-actions d-xl-none d-flex gap-3 align-items-center mt-3 pt-3 border-top border-secondary">
-                    <button class="icon-btn theme-toggle-btn" title="Toggle Theme">
-                        <i class="bi bi-moon"></i>
-                    </button>
-                    <button class="icon-btn rtl-toggle-btn" title="Toggle RTL">
-                        <i class="bi bi-arrow-left-right"></i>
-                    </button>
-                    <a href="signup.html" class="btn-premium primary w-100 text-center">Sign Up</a>
+
+                <div class="mobile-only-actions d-xl-none d-flex flex-column gap-3 mt-3 pt-3 border-top border-secondary">
+                    <a href="login.html" class="btn-premium primary w-100 text-center">Login</a>
+                    <div class="d-flex gap-3 justify-content-center">
+                        <button class="icon-btn theme-toggle-btn" title="Toggle Theme" aria-label="Toggle theme">
+                            <i class="bi bi-moon"></i>
+                        </button>
+                        <button class="icon-btn rtl-toggle-btn" title="Toggle RTL" aria-label="Toggle text direction">
+                            <i class="bi bi-arrow-left-right"></i>
+                        </button>
+                    </div>
                 </div>
             </nav>
 
             <div class="header-actions">
-                <button class="icon-btn theme-toggle-btn d-none d-xl-flex" title="Toggle Theme">
+                <button class="icon-btn theme-toggle-btn d-none d-xl-flex" title="Toggle Theme" aria-label="Toggle theme">
                     <i class="bi bi-moon"></i>
                 </button>
-                <button class="icon-btn rtl-toggle-btn d-none d-xl-flex" title="Toggle RTL">
+                <button class="icon-btn rtl-toggle-btn d-none d-xl-flex" title="Toggle RTL" aria-label="Toggle text direction">
                     <i class="bi bi-arrow-left-right"></i>
                 </button>
-                <a href="signup.html" class="btn-premium primary d-none d-xl-flex">Sign Up</a>
-                <button class="icon-btn mobile-toggle">
+                <a href="login.html" class="btn-premium primary d-none d-xl-flex">Login</a>
+                <button class="icon-btn mobile-toggle" aria-label="Toggle navigation">
                     <i class="bi bi-list"></i>
                 </button>
             </div>
         </div>
     </header>
-
     <div class="error-layout">
-        <div>
+        <div class="container">
             <div class="error-code">404</div>
-            <h2 class="mb-4">Page Not Found</h2>
-            <p class="lead text-secondary mb-5 mx-auto" style="max-width: 500px;">The page you are looking for has been moved or no longer exists. Let's get you back on the road.</p>
-            <div class="d-flex gap-3 justify-content-center flex-wrap">
-                <a href="index.html" class="btn-premium primary">Return to Home</a>
-                <a href="contact.html" class="btn-premium outline">Contact Support</a>
+            <h2 class="display-6 fw-bold mb-3">Vehicle Route Not Found</h2>
+            <p class="text-secondary mx-auto mb-4" style="max-width: 500px;">The logistics page or vehicle manifest you requested does not exist or has been relocated to another hub.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="index.html" class="btn-premium primary">Return Home</a>
+                <a href="contact.html" class="btn-premium outline">Contact Dispatch</a>
             </div>
         </div>
     </div>
-
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
@@ -110,67 +87,79 @@
     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
-                            Auto <span>Fix</span>
+                            Vault<span>X</span>
                         </a>
                     </div>
-                    <p class="mb-4">Premium auto repair services combining specialized mechanics with a customer dashboard. Keep your vehicle healthy effortlessly.</p>
+                    <p class="mb-4">The nation's premier climate-controlled classic car storage facility and enclosed transport logistics network. Protecting prized automotive heritage with white-glove precision and real-time client tracking.</p>
                     <div class="d-flex gap-3 footer-social">
-                        <a href="#" class="fs-5"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="fs-5"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="fs-5"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="fs-5" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="fs-5" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="fs-5" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="fs-5" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
 
                 <div class="col-lg-2 footer-widget">
-                    <h4>Quick Links</h4>
+                    <h4>Logistics & Facility</h4>
                     <ul class="footer-links">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Our Services</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="gallery.html">Our Gallery</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="about.html">About Facility</a></li>
+                        <li><a href="services.html">Enclosed Transport</a></li>
+                        <li><a href="services.html">Climate Storage</a></li>
+                        <li><a href="pricing.html">Storage Rates</a></li>
+                        <li><a href="services.html">Specialized Logistics</a></li>
+                        <li><a href="contact.html">Dispatch Hotline</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-2 footer-widget">
-                    <h4>Resources</h4>
+                    <h4>Customer Portal</h4>
                     <ul class="footer-links">
-                        <li><a href="login.html">Customer Dashboard</a></li>
-                        <li><a href="blog.html">Maintenance Tips</a></li>
-                        <li><a href="#">Service Guide</a></li>
-                        <li><a href="booking.html">Book Appointment</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="dashboard.html">Client Dashboard</a></li>
+                        <li><a href="contact.html">Request a Quote</a></li>
+                        <li><a href="dashboard.html">Live GPS Tracking</a></li>
+                        <li><a href="dashboard.html">Inspection Reports</a></li>
+                        <li><a href="blog.html">Collector Guides</a></li>
+                        <li><a href="login.html">Portal Login</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-4 footer-widget">
-                    <h4>Newsletter</h4>
-                    <p class="mb-3">Subscribe for the latest car maintenance tips and exclusive offers.</p>
-                    <form class="d-flex position-relative footer-form">
+                    <h4>Logistics Newsletter</h4>
+                    <p class="mb-3">Subscribe for climate preservation reports, enclosed transport updates, and auction schedules.</p>
+                    <form class="d-flex position-relative footer-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to VaultX updates.');">
                         <input type="email" class="form-control rounded-pill py-3 px-4 w-100 border-color shadow-none"
-                            placeholder="Email address" required style="background: rgba(128,128,128,0.05);">
+                            placeholder="Enter your email" required style="background: rgba(128,128,128,0.05);">
                         <button type="submit"
                             class="btn-premium primary rounded-pill position-absolute end-0 top-0 bottom-0 m-1 px-4 border-0">Subscribe</button>
                     </form>
                     <div class="mt-4 d-flex gap-2 flex-wrap">
                         <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
-                                class="bi bi-wrench-adjustable-circle text-indigo me-1"></i> ASE Certified</span>
+                                class="bi bi-shield-lock-fill text-indigo me-1"></i> $5M Cargo Insurance</span>
                         <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
-                                class="bi bi-lock-fill text-indigo me-1"></i> Secure Booking</span>
+                                class="bi bi-thermometer-half text-indigo me-1"></i> 50% RH Regulated</span>
+                        <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
+                                class="bi bi-geo-alt-fill text-indigo me-1"></i> 50-State Coverage</span>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <div>&copy; 2026 Auto Fix Repair Center. All rights reserved.</div>
+                <div>&copy; 2026 VaultX. All rights reserved. Nationwide Vehicle Transport Logistics.</div>
                 <div class="d-flex gap-4">
-                    <a href="#" class="text-decoration-none hover-white fs-4" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"><i class="bi bi-arrow-up-circle-fill"></i></a>
-
+                    <a href="#" class="text-decoration-none hover-white fs-4"
+                        onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" aria-label="Back to top"><i
+                            class="bi bi-arrow-up-circle-fill"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" aria-label="Back to Top"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

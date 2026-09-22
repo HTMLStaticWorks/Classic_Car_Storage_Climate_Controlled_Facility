@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Fix | Our Services</title>
+    <title>VaultX | Enclosed Transport & Climate Storage Services</title>
+    <meta name="description" content="Explore VaultX nationwide enclosed transport, open vehicle shipping, climate-controlled storage suites, and digital 40-point inspection services.">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23E63946' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%23111827' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23D4AF37' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%230F172A' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,600&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -20,7 +21,7 @@
     <style>
         .service-hero {
             padding: 160px 0 100px;
-            background: url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1200&q=80') center/cover;
+            background: url('https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1200&q=80') center/cover;
             position: relative;
         }
 
@@ -31,7 +32,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(2, 6, 23, 0.85);
+            background: rgba(7, 12, 22, 0.88);
         }
 
         .service-hero .container {
@@ -43,11 +44,14 @@
             padding: 100px 0;
         }
 
-
         .svc-img {
             border-radius: 20px;
             box-shadow: var(--shadow-lg);
             transition: transform 0.5s;
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border: 1px solid var(--border-color);
         }
 
         .svc-img:hover {
@@ -58,28 +62,36 @@
             background: var(--bg-primary);
             border: 1px solid var(--border-color);
             padding: 40px;
-            border-radius: 16px;
+            border-radius: 20px;
             transition: all var(--transition-normal);
+            height: 100%;
         }
 
         .svc-card:hover {
             box-shadow: var(--shadow-premium);
-            border-color: var(--brand-indigo);
+            border-color: var(--brand-accent);
+        }
+
+        .check-list {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
         }
 
         .check-list li {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            color: var(--text-secondary);
         }
 
         .check-list i {
-            color: var(--brand-indigo);
+            color: var(--brand-accent);
             font-size: 1.2rem;
+            flex-shrink: 0;
         }
     </style>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23E63946' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%23111827' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 </head>
 
 <body>
@@ -92,26 +104,26 @@
     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
-                Auto <span>Fix</span>
+                Vault<span>X</span>
             </a>
 
             <nav class="main-nav">
-                <a href="index.html" class="nav-link active">Home 1</a>
+                <a href="index.html" class="nav-link">Home 1</a>
                 <a href="index-2.html" class="nav-link">Home 2</a>
                 <a href="about.html" class="nav-link">About</a>
-                <a href="services.html" class="nav-link">Services</a>
-                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="services.html" class="nav-link active">Services</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
                 <a href="blog.html" class="nav-link">Blog</a>
                 <a href="contact.html" class="nav-link">Contact</a>
                 <a href="dashboard.html" class="nav-link">Dashboard</a>
-            
+
                 <div class="mobile-only-actions d-xl-none d-flex flex-column gap-3 mt-3 pt-3 border-top border-secondary">
-                    <a href="signup.html" class="btn-premium primary w-100 text-center">Sign Up</a>
+                    <a href="login.html" class="btn-premium primary w-100 text-center">Login</a>
                     <div class="d-flex gap-3 justify-content-center">
-                        <button class="icon-btn theme-toggle-btn" title="Toggle Theme">
+                        <button class="icon-btn theme-toggle-btn" title="Toggle Theme" aria-label="Toggle theme">
                             <i class="bi bi-moon"></i>
                         </button>
-                        <button class="icon-btn rtl-toggle-btn" title="Toggle RTL">
+                        <button class="icon-btn rtl-toggle-btn" title="Toggle RTL" aria-label="Toggle text direction">
                             <i class="bi bi-arrow-left-right"></i>
                         </button>
                     </div>
@@ -119,14 +131,14 @@
             </nav>
 
             <div class="header-actions">
-                <button class="icon-btn theme-toggle-btn d-none d-xl-flex" title="Toggle Theme">
+                <button class="icon-btn theme-toggle-btn d-none d-xl-flex" title="Toggle Theme" aria-label="Toggle theme">
                     <i class="bi bi-moon"></i>
                 </button>
-                <button class="icon-btn rtl-toggle-btn d-none d-xl-flex" title="Toggle RTL">
+                <button class="icon-btn rtl-toggle-btn d-none d-xl-flex" title="Toggle RTL" aria-label="Toggle text direction">
                     <i class="bi bi-arrow-left-right"></i>
                 </button>
-                <a href="signup.html" class="btn-premium primary d-none d-xl-flex">Sign Up</a>
-                <button class="icon-btn mobile-toggle">
+                <a href="login.html" class="btn-premium primary d-none d-xl-flex">Login</a>
+                <button class="icon-btn mobile-toggle" aria-label="Toggle navigation">
                     <i class="bi bi-list"></i>
                 </button>
             </div>
@@ -136,146 +148,138 @@
     <!-- 1. Hero -->
     <section class="service-hero text-center text-white">
         <div class="container" data-aos="zoom-in">
-            <h1 class="display-3 fw-bold mb-4 text-white">Our Services</h1>
-            <p class="lead mx-auto text-light opacity-75" style="max-width: 700px;">Comprehensive auto repair and maintenance to keep your vehicle running smoothly and safely on the road.</p>
+            <span class="badge bg-warning text-dark badge-nitro px-3 py-2 rounded-pill fw-bold mb-3">White-Glove Auto Logistics</span>
+            <h1 class="display-3 fw-bold mb-4 text-white">Transport & Climate Storage Services</h1>
+            <p class="lead mx-auto text-light opacity-75" style="max-width: 700px;">Preserving and transporting the world's most cherished vintage, classic, and exotic automobiles with museum-grade care and nationwide dispatch.</p>
         </div>
     </section>
 
-    <!-- 2. Oil Change -->
+    <!-- 2. Enclosed Transport -->
     <section class="svc-block">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
-                    <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=800&q=80" alt="Oil Change"
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80" alt="Enclosed Auto Transport"
                         class="img-fluid svc-img">
                 </div>
-                <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
-                    <div class="text-indigo mb-3"><i class="bi bi-droplet-fill fs-2"></i></div>
-                    <h2 class="mb-4">Premium Oil Change</h2>
-                    <p class="text-secondary mb-4">Extend your engine's life with our comprehensive oil and filter change services. We use high-quality synthetic and conventional oils suited for your vehicle.</p>
-                    <ul class="list-unstyled check-list mb-5">
-                        <li><i class="bi bi-check-circle-fill"></i> Full Synthetic Oil Options</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Oil Filter Replacement</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Fluid Level Checks</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Multipoint Inspection</li>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="d-inline-flex align-items-center gap-2 text-accent fw-bold mb-2">
+                        <i class="bi bi-shield-shaded fs-5"></i> Service 01
+                    </div>
+                    <h2 class="display-6 fw-bold mb-4">White-Glove Enclosed Carrier Transport</h2>
+                    <p class="text-secondary lead mb-4">Our premier transport solution for high-value collector cars, concourse showpieces, and vintage exotics. Vehicles travel in fully enclosed, climate-dampened trailers protected from road salt, stone chips, and weather extremes.</p>
+                    <ul class="check-list">
+                        <li><i class="bi bi-check-circle-fill"></i> Hydraulic lift gates ensuring flat zero-angle loading for low ground clearance</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Horizontal air-ride suspension minimizing road vibrations across long distances</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Soft nylon wheel-strap tie-downs (never metal chassis chains)</li>
+                        <li><i class="bi bi-check-circle-fill"></i> $5,000,000 primary cargo insurance included on every transport journey</li>
                     </ul>
-                    <a href="service-details.html" class="btn-premium primary">View Details</a>
+                    <a href="contact.html" class="btn-premium primary mt-3">Inquire for Enclosed Transport</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. Brake Repair -->
-    <section class="svc-block">
+    <!-- 3. Open Carrier Transport -->
+    <section class="svc-block bg-secondary">
         <div class="container">
-            <div class="row align-items-center flex-lg-row-reverse">
-                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-left">
-                    <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=800&q=80" alt="Brake Repair"
+            <div class="row align-items-center g-5 flex-lg-row-reverse">
+                <div class="col-lg-6" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80" alt="Open Carrier Logistics"
                         class="img-fluid svc-img">
                 </div>
-                <div class="col-lg-6 pe-lg-5" data-aos="fade-right">
-                    <div class="text-indigo mb-3"><i class="bi bi-shield-fill-check fs-2"></i></div>
-                    <h2 class="mb-4">Brake Repair & Service</h2>
-                    <p class="text-secondary mb-4">Ensure your safety on the road with our expert brake services. From pad replacements to full rotor resurfacing, we have you covered.</p>
-                    <ul class="list-unstyled check-list mb-5">
-                        <li><i class="bi bi-check-circle-fill"></i> Brake Pad & Shoe Replacement</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Rotor Resurfacing & Replacement</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Brake Fluid Exchange</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Comprehensive Brake System Diagnosis</li>
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="d-inline-flex align-items-center gap-2 text-accent fw-bold mb-2">
+                        <i class="bi bi-truck fs-5"></i> Service 02
+                    </div>
+                    <h2 class="display-6 fw-bold mb-4">Nationwide Open Carrier Shipping</h2>
+                    <p class="text-secondary lead mb-4">Reliable, cost-efficient vehicle logistics across all 50 states. Ideal for multi-vehicle dealer transfers, robust vintage drivers, and standard collector car relocations.</p>
+                    <ul class="check-list">
+                        <li><i class="bi bi-check-circle-fill"></i> Direct pickup from private residences, auctions, and dealerships</li>
+                        <li><i class="bi bi-check-circle-fill"></i> DOT-certified commercial auto transport operators with proven safety records</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Scheduled pickup and delivery window coordination with live driver dispatch</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Comprehensive cargo protection and electronic Bill of Lading (eBOL)</li>
                     </ul>
-                    <a href="service-details.html" class="btn-premium primary">View Details</a>
+                    <a href="contact.html" class="btn-premium primary mt-3">Inquire Open Carrier</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. AC Service -->
+    <!-- 4. Climate-Controlled Storage -->
     <section class="svc-block">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="zoom-in">
-                    <div class="svc-card text-center">
-                        <i class="bi bi-snow display-1 text-indigo mb-4"></i>
-                        <h3>AC Service & Repair</h3>
-                        <p class="text-secondary mt-3">Stay cool in the summer and warm in the winter. Our technicians are certified to diagnose, repair, and recharge your vehicle's air conditioning system.</p>
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" alt="Climate-Controlled Facility"
+                        class="img-fluid svc-img">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="d-inline-flex align-items-center gap-2 text-accent fw-bold mb-2">
+                        <i class="bi bi-thermometer-sun fs-5"></i> Service 03
+                    </div>
+                    <h2 class="display-6 fw-bold mb-4">Climate-Controlled Storage Suites</h2>
+                    <p class="text-secondary lead mb-4">Our purpose-built facilities in Scottsdale and Greenwich provide museum-grade preservation environments. We regulate temperature and humidity 24/7 to prevent rust, seal degradation, and paint deterioration.</p>
+                    <ul class="check-list">
+                        <li><i class="bi bi-check-circle-fill"></i> Constant 68°F (20°C) and precision 50% relative humidity regulation</li>
+                        <li><i class="bi bi-check-circle-fill"></i> HEPA air purification and active carbon filtration systems</li>
+                        <li><i class="bi bi-check-circle-fill"></i> CTEK microprocessor float charging maintained at all times</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Breathable soft satin indoor dust covers tailored to your vehicle</li>
+                    </ul>
+                    <a href="pricing.html" class="btn-premium primary mt-3">View Storage Plans</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 40-Point Condition Inspection & Reports -->
+    <section class="svc-block bg-secondary">
+        <div class="container">
+            <div class="row align-items-center g-5 flex-lg-row-reverse">
+                <div class="col-lg-6" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=800&q=80" alt="Inspection Reports"
+                        class="img-fluid svc-img">
+                </div>
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="d-inline-flex align-items-center gap-2 text-accent fw-bold mb-2">
+                        <i class="bi bi-clipboard2-check fs-5"></i> Service 04
+                    </div>
+                    <h2 class="display-6 fw-bold mb-4">40-Point Condition & Inspection Reports</h2>
+                    <p class="text-secondary lead mb-4">Every vehicle undergoing transport or facility check-in receives an exhaustive 40-point photographic inspection. All reports are immediately accessible in your customer dashboard.</p>
+                    <ul class="check-list">
+                        <li><i class="bi bi-check-circle-fill"></i> High-resolution 360-degree digital exterior and undercarriage photo documentation</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Paint depth readings, glass inspection, and existing cosmetic verification</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Fluid level checks, battery health diagnostics, and tire pressure logging</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Tamper-proof digital timestamping and e-signature verification</li>
+                    </ul>
+                    <a href="dashboard.html" class="btn-premium primary mt-3">View Sample Report</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Concierge Maintenance & Real-time Tracking -->
+    <section class="svc-block">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="display-6">Additional Collector Concierge Services</h2>
+                <p class="text-secondary mx-auto" style="max-width: 600px;">Comprehensive maintenance and logistics support tailored to active collectors.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="svc-card car-hover-card">
+                        <div class="bento-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                        <h4>Real-Time Live GPS Fleet Tracking</h4>
+                        <p class="text-secondary">Follow your vehicle's live geographical coordinates throughout its transport journey. Receive automated SMS and email notifications upon driver dispatch, milestone checkpoints, and arrival window updates.</p>
                     </div>
                 </div>
-                <div class="col-lg-6 ps-lg-5" data-aos="fade-up">
-                    <h2 class="mb-4">Climate Control Systems</h2>
-                    <p class="text-secondary">We inspect for leaks, replace worn components, and recharge refrigerant to factory specifications to ensure your comfort all year round.</p>
-                    <a href="service-details.html" class="text-indigo fw-bold mt-3 d-inline-block">Learn more about
-                        AC Service &rarr;</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 4.1 Tyre Rotation -->
-    <section class="svc-block">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
-                    <img src="https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&w=800&q=80" alt="Tyre Rotation"
-                        class="img-fluid svc-img rounded-4" style="object-fit: cover; height: 400px; width: 100%;">
-                </div>
-                <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
-                    <div class="text-indigo mb-3"><i class="bi bi-record-circle-fill fs-2"></i></div>
-                    <h2 class="mb-4">Tyre Rotation & Alignment</h2>
-                    <p class="text-secondary mb-4">Maximize tyre life and improve fuel efficiency with regular tyre rotation and precision alignment services.</p>
-                    <ul class="list-unstyled check-list mb-5">
-                        <li><i class="bi bi-check-circle-fill"></i> Computerized Wheel Alignment</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Tyre Rotation & Balancing</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Tread Wear Inspection</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Tyre Replacement Services</li>
-                    </ul>
-                    <a href="service-details.html" class="btn-premium primary">View Details</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4.2 Engine Diagnostics -->
-    <section class="svc-block">
-        <div class="container">
-            <div class="row align-items-center flex-lg-row-reverse">
-                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-left">
-                    <img src="https://images.unsplash.com/photo-1632733711679-529326f6db12?auto=format&fit=crop&w=800&q=80"
-                        alt="Engine Diagnostics" class="img-fluid svc-img rounded-4"
-                        style="object-fit: cover; height: 400px; width: 100%;">
-                </div>
-                <div class="col-lg-6 pe-lg-5" data-aos="fade-right">
-                    <div class="text-indigo mb-3"><i class="bi bi-speedometer2 fs-2"></i></div>
-                    <h2 class="mb-4">Engine Diagnostics</h2>
-                    <p class="text-secondary mb-4">Check engine light on? Our advanced diagnostic equipment pinpoints the exact issue to get you back on the road quickly.</p>
-                    <ul class="list-unstyled check-list mb-5">
-                        <li><i class="bi bi-check-circle-fill"></i> OBD-II Scanner Analysis</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Emission System Checks</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Sensor Calibration</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Engine Performance Tuning</li>
-                    </ul>
-                    <a href="service-details.html" class="btn-premium primary">View Details</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. Vehicle Management -->
-    <section class="svc-block">
-        <div class="container text-center">
-            <div data-aos="fade-up">
-                <h2 class="mb-3">Strategic Vehicle Maintenance</h2>
-                <p class="mx-auto text-secondary mb-5" style="max-width: 600px;">Leverage our proprietary Client
-                    Dashboard to track service history, view upcoming maintenance schedules, and book appointments.</p>
-            </div>
-
-            <div class="row justify-content-center">
-                <div class="col-lg-8" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="p-5 rounded-4 border border-gold" style="background: var(--bg-primary);">
-                        <i class="bi bi-laptop display-3 text-indigo mb-4"></i>
-                        <h4>The Auto Fix Dashboard</h4>
-                        <p class="text-secondary mb-4">A single pane of glass for all your vehicle maintenance records.
-                            Built for total transparency and convenience.</p>
-                        <a href="signup.html" class="btn-premium primary">Create Client Account</a>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="svc-card car-hover-card">
+                        <div class="bento-icon"><i class="bi bi-wrench-adjustable"></i></div>
+                        <h4>Preservation Maintenance & Tire Cycling</h4>
+                        <p class="text-secondary">Prevent flat-spotting and mechanical stagnation during storage. Our custodians perform bi-weekly tire rolls, monitor battery tender telemetry, and execute controlled engine turnover and fluid warming cycles upon request.</p>
                     </div>
                 </div>
             </div>
@@ -293,70 +297,79 @@
     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
-                            Auto <span>Fix</span>
+                            Vault<span>X</span>
                         </a>
                     </div>
-                    <p class="mb-4">Premium auto repair services combining specialized mechanics with a customer dashboard. Keep your vehicle healthy effortlessly.</p>
+                    <p class="mb-4">The nation's premier climate-controlled classic car storage facility and enclosed transport logistics network. Protecting prized automotive heritage with white-glove precision and real-time client tracking.</p>
                     <div class="d-flex gap-3 footer-social">
-                        <a href="#" class="fs-5"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="fs-5"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="fs-5"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="fs-5" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="fs-5" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="fs-5" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="fs-5" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
 
                 <div class="col-lg-2 footer-widget">
-                    <h4>Quick Links</h4>
+                    <h4>Logistics & Facility</h4>
                     <ul class="footer-links">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Our Services</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="gallery.html">Our Gallery</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="about.html">About Facility</a></li>
+                        <li><a href="services.html">Enclosed Transport</a></li>
+                        <li><a href="services.html">Climate Storage</a></li>
+                        <li><a href="pricing.html">Storage Rates</a></li>
+                        <li><a href="services.html">Specialized Logistics</a></li>
+                        <li><a href="contact.html">Dispatch Hotline</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-2 footer-widget">
-                    <h4>Resources</h4>
+                    <h4>Customer Portal</h4>
                     <ul class="footer-links">
-                        <li><a href="login.html">Customer Dashboard</a></li>
-                        <li><a href="blog.html">Maintenance Tips</a></li>
-                        <li><a href="#">Service Guide</a></li>
-                        <li><a href="booking.html">Book Appointment</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="dashboard.html">Client Dashboard</a></li>
+                        <li><a href="contact.html">Request a Quote</a></li>
+                        <li><a href="dashboard.html">Live GPS Tracking</a></li>
+                        <li><a href="dashboard.html">Inspection Reports</a></li>
+                        <li><a href="blog.html">Collector Guides</a></li>
+                        <li><a href="login.html">Portal Login</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-4 footer-widget">
-                    <h4>Newsletter</h4>
-                    <p class="mb-3">Subscribe for the latest car maintenance tips and exclusive offers.</p>
-                    <form class="d-flex position-relative footer-form">
+                    <h4>Logistics Newsletter</h4>
+                    <p class="mb-3">Subscribe for climate preservation reports, enclosed transport updates, and auction schedules.</p>
+                    <form class="d-flex position-relative footer-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to VaultX updates.');">
                         <input type="email" class="form-control rounded-pill py-3 px-4 w-100 border-color shadow-none"
-                            placeholder="Email address" required style="background: rgba(128,128,128,0.05);">
+                            placeholder="Enter your email" required style="background: rgba(128,128,128,0.05);">
                         <button type="submit"
                             class="btn-premium primary rounded-pill position-absolute end-0 top-0 bottom-0 m-1 px-4 border-0">Subscribe</button>
                     </form>
                     <div class="mt-4 d-flex gap-2 flex-wrap">
                         <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
-                                class="bi bi-wrench-adjustable-circle text-indigo me-1"></i> ASE Certified</span>
+                                class="bi bi-shield-lock-fill text-indigo me-1"></i> $5M Cargo Insurance</span>
                         <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
-                                class="bi bi-lock-fill text-indigo me-1"></i> Secure Booking</span>
+                                class="bi bi-thermometer-half text-indigo me-1"></i> 50% RH Regulated</span>
+                        <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
+                                class="bi bi-geo-alt-fill text-indigo me-1"></i> 50-State Coverage</span>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <div>&copy; 2026 Auto Fix Repair Center. All rights reserved.</div>
+                <div>&copy; 2026 VaultX. All rights reserved. Nationwide Vehicle Transport Logistics.</div>
                 <div class="d-flex gap-4">
-                    <a href="#" class="text-decoration-none hover-white fs-4" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"><i class="bi bi-arrow-up-circle-fill"></i></a>
-
+                    <a href="#" class="text-decoration-none hover-white fs-4"
+                        onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" aria-label="Back to top"><i
+                            class="bi bi-arrow-up-circle-fill"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" aria-label="Back to Top"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
-
 </html>

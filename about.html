@@ -4,27 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Fix | About Us</title>
+    <title>VaultX | About Our Facility & Logistics Network</title>
+    <meta name="description" content="Learn about VaultX 50,000 sq ft climate-controlled facility, specialized enclosed auto transport fleet, and team of certified classic vehicle custodians.">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23E63946' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%23111827' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23D4AF37' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%230F172A' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Oswald:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,600&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 
     <style>
-        /* About Page Styles */
         .page-hero {
             padding: 160px 0 100px;
-            background: linear-gradient(rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.85)), url('https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(7, 12, 22, 0.85), rgba(7, 12, 22, 0.85)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
             color: white;
             text-align: center;
         }
@@ -33,148 +29,31 @@
             border-radius: 20px;
             border: 1px solid var(--border-color);
             box-shadow: var(--shadow-lg);
-        }
-
-        .timeline-wrapper {
-            position: relative;
-            padding: 40px 0;
-        }
-
-        .timeline-wrapper::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--brand-indigo);
-            transform: translateX(-50%);
-        }
-
-        .timeline-card {
-            background: var(--bg-primary);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-color);
-            width: calc(50% - 40px);
-            position: relative;
-            transition: all var(--transition-normal);
-        }
-
-        .timeline-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--brand-indigo);
-        }
-
-        .timeline-card.left {
-            margin-right: auto;
-        }
-
-        .timeline-card.right {
-            margin-left: auto;
-        }
-
-        .timeline-card::after {
-            content: '';
-            position: absolute;
-            top: 30px;
-            width: 20px;
-            height: 2px;
-            background: var(--brand-indigo);
-        }
-
-        .timeline-card.left::after {
-            right: -20px;
-        }
-
-        .timeline-card.right::after {
-            left: -20px;
-        }
-
-        @media (max-width: 767px) {
-            .timeline-wrapper::before {
-                left: 20px;
-            }
-
-            .timeline-card {
-                width: calc(100% - 40px);
-                margin-left: 40px !important;
-                margin-right: 0 !important;
-                margin-bottom: 20px;
-            }
-
-            .timeline-card.right.mt-5,
-            .timeline-card.left.mt-5 {
-                margin-top: 20px !important;
-            }
-
-            .timeline-card::after {
-                width: 20px;
-                left: -20px !important;
-                right: auto !important;
-            }
-        }
-
-        .why-icon {
-            font-size: 2.5rem;
-            color: var(--brand-indigo);
-            margin-bottom: 1rem;
-            animation: bounce 3s infinite ease-in-out;
-        }
-
-        @keyframes bounce {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
         }
 
         .leader-card {
             text-align: center;
             overflow: hidden;
-            border-radius: 12px;
+            border-radius: 16px;
             border: 1px solid var(--border-color);
+            background: var(--bg-primary);
             transition: all var(--transition-normal);
             height: 100%;
-            display: flex;
-            flex-direction: column;
         }
-
-        .leader-img-wrapper {
-            overflow: hidden;
-            height: 300px;
+        .leader-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--brand-accent);
         }
-
         .leader-img {
             width: 100%;
-            height: 100%;
+            height: 280px;
             object-fit: cover;
-            object-position: top;
-            transition: transform 0.6s ease;
-        }
-
-        .leader-card:hover .leader-img {
-            transform: scale(1.1);
-        }
-
-        .leader-info {
-            padding: 20px;
-            background: var(--bg-primary);
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
     </style>
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23E63946' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%23111827' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 </head>
 
 <body>
@@ -183,33 +62,30 @@
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="logo">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                    style="margin-right: 8px;">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)"
-                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-                Auto <span>Fix</span>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                Vault<span>X</span>
             </a>
 
             <nav class="main-nav">
-                <a href="index.html" class="nav-link active">Home 1</a>
+                <a href="index.html" class="nav-link">Home 1</a>
                 <a href="index-2.html" class="nav-link">Home 2</a>
-                <a href="about.html" class="nav-link">About</a>
+                <a href="about.html" class="nav-link active">About</a>
                 <a href="services.html" class="nav-link">Services</a>
-                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
                 <a href="blog.html" class="nav-link">Blog</a>
                 <a href="contact.html" class="nav-link">Contact</a>
                 <a href="dashboard.html" class="nav-link">Dashboard</a>
 
                 <div class="mobile-only-actions d-xl-none d-flex flex-column gap-3 mt-3 pt-3 border-top border-secondary">
-                    <a href="signup.html" class="btn-premium primary w-100 text-center">Sign Up</a>
+                    <a href="login.html" class="btn-premium primary w-100 text-center">Login</a>
                     <div class="d-flex gap-3 justify-content-center">
-                        <button class="icon-btn theme-toggle-btn" title="Toggle Theme">
+                        <button class="icon-btn theme-toggle-btn" title="Toggle Theme" aria-label="Toggle theme">
                             <i class="bi bi-moon"></i>
                         </button>
-                        <button class="icon-btn rtl-toggle-btn" title="Toggle RTL">
+                        <button class="icon-btn rtl-toggle-btn" title="Toggle RTL" aria-label="Toggle text direction">
                             <i class="bi bi-arrow-left-right"></i>
                         </button>
                     </div>
@@ -217,14 +93,14 @@
             </nav>
 
             <div class="header-actions">
-                <button class="icon-btn theme-toggle-btn d-none d-xl-flex" title="Toggle Theme">
+                <button class="icon-btn theme-toggle-btn d-none d-xl-flex" title="Toggle Theme" aria-label="Toggle theme">
                     <i class="bi bi-moon"></i>
                 </button>
-                <button class="icon-btn rtl-toggle-btn d-none d-xl-flex" title="Toggle RTL">
+                <button class="icon-btn rtl-toggle-btn d-none d-xl-flex" title="Toggle RTL" aria-label="Toggle text direction">
                     <i class="bi bi-arrow-left-right"></i>
                 </button>
-                <a href="signup.html" class="btn-premium primary d-none d-xl-flex">Sign Up</a>
-                <button class="icon-btn mobile-toggle">
+                <a href="login.html" class="btn-premium primary d-none d-xl-flex">Login</a>
+                <button class="icon-btn mobile-toggle" aria-label="Toggle navigation">
                     <i class="bi bi-list"></i>
                 </button>
             </div>
@@ -232,156 +108,117 @@
     </header>
 
     <!-- 1. Hero -->
-    <section class="page-hero text-center text-white">
-        <div class="container" data-aos="fade-up">
-            <h1 class="display-3 fw-bold mb-4 text-white">Our Legacy of Excellence</h1>
-            <p class="lead opacity-75 mx-auto text-light" style="max-width: 700px;">Since our inception, we have been at
-                the
-                forefront of providing top-tier auto repair services to our community.</p>
+    <section class="page-hero">
+        <div class="container" data-aos="zoom-in">
+            <span class="badge bg-warning text-dark badge-nitro px-3 py-2 rounded-pill fw-bold mb-3">Our Heritage & Mission</span>
+            <h1 class="display-3 fw-bold mb-4 text-white">Preserving Automotive Legacies</h1>
+            <p class="lead mx-auto text-light opacity-75" style="max-width: 700px;">Founded by collectors for collectors. We engineered our facilities and transport fleet around the singular goal of flawless preservation and logistics safety.</p>
         </div>
     </section>
 
-    <!-- 2. Company Story -->
+    <!-- 2. Story Section -->
     <section class="section-padding">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
-                    <img src="https://images.pexels.com/photos/33814734/pexels-photo-33814734.jpeg"
-                        alt="Auto Repair Shop" class="img-fluid story-img">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80" alt="Classic Car Facility" class="story-img">
                 </div>
-                <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
-                    <h6 class="text-indigo fw-bold text-uppercase mb-2">Our Origins</h6>
-                    <h2 class="mb-4">Passion for Precision</h2>
-                    <p>Founded by master mechanics and auto enthusiasts, Auto Fix was built on the principle that
-                        true vehicle care requires an intimate understanding of complex automotive engineering.</p>
-                    <p>We saw a gap between dealership prices and corner garage reliability. Our solution was to create
-                        a
-                        modern, tech-driven auto repair center equipped with advanced diagnostics and a proprietary
-                        customer dashboard, bringing transparency
-                        and speed to auto maintenance.</p>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <span class="badge bg-warning text-dark badge-nitro px-3 py-1 rounded-pill fw-bold mb-2">Our Foundation</span>
+                    <h2 class="display-6 fw-bold mb-4">Precision Engineering Meets White-Glove Passion</h2>
+                    <p class="text-secondary lead mb-4">Collector vehicles require specialized care that standard garages and generic auto freight cannot provide. From temperature fluctuations that compromise seals to road grit that ruins concourse paint, every factor matters.</p>
+                    <p class="text-secondary mb-4">VaultX was built to set the gold standard: purpose-engineered 50,000 sq ft climate-controlled vaults maintaining exactly 68°F and 50% relative humidity, coupled with a nationwide fleet of enclosed air-ride carriers with hydraulic lift gates.</p>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="p-3 bg-secondary rounded-3 border border-color">
+                                <h4 class="text-accent fw-bold mb-1">50,000 Sq Ft</h4>
+                                <small class="text-secondary">Climate Vault Capacity</small>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="p-3 bg-secondary rounded-3 border border-color">
+                                <h4 class="text-accent fw-bold mb-1">$0 Claims</h4>
+                                <small class="text-secondary">Flawless Transport Record</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. Expertise Timeline -->
+    <!-- 3. Facility Features -->
     <section class="section-padding bg-secondary">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
-                <h2>A Decade of Milestones</h2>
+                <h2 class="display-6">Museum-Grade Preservation Standards</h2>
+                <p class="text-secondary mx-auto" style="max-width: 600px;">Every square foot of our Scottsdale and Greenwich facilities is engineered for vintage vehicle integrity.</p>
             </div>
 
-            <div class="timeline-wrapper">
-                <div class="timeline-card left" data-aos="fade-up">
-                    <h4 class="text-indigo">2016</h4>
-                    <h5>Shop Establishment</h5>
-                    <p class="text-secondary mb-0">Founded in the local community with a two-bay garage.</p>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 d-flex flex-column" data-aos="fade-up" data-aos-delay="100">
+                    <div class="premium-card car-hover-card p-4 p-md-5 h-100 d-flex flex-column">
+                        <div class="bento-icon"><i class="bi bi-thermometer-half"></i></div>
+                        <h4 class="mb-3">50% RH Humidity Regulation</h4>
+                        <p class="text-secondary mb-0">Industrial de-humidification and HVAC systems prevent dry rot in vintage rubber gaskets, leather cracking, and undercarriage oxidation.</p>
+                    </div>
                 </div>
-                <div class="timeline-card right mt-5" data-aos="fade-up">
-                    <h4 class="text-indigo">2019</h4>
-                    <h5>Facility Expansion</h5>
-                    <p class="text-secondary mb-0">Upgraded to a state-of-the-art 10-bay service center.</p>
+
+                <div class="col-lg-4 col-md-6 d-flex flex-column" data-aos="fade-up" data-aos-delay="200">
+                    <div class="premium-card car-hover-card p-4 p-md-5 h-100 d-flex flex-column">
+                        <div class="bento-icon"><i class="bi bi-shield-lock-fill"></i></div>
+                        <h4 class="mb-3">24/7 Armed Biometric Security</h4>
+                        <p class="text-secondary mb-0">Multi-layered physical security including biometric access control, laser perimeter sensors, and 4K CCTV coverage with direct police dispatch.</p>
+                    </div>
                 </div>
-                <div class="timeline-card left mt-5" data-aos="fade-up">
-                    <h4 class="text-indigo">2022</h4>
-                    <h5>Client Dashboard Launch</h5>
-                    <p class="text-secondary mb-0">Revolutionized customer communication with our proprietary service
-                        tracking system.</p>
-                </div>
-                <div class="timeline-card right mt-5" data-aos="fade-up">
-                    <h4 class="text-indigo">2026</h4>
-                    <h5>EV Certification</h5>
-                    <p class="text-secondary mb-0">Recognized as the top local service center for hybrid and electric
-                        vehicles.</p>
+
+                <div class="col-lg-4 col-md-6 d-flex flex-column" data-aos="fade-up" data-aos-delay="300">
+                    <div class="premium-card car-hover-card p-4 p-md-5 h-100 d-flex flex-column">
+                        <div class="bento-icon"><i class="bi bi-truck-flatbed"></i></div>
+                        <h4 class="mb-3">Nationwide Enclosed Carriers</h4>
+                        <p class="text-secondary mb-0">Our dedicated air-ride enclosed transport rigs operate coast-to-coast, giving stored vehicles direct white-glove transport to any home, rally, or auction.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. Why Choose Us -->
+    <!-- 4. Leadership & Custodians -->
     <section class="section-padding">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
-                <h2>The Auto Fix Advantage</h2>
+                <h2 class="display-6">Leadership & Logistics Team</h2>
+                <p class="text-secondary mx-auto" style="max-width: 600px;">Experienced automotive preservationists and commercial logistics coordinators.</p>
             </div>
-            <div class="row g-4 text-center">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="premium-card h-100 p-4 border border-color rounded-4 text-start hover-lift"
-                        style="transition: transform 0.3s; cursor:pointer;"
-                        onmouseover="this.style.transform='translateY(-5px)'"
-                        onmouseout="this.style.transform='translateY(0)'">
-                        <i class="bi bi-wrench-adjustable why-icon"></i>
-                        <h4>Master Mechanics</h4>
-                        <p class="text-secondary mb-0">All technicians are ASE Certified with decades of combined
-                            experience across all major brands.</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="premium-card h-100 p-4 border border-color rounded-4 text-start hover-lift"
-                        style="transition: transform 0.3s; cursor:pointer;"
-                        onmouseover="this.style.transform='translateY(-5px)'"
-                        onmouseout="this.style.transform='translateY(0)'">
-                        <i class="bi bi-display why-icon"></i>
-                        <h4>Modern Diagnostics</h4>
-                        <p class="text-secondary mb-0">We use the latest OBD-II and computerized diagnostic equipment to
-                            accurately pinpoint any issues.</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="premium-card h-100 p-4 border border-color rounded-4 text-start hover-lift"
-                        style="transition: transform 0.3s; cursor:pointer;"
-                        onmouseover="this.style.transform='translateY(-5px)'"
-                        onmouseout="this.style.transform='translateY(0)'">
-                        <i class="bi bi-people-fill why-icon"></i>
-                        <h4>Community Trusted</h4>
-                        <p class="text-secondary mb-0">A 5-star rating on local directories and thousands of satisfied
-                            customers in our neighborhood.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 5. Leadership -->
-    <section class="section-padding bg-secondary">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2>Our Master Technicians</h2>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="leader-card">
-                        <div class="leader-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80"
-                                alt="Master Technician" class="leader-img">
-                        </div>
-                        <div class="leader-info">
-                            <h5>Jonathan Reed</h5>
-                            <p class="text-indigo mb-0">Lead Mechanic / Founder</p>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 d-flex flex-column" data-aos="fade-up" data-aos-delay="100">
+                    <div class="leader-card h-100 d-flex flex-column">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Arthur Montgomery" class="leader-img">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h5 class="fw-bold mb-1">Arthur Montgomery</h5>
+                            <small class="text-accent d-block mb-3">Founder & Chief Logistics Officer</small>
+                            <p class="text-secondary small mb-0 mt-auto">Former concourse judge and vintage Ferrari restorer with 25+ years in high-value automotive transport logistics.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="leader-card">
-                        <div class="leader-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80"
-                                alt="Master Technician" class="leader-img">
-                        </div>
-                        <div class="leader-info">
-                            <h5>Elena Rostova</h5>
-                            <p class="text-indigo mb-0">Diagnostic Specialist</p>
+                <div class="col-lg-4 col-md-6 d-flex flex-column" data-aos="fade-up" data-aos-delay="200">
+                    <div class="leader-card h-100 d-flex flex-column">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Claire Harrington" class="leader-img">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h5 class="fw-bold mb-1">Claire Harrington</h5>
+                            <small class="text-accent d-block mb-3">Director of Facility Operations</small>
+                            <p class="text-secondary small mb-0 mt-auto">Oversees climate telemetry, dust filtration systems, and vehicle preservation cycling protocols across all locations.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="leader-card">
-                        <div class="leader-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80"
-                                alt="Master Technician" class="leader-img">
-                        </div>
-                        <div class="leader-info">
-                            <h5>Marcus Chen</h5>
-                            <p class="text-indigo mb-0">Brake & Suspension Expert</p>
+                <div class="col-lg-4 col-md-6 d-flex flex-column" data-aos="fade-up" data-aos-delay="300">
+                    <div class="leader-card h-100 d-flex flex-column">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" alt="Marcus Chen" class="leader-img">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h5 class="fw-bold mb-1">Marcus Chen</h5>
+                            <small class="text-accent d-block mb-3">Lead Transport Dispatcher</small>
+                            <p class="text-secondary small mb-0 mt-auto">Manages our nationwide 50-state carrier network, GPS tracking dispatch, and driver compliance monitoring.</p>
                         </div>
                     </div>
                 </div>
@@ -396,80 +233,83 @@
                 <div class="col-lg-4 footer-widget">
                     <div class="mb-4 d-inline-block">
                         <a href="index.html" class="logo">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)"
-                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                            Auto <span>Fix</span>
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            Vault<span>X</span>
                         </a>
                     </div>
-                    <p class="mb-4">Premium auto repair services combining specialized mechanics with a customer
-                        dashboard. Keep your vehicle healthy effortlessly.</p>
+                    <p class="mb-4">The nation's premier climate-controlled classic car storage facility and enclosed transport logistics network. Protecting prized automotive heritage with white-glove precision and real-time client tracking.</p>
                     <div class="d-flex gap-3 footer-social">
-                        <a href="#" class="fs-5"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="fs-5"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="fs-5"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="fs-5" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="fs-5" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="fs-5" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="fs-5" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
 
                 <div class="col-lg-2 footer-widget">
-                    <h4>Quick Links</h4>
+                    <h4>Logistics & Facility</h4>
                     <ul class="footer-links">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Our Services</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="gallery.html">Our Gallery</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="about.html">About Facility</a></li>
+                        <li><a href="services.html">Enclosed Transport</a></li>
+                        <li><a href="services.html">Climate Storage</a></li>
+                        <li><a href="pricing.html">Storage Rates</a></li>
+                        <li><a href="services.html">Specialized Logistics</a></li>
+                        <li><a href="contact.html">Dispatch Hotline</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-2 footer-widget">
-                    <h4>Resources</h4>
+                    <h4>Customer Portal</h4>
                     <ul class="footer-links">
-                        <li><a href="login.html">Customer Dashboard</a></li>
-                        <li><a href="blog.html">Maintenance Tips</a></li>
-                        <li><a href="#">Service Guide</a></li>
-                        <li><a href="booking.html">Book Appointment</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="dashboard.html">Client Dashboard</a></li>
+                        <li><a href="contact.html">Request a Quote</a></li>
+                        <li><a href="dashboard.html">Live GPS Tracking</a></li>
+                        <li><a href="dashboard.html">Inspection Reports</a></li>
+                        <li><a href="blog.html">Collector Guides</a></li>
+                        <li><a href="login.html">Portal Login</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-4 footer-widget">
-                    <h4>Newsletter</h4>
-                    <p class="mb-3">Subscribe for the latest car maintenance tips and exclusive offers.</p>
-                    <form class="d-flex position-relative footer-form">
+                    <h4>Logistics Newsletter</h4>
+                    <p class="mb-3">Subscribe for climate preservation reports, enclosed transport updates, and auction schedules.</p>
+                    <form class="d-flex position-relative footer-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to VaultX updates.');">
                         <input type="email" class="form-control rounded-pill py-3 px-4 w-100 border-color shadow-none"
-                            placeholder="Email address" required style="background: rgba(128,128,128,0.05);">
+                            placeholder="Enter your email" required style="background: rgba(128,128,128,0.05);">
                         <button type="submit"
                             class="btn-premium primary rounded-pill position-absolute end-0 top-0 bottom-0 m-1 px-4 border-0">Subscribe</button>
                     </form>
                     <div class="mt-4 d-flex gap-2 flex-wrap">
                         <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
-                                class="bi bi-wrench-adjustable-circle text-indigo me-1"></i> ASE Certified</span>
+                                class="bi bi-shield-lock-fill text-indigo me-1"></i> $5M Cargo Insurance</span>
                         <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
-                                class="bi bi-lock-fill text-indigo me-1"></i> Secure Booking</span>
+                                class="bi bi-thermometer-half text-indigo me-1"></i> 50% RH Regulated</span>
+                        <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
+                                class="bi bi-geo-alt-fill text-indigo me-1"></i> 50-State Coverage</span>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <div>&copy; 2026 Auto Fix Repair Center. All rights reserved.</div>
+                <div>&copy; 2026 VaultX. All rights reserved. Nationwide Vehicle Transport Logistics.</div>
                 <div class="d-flex gap-4">
                     <a href="#" class="text-decoration-none hover-white fs-4"
-                        onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"><i
+                        onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" aria-label="Back to top"><i
                             class="bi bi-arrow-up-circle-fill"></i></a>
-
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" aria-label="Back to Top"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
-
 </html>

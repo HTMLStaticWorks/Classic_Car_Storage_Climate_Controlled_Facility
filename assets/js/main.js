@@ -158,4 +158,78 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // 9. Interactive Chamber Telemetry Switcher
+    const chamberTabs = document.querySelectorAll('.chamber-tab-card');
+    const chamberImg = document.getElementById('chamberVehicleImg');
+    const chamberBayName = document.getElementById('chamberBayName');
+    const chamberModeStatus = document.getElementById('chamberModeStatus');
+    const telTemp = document.getElementById('telTemp');
+    const telHum = document.getElementById('telHum');
+    const telVolt = document.getElementById('telVolt');
+    const telAir = document.getElementById('telAir');
+
+    const chamberData = {
+        'climate': {
+            bay: 'BAY #07-OMEGA',
+            status: 'ATMOSPHERIC LOCK ACTIVE',
+            img: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=900&q=80',
+            temp: '68.2°F',
+            hum: '50.1% RH',
+            volt: '13.6V',
+            air: '99.98%'
+        },
+        'security': {
+            bay: 'VAULT SECTOR 04-APEX',
+            status: 'BIOMETRIC & LASER ARMED',
+            img: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80',
+            temp: '68.0°F',
+            hum: '49.8% RH',
+            volt: '13.4V',
+            air: '100.0%'
+        },
+        'power': {
+            bay: 'TRICKLE STATION #12',
+            status: 'CTEK FLOAT OPTIMIZED',
+            img: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=80',
+            temp: '68.5°F',
+            hum: '50.0% RH',
+            volt: '13.8V',
+            air: '99.95%'
+        },
+        'telemetry': {
+            bay: 'COCKPIT TELEMETRY LIVE',
+            status: '4K OPTICS STREAMING',
+            img: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=80',
+            temp: '68.1°F',
+            hum: '50.3% RH',
+            volt: '13.7V',
+            air: '99.99%'
+        }
+    };
+
+    if (chamberTabs.length > 0) {
+        chamberTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                chamberTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                const mode = tab.getAttribute('data-chamber-mode');
+                const data = chamberData[mode];
+                if (data && chamberImg) {
+                    chamberImg.style.opacity = '0.3';
+                    setTimeout(() => {
+                        chamberImg.src = data.img;
+                        if (chamberBayName) chamberBayName.textContent = data.bay;
+                        if (chamberModeStatus) chamberModeStatus.textContent = data.status;
+                        if (telTemp) telTemp.textContent = data.temp;
+                        if (telHum) telHum.textContent = data.hum;
+                        if (telVolt) telVolt.textContent = data.volt;
+                        if (telAir) telAir.textContent = data.air;
+                        chamberImg.style.opacity = '1';
+                    }, 200);
+                }
+            });
+        });
+    }
 });

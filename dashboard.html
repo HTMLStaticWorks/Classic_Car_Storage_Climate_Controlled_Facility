@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Fix | Client Dashboard</title>
+    <title>VaultX | Customer Logistics & Storage Dashboard</title>
+    <meta name="description" content="Manage vehicle transport requests, track live shipment status, view pickup and delivery windows, access 40-point inspection reports, and handle payments.">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23E63946' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%23111827' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23D4AF37' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%230F172A' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,600&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -21,12 +24,12 @@
         /* Dashboard Layout */
         body {
             background-color: var(--bg-secondary);
+            overflow-x: hidden;
         }
         
         .dashboard-layout {
             display: flex;
-            height: 100vh;
-            overflow: hidden;
+            min-height: 100vh;
         }
         
         /* Sidebar */
@@ -37,6 +40,8 @@
             display: flex;
             flex-direction: column;
             transition: all var(--transition-normal);
+            flex-shrink: 0;
+            z-index: 1000;
         }
         
         .sidebar-header {
@@ -59,6 +64,8 @@
             text-decoration: none;
             transition: all var(--transition-fast);
             border-left: 3px solid transparent;
+            font-weight: 500;
+            cursor: pointer;
         }
         
         .menu-item:hover {
@@ -67,10 +74,10 @@
         }
         
         .menu-item.active {
-            background: var(--brand-cyan-muted);
-            color: var(--brand-indigo);
-            border-left-color: var(--brand-indigo);
-            font-weight: 500;
+            background: var(--brand-accent-muted);
+            color: var(--brand-accent);
+            border-left-color: var(--brand-accent);
+            font-weight: 600;
         }
         
         .menu-item i {
@@ -87,7 +94,6 @@
             flex-grow: 1;
             display: flex;
             flex-direction: column;
-            overflow: hidden;
             min-width: 0;
             width: 100%;
         }
@@ -100,6 +106,10 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            padding: 0 30px;
+            gap: 12px;
+            width: 100%;
+            overflow: hidden;
         }
         
         .content-area {
@@ -107,742 +117,847 @@
             padding: 30px;
             overflow-y: auto;
         }
+
+        /* Responsive Sidebar & Topbar for Mobile & Tablet */
+        @media (max-width: 991px) {
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                height: 100vh;
+                transform: translateX(-100%);
+                box-shadow: var(--shadow-lg);
+                z-index: 1050;
+            }
+            .sidebar.show {
+                transform: translateX(0);
+            }
+            .sidebar-backdrop {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.6);
+                backdrop-filter: blur(4px);
+                z-index: 1040;
+                opacity: 0;
+                visibility: hidden;
+                transition: all var(--transition-fast);
+            }
+            .sidebar-backdrop.show {
+                opacity: 1;
+                visibility: visible;
+            }
+            .topbar {
+                padding: 0 16px;
+                height: 64px;
+            }
+            #dash-title {
+                font-size: 0.95rem;
+            }
+            .content-area {
+                padding: 20px 16px;
+            }
+        }
+        @media (max-width: 575px) {
+            #dash-title {
+                font-size: 0.88rem;
+            }
+        }
         
         /* Dashboard Widgets */
         .stat-card {
             background: var(--bg-primary);
-            border-radius: 12px;
-            padding: 24px;
+            border-radius: 16px;
+            padding: 22px 24px;
             border: 1px solid var(--border-color);
             box-shadow: var(--shadow-sm);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all var(--transition-normal);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--brand-accent);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .stat-card-title {
+            color: var(--text-secondary);
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            min-height: 34px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+        
+        .stat-card-value {
+            font-family: var(--font-heading);
+            font-size: 1.85rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin: 0;
+            color: var(--text-primary);
+        }
+        
+        .stat-card-footer {
+            margin-top: 16px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
         }
         
         .stat-icon {
-            width: 48px;
-            height: 48px;
+            width: 46px;
+            height: 46px;
             border-radius: 12px;
-            background: var(--brand-cyan-muted);
-            color: var(--brand-indigo);
+            background: var(--brand-accent-muted);
+            color: var(--brand-accent);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.35rem;
+            flex-shrink: 0;
         }
         
-        /* Charts */
-        .chart-container {
-            background: var(--bg-primary);
-            border-radius: 12px;
-            padding: 24px;
-            border: 1px solid var(--border-color);
-            margin-top: 24px;
-        }
-        
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 5px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--border-color);
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin-bottom: 20px;
-        }
-        
-        .timeline-dot {
-            position: absolute;
-            left: -30px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--brand-indigo);
-            box-shadow: 0 0 0 4px var(--bg-primary);
-        }
-        
-        /* Drag & Drop Zone */
-        .drop-zone {
-            border: 2px dashed var(--border-color);
-            border-radius: 12px;
-            padding: 40px;
-            text-align: center;
-            background: var(--bg-primary);
-            transition: all var(--transition-fast);
-            cursor: pointer;
-        }
-        
-        .drop-zone:hover, .drop-zone.dragover {
-            border-color: var(--brand-indigo);
-            background: var(--brand-cyan-muted);
-        }
-        
-        /* Sections Toggling */
-        .dashboard-section {
+        /* Interactive Tabs */
+        .tab-pane-dash {
             display: none;
-            animation: fadeIn 0.4s ease;
+            animation: fadeIn 0.3s ease;
         }
-        
-        .dashboard-section.active {
+        .tab-pane-dash.active {
             display: block;
         }
-        
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
-        @media (max-width: 991px) {
-            .sidebar {
-                position: fixed;
-                left: -280px;
-                top: 0;
-                bottom: 0;
-                z-index: 1050;
-                box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            }
-            .sidebar.show {
-                left: 0;
-            }
-            .sidebar-overlay {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(0,0,0,0.5);
-                z-index: 1040;
-            }
-            .sidebar-overlay.show {
-                display: block;
-            }
-            .content-area {
-                padding: 15px;
-            }
-            .mobile-xs-icon {
-                width: 32px !important;
-                height: 32px !important;
-                font-size: 0.9rem !important;
-            }
-            .mobile-avatar {
-                width: 28px !important;
-                height: 28px !important;
-            }
-            .mobile-profile-name {
-                font-size: 0.8rem !important;
-            }
-            .topbar {
-                height: auto;
-                min-height: 70px;
-                padding-top: 10px;
-                padding-bottom: 10px;
-            }
+        /* Vehicle Status Badge */
+        .badge-in-transit {
+            background: rgba(29, 78, 216, 0.15);
+            color: #1D4ED8;
+            border: 1px solid rgba(29, 78, 216, 0.3);
+        }
+        .badge-in-vault {
+            background: rgba(16, 185, 129, 0.15);
+            color: #10B981;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        .badge-scheduled {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--brand-accent);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* GPS Map Tracker Mockup */
+        .gps-map-box {
+            height: 380px;
+            border-radius: 16px;
+            background: url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1200&q=80') center/cover;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        .gps-overlay {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--bg-primary);
+            padding: 16px 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-lg);
+            max-width: 320px;
+        }
+        .pulse-pin {
+            position: absolute;
+            top: 48%;
+            left: 54%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pulse-ring {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.4);
+            animation: pulse-ring 2s infinite;
+            position: absolute;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.5); opacity: 1; }
+            100% { transform: scale(2.2); opacity: 0; }
+        }
+        
+        /* Inspection Checklist */
+        .inspect-item {
+            padding: 12px 16px;
+            border-radius: 10px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
     </style>
 </head>
 <body>
 
-    <div class="dashboard-layout">
-        <div class="sidebar-overlay" id="sidebar-overlay"></div>
-        <!-- Sidebar -->
-        <aside class="sidebar" id="sidebar">
-            <div class="sidebar-header">
-                <a href="index.html" class="logo">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
+<div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo text-decoration-none">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
-                    Auto <span>Fix</span>
-                </a>
-            </div>
-            
-            <div class="sidebar-menu">
-                <small class="text-secondary px-4 mb-2 d-block text-uppercase fw-bold" style="font-size: 0.75rem;">Menu</small>
-                <a href="#" class="menu-item active" data-target="overview">
-                    <i class="bi bi-grid-1x2"></i> Overview
-                </a>
-                <a href="#" class="menu-item" data-target="tracking">
-                    <i class="bi bi-diagram-3"></i> Service History
-                </a>
-                <a href="#" class="menu-item" data-target="renewals">
-                    <i class="bi bi-calendar-event"></i> Maintenance Reminders
-                </a>
-                <a href="#" class="menu-item" data-target="documents">
-                    <i class="bi bi-folder2-open"></i> Service Records
-                </a>
-                <a href="#" class="menu-item" data-target="analytics">
-                    <i class="bi bi-bar-chart"></i> Costs
-                </a>
-                
-                <small class="text-secondary px-4 mt-4 mb-2 d-block text-uppercase fw-bold" style="font-size: 0.75rem;">Account</small>
-                <a href="#" class="menu-item" data-target="profile">
-                    <i class="bi bi-person"></i> Profile
-                </a>
-                <a href="#" class="menu-item" data-target="settings">
-                    <i class="bi bi-gear"></i> Settings
-                </a>
-            </div>
-            
-            <div class="sidebar-footer">
-                <a href="index.html" class="menu-item text-danger p-0">
-                    <i class="bi bi-box-arrow-right"></i> Logout
-                </a>
-            </div>
-        </aside>
+                <span class="fs-5 fw-bold">Vault<span class="text-accent">X</span></span>
+            </a>
+            <button type="button" class="btn-close d-lg-none" id="dashSidebarClose" aria-label="Close sidebar"></button>
+        </div>
         
-        <!-- Main Content -->
-        <main class="main-content">
-            <header class="topbar px-2 px-md-4">
-                <div class="d-flex align-items-center gap-2 gap-md-3" style="min-width: 0;">
-                    <button class="btn btn-light d-lg-none flex-shrink-0" id="mobile-sidebar-toggle"><i class="bi bi-list"></i></button>
-                    <div class="text-truncate">
-                        <span class="text-secondary d-block text-truncate" style="font-size: 0.85rem; margin-bottom: 2px;">Welcome back, David Chen</span>
-                        <h5 class="mb-0 fw-bold text-truncate" id="page-title">Overview</h5>
-                    </div>
+        <div class="sidebar-menu">
+            <div class="menu-item active" onclick="switchTab('tab-overview', this)">
+                <i class="bi bi-grid-1x2-fill"></i>
+                <span>Portal Overview</span>
+            </div>
+            <div class="menu-item" onclick="switchTab('tab-booking', this)">
+                <i class="bi bi-plus-circle-fill"></i>
+                <span>Book Transport Request</span>
+            </div>
+            <div class="menu-item" onclick="switchTab('tab-tracking', this)">
+                <i class="bi bi-geo-alt-fill"></i>
+                <span>Live GPS Tracking</span>
+            </div>
+            <div class="menu-item" onclick="switchTab('tab-windows', this)">
+                <i class="bi bi-calendar-range-fill"></i>
+                <span>Pickup & Delivery Windows</span>
+            </div>
+            <div class="menu-item" onclick="switchTab('tab-inspections', this)">
+                <i class="bi bi-clipboard2-check-fill"></i>
+                <span>40-Point Inspection Reports</span>
+            </div>
+            <div class="menu-item" onclick="switchTab('tab-payments', this)">
+                <i class="bi bi-credit-card-2-front-fill"></i>
+                <span>Payments & Invoices</span>
+            </div>
+            <div class="menu-item" onclick="switchTab('tab-telemetry', this)">
+                <i class="bi bi-thermometer-half"></i>
+                <span>Facility Bay Telemetry</span>
+            </div>
+            <div class="menu-item" onclick="location.href='index.html'">
+                <i class="bi bi-box-arrow-up-right"></i>
+                <span>Return to Public Site</span>
+            </div>
+        </div>
+        
+        <div class="sidebar-footer">
+            <div class="d-flex align-items-center gap-3">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Client Avatar" class="rounded-circle" width="42" height="42" style="object-fit:cover;">
+                <div class="flex-grow-1 overflow-hidden">
+                    <div class="fw-bold small text-truncate">Lord Sterling (VIP)</div>
+                    <div class="text-secondary small text-truncate">Client #CCS-8942</div>
                 </div>
-                
-                <div class="d-flex flex-column flex-md-row align-items-end align-items-md-center gap-2 gap-md-3 ms-auto">
-                    <!-- Toggles Row -->
-                    <div class="d-flex align-items-center gap-1 gap-md-3">
-                        <button class="icon-btn flex-shrink-0 theme-toggle-btn mobile-xs-icon" title="Toggle Theme"><i class="bi bi-moon"></i></button>
-                        <button class="icon-btn flex-shrink-0 rtl-toggle-btn mobile-xs-icon" title="Toggle RTL"><i class="bi bi-arrow-left-right"></i></button>
-                        <div class="position-relative flex-shrink-0">
-                            <button class="icon-btn mobile-xs-icon"><i class="bi bi-bell"></i></button>
-                            <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle" style="transform: translate(-30%, -30%) !important;"></span>
-                        </div>
-                    </div>
-                    <!-- Profile Row -->
-                    <div class="d-flex align-items-center gap-2 ms-0 ms-md-3 border-secondary flex-shrink-0 border-md-start ps-0 ps-md-3">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="rounded-circle mobile-avatar" width="35" height="35">
-                        <div class="d-block text-end text-md-start" style="line-height: 1.2;">
-                            <h6 class="mb-0 fs-6 mobile-profile-name">David Chen</h6>
-                            <small class="text-secondary d-none d-md-block" style="font-size: 0.8rem;">TechVision AI</small>
-                        </div>
-                    </div>
-                </div>
-            </header>
+                <a href="login.html" class="text-secondary hover-accent" title="Logout"><i class="bi bi-box-arrow-right fs-5"></i></a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Topbar -->
+        <header class="topbar">
+            <div class="d-flex align-items-center gap-2 min-w-0 overflow-hidden me-2" style="min-width: 0;">
+                <button type="button" class="icon-btn d-lg-none flex-shrink-0" id="dashSidebarToggle" title="Open Menu" aria-label="Toggle navigation">
+                    <i class="bi bi-list fs-4"></i>
+                </button>
+                <h5 class="fw-bold mb-0 text-truncate" id="dash-title">Customer Logistics & Storage Portal</h5>
+                <span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-50 px-3 py-1 rounded-pill small d-none d-xl-inline-flex align-items-center flex-shrink-0"><i class="bi bi-shield-check me-1"></i> Active Cargo Policy: $5M</span>
+            </div>
             
-            <div class="content-area">
-                
-                <!-- 1. Overview Section -->
-                <div id="overview" class="dashboard-section active">
-                    <div class="row g-4 mb-4">
-                        <div class="col-md-3">
-                            <div class="stat-card">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <div>
-                                        <p class="text-secondary mb-1">Pending Appointments</p>
-                                        <h3 class="fw-bold mb-0 counter" data-target="1">0</h3>
-                                    </div>
-                                    <div class="stat-icon"><i class="bi bi-calendar"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="stat-card">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <div>
-                                        <p class="text-secondary mb-1">Completed Services</p>
-                                        <h3 class="fw-bold mb-0 counter" data-target="8">0</h3>
-                                    </div>
-                                    <div class="stat-icon text-success bg-success bg-opacity-10"><i class="bi bi-patch-check"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="stat-card">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <div>
-                                        <p class="text-secondary mb-1">Action Required</p>
-                                        <h3 class="fw-bold mb-0 text-danger counter" data-target="2">0</h3>
-                                    </div>
-                                    <div class="stat-icon text-danger bg-danger bg-opacity-10"><i class="bi bi-exclamation-triangle"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="stat-card">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <div>
-                                        <p class="text-secondary mb-1">Upcoming Maintenance</p>
-                                        <h3 class="fw-bold mb-0 text-warning counter" data-target="1">0</h3>
-                                    </div>
-                                    <div class="stat-icon text-warning bg-warning bg-opacity-10"><i class="bi bi-calendar-event"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="row g-4">
-                        <div class="col-lg-8">
-                            <div class="chart-container h-100">
-                                <h5>Service Activity (YTD)</h5>
-                                <div style="position: relative; height: 250px; width: 100%;">
-                                    <canvas id="activityChart"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="chart-container h-100">
-                                <h5>Recent Milestones</h5>
-                                <div class="timeline mt-4">
-                                    <div class="timeline-item">
-                                        <div class="timeline-dot bg-success"></div>
-                                        <h6>Oil Change Completed</h6>
-                                        <p class="text-secondary small mb-0">Honda Civic 2019</p>
-                                        <small class="text-muted">Today, 10:30 AM</small>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <div class="timeline-dot"></div>
-                                        <h6>Brake Pad Replacement</h6>
-                                        <p class="text-secondary small mb-0">Toyota Camry 2021</p>
-                                        <small class="text-muted">Yesterday</small>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <div class="timeline-dot bg-danger"></div>
-                                        <h6>Battery Check Required</h6>
-                                        <p class="text-secondary small mb-0">Ford F-150 2018</p>
-                                        <small class="text-muted">Oct 12, 2026</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="d-flex align-items-center gap-2 flex-shrink-0">
+                <button class="icon-btn theme-toggle-btn flex-shrink-0" title="Toggle Theme" aria-label="Toggle theme">
+                    <i class="bi bi-moon"></i>
+                </button>
+                <div class="dropdown">
+                    <button class="btn-premium outline py-2 px-3 dropdown-toggle d-flex align-items-center gap-1" data-bs-toggle="dropdown">
+                        <i class="bi bi-bell-fill text-accent"></i>
+                        <span class="d-none d-sm-inline">Alerts</span> <span>(2)</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end p-2" style="min-width: 280px; background: var(--bg-primary); border-color: var(--border-color);">
+                        <li class="p-2 border-bottom border-color small">
+                            <span class="text-accent fw-bold d-block">Transport Dispatched</span>
+                            <span class="text-secondary">Enclosed carrier en route to Greenwich (ETA: 4h 20m)</span>
+                        </li>
+                        <li class="p-2 small">
+                            <span class="text-success fw-bold d-block">40-Point Inspection Signed</span>
+                            <span class="text-secondary">1967 Shelby GT500 report available for download</span>
+                        </li>
+                    </ul>
                 </div>
-                
-                <!-- 2. Service Tracking -->
-                <div id="tracking" class="dashboard-section">
-                    <div class="chart-container">
-                        <div class="d-flex justify-content-between mb-4">
-                            <h5>Vehicle Portfolio</h5>
-                            <button class="btn-premium primary btn-sm border-0">+ New Appointment</button>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table table-hover align-middle" style="color: var(--text-primary)">
-                                <thead>
-                                    <tr>
-                                        <th>Ref ID</th>
-                                        <th>Vehicle</th>
-                                        <th>Service Type</th>
-                                        <th>Status</th>
-                                        <th>Next Service</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="fw-bold">APP-001</td>
-                                        <td>Honda Civic 2019</td>
-                                        <td>Full Service</td>
-                                        <td><span class="badge bg-success">Completed</span></td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="fw-bold">APP-002</td>
-                                        <td>Toyota Camry 2021</td>
-                                        <td>Brakes</td>
-                                        <td><span class="badge bg-warning text-dark">In Progress</span></td>
-                                        <td class="text-danger fw-bold">Nov 15, 2026</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="fw-bold">APP-003</td>
-                                        <td>Ford F-150 2018</td>
-                                        <td>Oil Change</td>
-                                        <td><span class="badge bg-info">Scheduled</span></td>
-                                        <td>Dec 01, 2026</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 3. Renewal Center -->
-                <div id="renewals" class="dashboard-section">
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <div class="chart-container">
-                                <h5>Upcoming Scheduled Maintenance</h5>
-                                <p class="text-secondary">Keep your vehicle alive by performing scheduled maintenance.</p>
-                                
-                                <div class="card bg-transparent border-warning mt-3">
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div>
-                                                <h6 class="mb-0 text-warning">Honda Civic 2019</h6>
-                                                <small class="text-secondary">60,000 Mile Service</small>
-                                            </div>
-                                            <h4 class="mb-0">$450</h4>
-                                        </div>
-                                        <hr class="border-secondary">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <span class="text-danger fw-bold"><i class="bi bi-clock"></i> Due in 45 Days</span>
-                                            <button class="btn btn-sm btn-premium primary">Book Now</button>
-                                        </div>
-                                    </div>
+            </div>
+        </header>
+
+        <!-- Dynamic Content Tabs -->
+        <div class="content-area">
+            
+            <!-- 1. OVERVIEW TAB -->
+            <div class="tab-pane-dash active" id="tab-overview">
+                <div class="row g-4 mb-4">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="stat-card car-hover-card">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div class="flex-grow-1 pe-2">
+                                    <span class="stat-card-title">Active Transports</span>
+                                    <h3 class="stat-card-value">1</h3>
                                 </div>
+                                <div class="stat-icon"><i class="bi bi-truck"></i></div>
+                            </div>
+                            <div class="stat-card-footer">
+                                <span class="badge-in-transit px-2 py-1 rounded small fw-bold d-inline-flex align-items-center"><i class="bi bi-broadcast me-1"></i> Live GPS En Route</span>
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- 4. Documents -->
-                <div id="documents" class="dashboard-section">
-                    <div class="chart-container">
-                        <h5>Secure File Vault</h5>
-                        <p class="text-secondary mb-4">Upload vehicle photos, insurance documents, or previous service records.</p>
-                        
-                        <div class="drop-zone mb-4" id="drop-zone">
-                            <i class="bi bi-cloud-arrow-up display-4 text-indigo mb-3 d-block"></i>
-                            <h5>Drag & Drop Files Here</h5>
-                            <p class="text-secondary">or click to browse from your computer</p>
-                            <input type="file" hidden id="file-input" multiple>
-                        </div>
-                        
-                        <h6 class="mb-3">Recent Files</h6>
-                        <ul class="list-group">
-                            <li class="list-group-item bg-transparent border-secondary text-primary d-flex justify-content-between align-items-center">
-                                <div><i class="bi bi-file-pdf text-danger me-2"></i> Civic_2019_Registration.pdf</div>
-                                <button class="btn btn-sm btn-light"><i class="bi bi-download"></i></button>
-                            </li>
-                            <li class="list-group-item bg-transparent border-secondary text-primary d-flex justify-content-between align-items-center">
-                                <div><i class="bi bi-file-word text-primary me-2"></i> Previous_Service_Record.docx</div>
-                                <button class="btn btn-sm btn-light"><i class="bi bi-download"></i></button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- 5. Analytics -->
-                <div id="analytics" class="dashboard-section">
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <div class="chart-container">
-                                <h5>Portfolio Distribution</h5>
-                                <div style="position: relative; height: 250px; width: 100%;">
-                                    <canvas id="pieChart"></canvas>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="stat-card car-hover-card">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div class="flex-grow-1 pe-2">
+                                    <span class="stat-card-title">Vehicles in Vault</span>
+                                    <h3 class="stat-card-value">3</h3>
                                 </div>
+                                <div class="stat-icon"><i class="bi bi-shield-shaded"></i></div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="chart-container">
-                                <h5>Cost Projection (Next 12 Mo)</h5>
-                                <div style="position: relative; height: 250px; width: 100%;">
-                                    <canvas id="barChart"></canvas>
-                                </div>
+                            <div class="stat-card-footer">
+                                <span class="badge-in-vault px-2 py-1 rounded small fw-bold d-inline-flex align-items-center"><i class="bi bi-thermometer-half me-1"></i> 68°F & 50% RH</span>
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- 6. Profile -->
-                <div id="profile" class="dashboard-section">
-                    <div class="chart-container">
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h5>My Profile</h5>
-                            <button class="btn btn-sm btn-premium primary">Edit Profile</button>
-                        </div>
-                        <div class="row g-4 align-items-center">
-                            <div class="col-md-3 text-center">
-                                <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=150&q=80" alt="David Chen" class="rounded-circle mb-3 border border-3 border-primary" style="width: 120px; height: 120px; object-fit: cover;">
-                                <h5 class="mb-1">David Chen</h5>
-                                <span class="badge bg-indigo text-navy">Premium Member</span>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="row g-4">
-                                    <div class="col-sm-6">
-                                        <p class="text-secondary mb-1">Email Address</p>
-                                        <p class="fw-medium mb-0" style="color: var(--text-primary)">david.chen@example.com</p>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <p class="text-secondary mb-1">Phone Number</p>
-                                        <p class="fw-medium mb-0" style="color: var(--text-primary)">+1 (555) 123-4567</p>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <p class="text-secondary mb-1">Home Address</p>
-                                        <p class="fw-medium mb-0" style="color: var(--text-primary)">1234 Maple Street, Apt 4B, Seattle, WA 98101</p>
-                                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="stat-card car-hover-card">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div class="flex-grow-1 pe-2">
+                                    <span class="stat-card-title">Next Delivery Window</span>
+                                    <h3 class="stat-card-value">Sep 24</h3>
                                 </div>
+                                <div class="stat-icon"><i class="bi bi-calendar-check"></i></div>
+                            </div>
+                            <div class="stat-card-footer">
+                                <span class="badge-scheduled px-2 py-1 rounded small fw-bold d-inline-flex align-items-center"><i class="bi bi-clock me-1"></i> 10:00 - 14:00 EDT</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="stat-card car-hover-card">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div class="flex-grow-1 pe-2">
+                                    <span class="stat-card-title">Account Balance</span>
+                                    <h3 class="stat-card-value">$0.00</h3>
+                                </div>
+                                <div class="stat-icon"><i class="bi bi-check2-circle text-success"></i></div>
+                            </div>
+                            <div class="stat-card-footer">
+                                <span class="text-success small fw-bold d-inline-flex align-items-center"><i class="bi bi-check-circle-fill me-1"></i> All Invoices Paid</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 7. Settings -->
-                <div id="settings" class="dashboard-section">
-                    <div class="row g-4">
-                        <div class="col-lg-6">
-                            <div class="chart-container h-100">
-                                <h5 class="mb-4">Notification Preferences</h5>
-                                <div class="form-check form-switch mb-4">
-                                    <input class="form-check-input" type="checkbox" id="emailNotif" checked>
-                                    <label class="form-check-label ms-2" for="emailNotif" style="color: var(--text-primary)">Email Notifications (Service Reminders & Updates)</label>
-                                </div>
-                                <div class="form-check form-switch mb-4">
-                                    <input class="form-check-input" type="checkbox" id="smsNotif" checked>
-                                    <label class="form-check-label ms-2" for="smsNotif" style="color: var(--text-primary)">SMS Text Alerts (Appointments & Ready for Pickup)</label>
-                                </div>
-                                <div class="form-check form-switch mb-4">
-                                    <input class="form-check-input" type="checkbox" id="promoNotif">
-                                    <label class="form-check-label ms-2" for="promoNotif" style="color: var(--text-primary)">Promotional Offers & Newsletters</label>
-                                </div>
-                                <button class="btn btn-premium primary mt-2">Save Preferences</button>
+                <!-- Active Fleet Table -->
+                <div class="premium-card car-hover-card p-4 mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <h5 class="fw-bold mb-1">Your Registered Vehicles & Status</h5>
+                            <p class="text-secondary small mb-0">Manage vehicle shipments, view digital reports, and inspect bay telemetry.</p>
+                        </div>
+                        <button class="btn-premium primary py-2 px-3 small" onclick="switchTab('tab-booking', document.querySelectorAll('.menu-item')[1])">
+                            <i class="bi bi-plus-lg me-1"></i> Request New Transport
+                        </button>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table align-middle">
+                            <thead class="border-bottom border-color">
+                                <tr class="text-secondary small">
+                                    <th>Vehicle Details</th>
+                                    <th>Service Protocol</th>
+                                    <th>Current Location / Status</th>
+                                    <th>Inspection Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?auto=format&fit=crop&w=120&q=80" class="rounded-3" width="60" height="42" style="object-fit:cover;">
+                                            <div>
+                                                <div class="fw-bold">1967 Shelby GT500 Fastback</div>
+                                                <div class="text-secondary small">VIN: #67-400F-8921</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge bg-primary">White-Glove Enclosed</span></td>
+                                    <td>
+                                        <span class="badge-in-transit px-2 py-1 rounded small fw-bold d-inline-flex align-items-center gap-1">
+                                            <i class="bi bi-broadcast"></i> En Route (I-80 E, PA)
+                                        </span>
+                                        <div class="text-secondary small mt-1">Delivery: Greenwich Vault (Sep 24)</div>
+                                    </td>
+                                    <td><span class="text-success fw-bold small"><i class="bi bi-check-circle-fill"></i> 40/40 Verified</span></td>
+                                    <td>
+                                        <button class="btn-premium outline py-1 px-3 small" onclick="switchTab('tab-tracking', document.querySelectorAll('.menu-item')[2])">Track GPS</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=120&q=80" class="rounded-3" width="60" height="42" style="object-fit:cover;">
+                                            <div>
+                                                <div class="fw-bold">1958 Mercedes-Benz 300SL Roadster</div>
+                                                <div class="text-secondary small">VIN: #198-042-8500</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge bg-warning text-dark badge-nitro">Platinum Vault Suite</span></td>
+                                    <td>
+                                        <span class="badge-in-vault px-2 py-1 rounded small fw-bold d-inline-flex align-items-center gap-1">
+                                            <i class="bi bi-shield-check"></i> Scottsdale Bay #A-14
+                                        </span>
+                                        <div class="text-secondary small mt-1">68.2°F | 49.8% RH | Float Charged</div>
+                                    </td>
+                                    <td><span class="text-success fw-bold small"><i class="bi bi-check-circle-fill"></i> Bi-Weekly Audit Passed</span></td>
+                                    <td>
+                                        <button class="btn-premium outline py-1 px-3 small" onclick="switchTab('tab-inspections', document.querySelectorAll('.menu-item')[4])">View Report</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" class="rounded-3" width="60" height="42" style="object-fit:cover;">
+                                            <div>
+                                                <div class="fw-bold">1973 Porsche 911 Carrera RS 2.7</div>
+                                                <div class="text-secondary small">VIN: #911-360-0419</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge bg-warning text-dark badge-nitro">Gold Climate Suite</span></td>
+                                    <td>
+                                        <span class="badge-in-vault px-2 py-1 rounded small fw-bold d-inline-flex align-items-center gap-1">
+                                            <i class="bi bi-shield-check"></i> Greenwich Bay #C-08
+                                        </span>
+                                        <div class="text-secondary small mt-1">67.9°F | 50.1% RH | Float Charged</div>
+                                    </td>
+                                    <td><span class="text-success fw-bold small"><i class="bi bi-check-circle-fill"></i> 40/40 Verified</span></td>
+                                    <td>
+                                        <button class="btn-premium outline py-1 px-3 small" onclick="switchTab('tab-telemetry', document.querySelectorAll('.menu-item')[6])">Telemetry</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. BOOK TRANSPORT TAB -->
+            <div class="tab-pane-dash" id="tab-booking">
+                <div class="premium-card car-hover-card p-4 p-md-5 mb-4">
+                    <h4 class="fw-bold mb-2">Book Vehicle Transport Request</h4>
+                    <p class="text-secondary mb-4">Submit a dispatch booking directly into our carrier dispatch queue with priority customer SLA.</p>
+                    
+                    <form onsubmit="event.preventDefault(); alert('Transport request submitted successfully! Dispatch assignment in progress.'); switchTab('tab-tracking', document.querySelectorAll('.menu-item')[2]);">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <label class="form-label text-secondary small fw-bold">Select Vehicle from Vault / Garage</label>
+                                <select class="form-select">
+                                    <option>1967 Shelby GT500 Fastback (#67-400F)</option>
+                                    <option>1958 Mercedes-Benz 300SL Roadster (#198-042)</option>
+                                    <option>1973 Porsche 911 Carrera RS (#911-360)</option>
+                                    <option>+ Add New Vehicle</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-secondary small fw-bold">Transport Carrier Level</label>
+                                <select class="form-select">
+                                    <option>White-Glove Enclosed Carrier (Zero Road Exposure)</option>
+                                    <option>Nationwide Open Carrier (Cost-Efficient Logistics)</option>
+                                    <option>Dedicated Hot-Shot Transport (Direct Single-Car VIP)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-secondary small fw-bold">Pickup Location & Contact</label>
+                                <input type="text" class="form-control" placeholder="Address, City, State, ZIP" value="Scottsdale Climate Facility Bay #A-14">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-secondary small fw-bold">Delivery Destination</label>
+                                <input type="text" class="form-control" placeholder="Address, City, State, ZIP" value="Pebble Beach Concours, Monterey, CA">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label text-secondary small fw-bold">Requested Pickup Window</label>
+                                <input type="date" class="form-control" value="2026-09-28">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label text-secondary small fw-bold">Target Delivery Window</label>
+                                <input type="date" class="form-control" value="2026-10-01">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label text-secondary small fw-bold">Cargo Insurance Add-on</label>
+                                <select class="form-select">
+                                    <option>$5,000,000 Included Policy</option>
+                                    <option>$10,000,000 High-Value Policy (+$250)</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label text-secondary small fw-bold">Driver Instructions & Access Protocols</label>
+                                <textarea class="form-control" rows="3" placeholder="Special loading protocols, concours tags, or contact on arrival..."></textarea>
+                            </div>
+                            <div class="col-12 text-end">
+                                <button type="submit" class="btn-premium primary px-5 py-3">Confirm & Dispatch Transport</button>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="chart-container h-100">
-                                <h5 class="mb-4">Account Security</h5>
-                                <form>
-                                    <div class="mb-3">
-                                        <label class="form-label text-secondary">Current Password</label>
-                                        <input type="password" class="form-control bg-transparent border-secondary text-primary" placeholder="••••••••">
+                    </form>
+                </div>
+            </div>
+
+            <!-- 3. LIVE GPS TRACKING TAB -->
+            <div class="tab-pane-dash" id="tab-tracking">
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <div class="premium-card car-hover-card p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div>
+                                    <h5 class="fw-bold mb-1">Live Shipment Tracking: #TRK-8921</h5>
+                                    <p class="text-secondary small mb-0">1967 Shelby GT500 Fastback &bull; Enclosed Transporter #07</p>
+                                </div>
+                                <span class="badge bg-success"><i class="bi bi-broadcast me-1"></i> Live Satellite Feed</span>
+                            </div>
+                            
+                            <div class="gps-map-box mb-4">
+                                <div class="gps-overlay">
+                                    <div class="fw-bold small text-accent"><i class="bi bi-geo-alt-fill me-1"></i> Current Carrier Position</div>
+                                    <div class="fw-bold mt-1">Interstate 80 East (Mile 194, PA)</div>
+                                    <div class="text-secondary small mt-1">Speed: 64 mph &bull; Heading: East</div>
+                                    <div class="text-secondary small">Internal Trailer Temp: 68.4°F (Regulated)</div>
+                                </div>
+                                <div class="pulse-pin">
+                                    <div class="pulse-ring"></div>
+                                    <i class="bi bi-truck-front-fill text-accent fs-3" style="filter: drop-shadow(0 2px 8px rgba(0,0,0,0.8));"></i>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between text-secondary small">
+                                <span><strong>Origin:</strong> Scottsdale Hub (Sep 21, 09:30 MST)</span>
+                                <span><strong>Destination:</strong> Greenwich Vault (Sep 24, 11:00 EDT)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="premium-card car-hover-card p-4 h-100">
+                            <h5 class="fw-bold mb-3">Milestone Progress</h5>
+                            <div class="timeline">
+                                <div class="mb-4 pb-2 border-bottom border-color">
+                                    <div class="d-flex align-items-center gap-2 text-success fw-bold small">
+                                        <i class="bi bi-check-circle-fill"></i> 40-Point Pre-Trip Inspection Completed
                                     </div>
-                                    <div class="mb-3">
-                                        <label class="form-label text-secondary">New Password</label>
-                                        <input type="password" class="form-control bg-transparent border-secondary text-primary" placeholder="••••••••">
+                                    <div class="text-secondary small">Scottsdale Hub &bull; Sep 21, 08:45 MST</div>
+                                </div>
+                                <div class="mb-4 pb-2 border-bottom border-color">
+                                    <div class="d-flex align-items-center gap-2 text-success fw-bold small">
+                                        <i class="bi bi-check-circle-fill"></i> Loaded via Hydraulic Lift Gate
                                     </div>
-                                    <button class="btn btn-premium primary mt-3">Change Password</button>
-                                </form>
+                                    <div class="text-secondary small">Driver: Capt. Thomas Reed &bull; Soft Nylon Tiedown</div>
+                                </div>
+                                <div class="mb-4 pb-2 border-bottom border-color">
+                                    <div class="d-flex align-items-center gap-2 text-accent fw-bold small">
+                                        <i class="bi bi-broadcast"></i> In Transit (Passing Pennsylvania Hub)
+                                    </div>
+                                    <div class="text-secondary small">Distance remaining: 248 miles &bull; ETA 4h 20m</div>
+                                </div>
+                                <div class="opacity-50">
+                                    <div class="d-flex align-items-center gap-2 text-secondary fw-bold small">
+                                        <i class="bi bi-circle"></i> Greenwich Facility Arrival & Post-Trip Inspection
+                                    </div>
+                                    <div class="text-secondary small">Scheduled: Sep 24, 10:00 - 12:00 EDT</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
-    </div>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="assets/js/main.js"></script>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            // 1. Navigation Logic
-            const menuItems = document.querySelectorAll('.sidebar-menu .menu-item[data-target]');
-            const sections = document.querySelectorAll('.dashboard-section');
-            const pageTitle = document.getElementById('page-title');
-            
-            menuItems.forEach(item => {
-                item.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    
-                    // Remove active from all
-                    menuItems.forEach(m => m.classList.remove('active'));
-                    sections.forEach(s => s.classList.remove('active'));
-                    
-                    // Add active to clicked
-                    item.classList.add('active');
-                    const targetId = item.getAttribute('data-target');
-                    document.getElementById(targetId).classList.add('active');
-                    
-                    // Update Title
-                    pageTitle.textContent = item.textContent.trim();
-                });
-            });
-            
-            // 2. Counters Animation
-            const counters = document.querySelectorAll('.counter');
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const duration = 1500;
-                const increment = target / (duration / 16); // 60fps
-                let current = 0;
-                
-                const updateCounter = () => {
-                    current += increment;
-                    if (current < target) {
-                        counter.innerText = Math.ceil(current);
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        counter.innerText = target;
-                    }
-                };
-                updateCounter();
-            });
-            
-            // 3. Drag and Drop
-            const dropZone = document.getElementById('drop-zone');
-            const fileInput = document.getElementById('file-input');
-            
-            dropZone.addEventListener('click', () => fileInput.click());
-            
-            dropZone.addEventListener('dragover', (e) => {
-                e.preventDefault();
-                dropZone.classList.add('dragover');
-            });
-            
-            dropZone.addEventListener('dragleave', () => {
-                dropZone.classList.remove('dragover');
-            });
-            
-            dropZone.addEventListener('drop', (e) => {
-                e.preventDefault();
-                dropZone.classList.remove('dragover');
-                const files = e.dataTransfer.files;
-                if(files.length) {
-                    alert(`${files.length} file(s) uploaded successfully.`);
-                }
-            });
-            
-            // 4. Mobile Sidebar Toggle
-            const sidebar = document.getElementById('sidebar');
-            const sidebarToggle = document.getElementById('mobile-sidebar-toggle');
-            const sidebarOverlay = document.getElementById('sidebar-overlay');
-            
-            if(sidebarToggle && sidebar && sidebarOverlay) {
-                const toggleSidebar = () => {
-                    sidebar.classList.toggle('show');
-                    sidebarOverlay.classList.toggle('show');
-                };
-                sidebarToggle.addEventListener('click', toggleSidebar);
-                sidebarOverlay.addEventListener('click', toggleSidebar);
-                
-                // Close sidebar when clicking a menu item on mobile
-                menuItems.forEach(item => {
-                    item.addEventListener('click', () => {
-                        if(window.innerWidth <= 991) {
-                            sidebar.classList.remove('show');
-                            sidebarOverlay.classList.remove('show');
-                        }
-                    });
-                });
-            }
+            <!-- 4. PICKUP & DELIVERY WINDOWS TAB -->
+            <div class="tab-pane-dash" id="tab-windows">
+                <div class="premium-card car-hover-card p-4 mb-4">
+                    <h5 class="fw-bold mb-2">Scheduled Pickup & Delivery Windows</h5>
+                    <p class="text-secondary small mb-4">Track confirmed arrival timeframes and direct driver contact protocols.</p>
 
-            // 5. Charts Logic
-            // Theme colors
-            const getChartColors = () => {
-                const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-                return {
-                    textColor: isDark ? '#cbd5e1' : '#475569',
-                    gridColor: isDark ? '#334155' : '#e2e8f0'
-                };
-            };
-            
-            let { textColor, gridColor } = getChartColors();
-            let activityChart, barChart, pieChart;
-            
-            // Activity Line Chart
-            const ctxActivity = document.getElementById('activityChart');
-            if(ctxActivity) {
-                activityChart = new Chart(ctxActivity, {
-                    type: 'line',
-                    data: {
-                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                        datasets: [{
-                            label: 'Filings',
-                            data: [2, 1, 4, 3, 5, 2],
-                            borderColor: '#4F46E5',
-                            backgroundColor: 'rgba(79, 70, 229, 0.2)',
-                            tension: 0.4,
-                            fill: true
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: { legend: { display: false } },
-                        scales: {
-                            y: { grid: { color: gridColor }, ticks: { color: textColor } },
-                            x: { grid: { color: gridColor }, ticks: { color: textColor } }
-                        }
-                    }
-                });
-            }
-            
-            // Pie Chart
-            const ctxPie = document.getElementById('pieChart');
-            if(ctxPie) {
-                pieChart = new Chart(ctxPie, {
-                    type: 'doughnut',
-                    data: {
-                        labels: ['Civic', 'Camry', 'F-150', 'Other'],
-                        datasets: [{
-                            data: [45, 25, 20, 10],
-                            backgroundColor: ['#06b6d4', '#4F46E5', '#f43f5e', '#f5cf53'],
-                            borderWidth: 0
-                        }]
-                    },
-                    options: { 
-                        responsive: true, 
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: { labels: { color: textColor } }
-                        }
-                    }
-                });
-            }
-            
-            // Bar Chart
-            const ctxBar = document.getElementById('barChart');
-            if(ctxBar) {
-                barChart = new Chart(ctxBar, {
-                    type: 'bar',
-                    data: {
-                        labels: ['Q1', 'Q2', 'Q3', 'Q4'],
-                        datasets: [{
-                            label: 'Estimated Costs ($)',
-                            data: [12000, 8500, 15000, 5000],
-                            backgroundColor: '#4F46E5'
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: { labels: { color: textColor } }
-                        },
-                        scales: {
-                            y: { grid: { color: gridColor }, ticks: { color: textColor } },
-                            x: { grid: { color: gridColor }, ticks: { color: textColor } }
-                        }
-                    }
-                });
-            }
+                    <div class="table-responsive">
+                        <table class="table align-middle">
+                            <thead class="border-bottom border-color">
+                                <tr class="text-secondary small">
+                                    <th>Shipment ID</th>
+                                    <th>Vehicle</th>
+                                    <th>Event Type</th>
+                                    <th>Window Date & Time</th>
+                                    <th>Assigned Lead Transporter</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="fw-bold">#TRK-8921</span></td>
+                                    <td>1967 Shelby GT500 Fastback</td>
+                                    <td><span class="badge bg-info text-dark">Destination Delivery</span></td>
+                                    <td><strong>Sep 24, 2026</strong><br><small class="text-secondary">10:00 AM - 02:00 PM EDT</small></td>
+                                    <td>Thomas Reed &bull; <a href="tel:4805550198" class="text-accent text-decoration-none"><i class="bi bi-telephone-fill me-1"></i> (480) 555-0198</a></td>
+                                    <td><span class="badge bg-success">On Schedule</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="fw-bold">#TRK-9044</span></td>
+                                    <td>1958 Mercedes-Benz 300SL</td>
+                                    <td><span class="badge bg-warning text-dark badge-nitro">Facility Departure</span></td>
+                                    <td><strong>Oct 04, 2026</strong><br><small class="text-secondary">08:00 AM - 11:00 AM MST</small></td>
+                                    <td>Dispatch Pending Assignment</td>
+                                    <td><span class="badge bg-secondary text-secondary border border-color">Scheduled</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
 
-            // Watch for theme changes
-            const observer = new MutationObserver((mutations) => {
-                mutations.forEach((mutation) => {
-                    if (mutation.attributeName === 'data-theme') {
-                        const newColors = getChartColors();
-                        if (activityChart) {
-                            activityChart.options.scales.y.grid.color = newColors.gridColor;
-                            activityChart.options.scales.y.ticks.color = newColors.textColor;
-                            activityChart.options.scales.x.grid.color = newColors.gridColor;
-                            activityChart.options.scales.x.ticks.color = newColors.textColor;
-                            activityChart.update();
-                        }
-                        if (barChart) {
-                            barChart.options.scales.y.grid.color = newColors.gridColor;
-                            barChart.options.scales.y.ticks.color = newColors.textColor;
-                            barChart.options.scales.x.grid.color = newColors.gridColor;
-                            barChart.options.scales.x.ticks.color = newColors.textColor;
-                            if(barChart.options.plugins && barChart.options.plugins.legend) {
-                                barChart.options.plugins.legend.labels.color = newColors.textColor;
-                            }
-                            barChart.update();
-                        }
-                        if (pieChart) {
-                            if(pieChart.options.plugins && pieChart.options.plugins.legend) {
-                                pieChart.options.plugins.legend.labels.color = newColors.textColor;
-                            }
-                            pieChart.update();
-                        }
-                    }
-                });
+            <!-- 5. 40-POINT INSPECTION REPORTS TAB -->
+            <div class="tab-pane-dash" id="tab-inspections">
+                <div class="premium-card car-hover-card p-4 mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <h5 class="fw-bold mb-1">Digital 40-Point Condition Report Vault</h5>
+                            <p class="text-secondary small mb-0">High-resolution photographic documentation, paint depth mapping, and electronic timestamp verification.</p>
+                        </div>
+                        <button class="btn-premium outline py-2 px-3 small" onclick="alert('Downloading Certified 40-Point Inspection PDF Report...');">
+                            <i class="bi bi-file-earmark-pdf-fill text-danger me-1"></i> Download Certified PDF
+                        </button>
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <h6 class="fw-bold mb-3"><i class="bi bi-shield-check text-accent me-2"></i> Exterior & Paint Scans (1967 Shelby GT500)</h6>
+                            <div class="inspect-item">
+                                <span><i class="bi bi-check-circle-fill text-success me-2"></i> Front Splitter & Valence Clearance</span>
+                                <span class="badge bg-success">No Blemishes (100%)</span>
+                            </div>
+                            <div class="inspect-item">
+                                <span><i class="bi bi-check-circle-fill text-success me-2"></i> Paint Depth Readings (Avg 5.2 mils)</span>
+                                <span class="badge bg-success">Factory Spec Verified</span>
+                            </div>
+                            <div class="inspect-item">
+                                <span><i class="bi bi-check-circle-fill text-success me-2"></i> Glass & Windshield Clarity</span>
+                                <span class="badge bg-success">Zero Chips / Cracks</span>
+                            </div>
+                            <div class="inspect-item">
+                                <span><i class="bi bi-check-circle-fill text-success me-2"></i> Undercarriage & Exhaust Integrity</span>
+                                <span class="badge bg-success">Dry / Zero Fluid Leaks</span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <h6 class="fw-bold mb-3"><i class="bi bi-cpu text-accent me-2"></i> Mechanical & Electrical Health Telemetry</h6>
+                            <div class="inspect-item">
+                                <span><i class="bi bi-check-circle-fill text-success me-2"></i> Battery Float Voltage (CTEK Test)</span>
+                                <span class="fw-bold text-accent">13.4V (Optimal Float)</span>
+                            </div>
+                            <div class="inspect-item">
+                                <span><i class="bi bi-check-circle-fill text-success me-2"></i> Cold Tire Pressure Calibration</span>
+                                <span class="fw-bold text-accent">32.0 PSI All 4 Wheels</span>
+                            </div>
+                            <div class="inspect-item">
+                                <span><i class="bi bi-check-circle-fill text-success me-2"></i> Fluid Levels (Coolant, Oil, Brake)</span>
+                                <span class="badge bg-success">Full / Tested Safe</span>
+                            </div>
+                            <div class="inspect-item">
+                                <span><i class="bi bi-check-circle-fill text-success me-2"></i> Odometer Timestamp & Verification</span>
+                                <span class="fw-bold">41,208.4 Miles</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. PAYMENTS & INVOICES TAB -->
+            <div class="tab-pane-dash" id="tab-payments">
+                <div class="premium-card car-hover-card p-4 mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <h5 class="fw-bold mb-1">Billing & Payment Management</h5>
+                            <p class="text-secondary small mb-0">Review past invoices, download tax receipts, and update corporate billing accounts.</p>
+                        </div>
+                        <button class="btn-premium primary py-2 px-3 small" onclick="alert('Opening secure payment processing window...');">
+                            <i class="bi bi-credit-card-fill me-1"></i> Make a Payment
+                        </button>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table align-middle">
+                            <thead class="border-bottom border-color">
+                                <tr class="text-secondary small">
+                                    <th>Invoice #</th>
+                                    <th>Description</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Receipt</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>INV-2026-8941</strong></td>
+                                    <td>Enclosed Transcontinental Transport (AZ to CT)</td>
+                                    <td>Sep 21, 2026</td>
+                                    <td class="fw-bold">$2,185.00</td>
+                                    <td><span class="badge bg-success"><i class="bi bi-check-circle-fill me-1"></i> Paid (Stripe)</span></td>
+                                    <td><button class="btn btn-sm btn-link text-accent p-0 text-decoration-none" onclick="alert('Downloading Receipt PDF...');"><i class="bi bi-download"></i> PDF</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>INV-2026-8802</strong></td>
+                                    <td>Gold Climate Storage Suite (Scottsdale Bay #A-14) - Monthly</td>
+                                    <td>Sep 01, 2026</td>
+                                    <td class="fw-bold">$595.00</td>
+                                    <td><span class="badge bg-success"><i class="bi bi-check-circle-fill me-1"></i> Auto-Paid</span></td>
+                                    <td><button class="btn btn-sm btn-link text-accent p-0 text-decoration-none" onclick="alert('Downloading Receipt PDF...');"><i class="bi bi-download"></i> PDF</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. FACILITY BAY TELEMETRY TAB -->
+            <div class="tab-pane-dash" id="tab-telemetry">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="premium-card car-hover-card p-4 h-100">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="fw-bold mb-0"><i class="bi bi-building text-accent me-2"></i> Scottsdale Facility (Bay #A-14)</h5>
+                                <span class="badge bg-success">Live Sensors</span>
+                            </div>
+                            <div class="row g-3 my-3">
+                                <div class="col-6">
+                                    <div class="p-3 bg-secondary rounded-3 text-center border border-color">
+                                        <div class="text-secondary small fw-bold mb-1">Temperature</div>
+                                        <div class="display-6 fw-bold text-accent">68.2°F</div>
+                                        <div class="text-success small"><i class="bi bi-check-circle-fill"></i> Steady &plusmn;0.3°F</div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="p-3 bg-secondary rounded-3 text-center border border-color">
+                                        <div class="text-secondary small fw-bold mb-1">Relative Humidity</div>
+                                        <div class="display-6 fw-bold text-indigo">49.8%</div>
+                                        <div class="text-success small"><i class="bi bi-check-circle-fill"></i> Target 50% Spec</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-secondary small mb-0">Air Filtration: Active HEPA & carbon extraction operational. Battery Tender Telemetry: 13.4V steady float.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="premium-card car-hover-card p-4 h-100">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="fw-bold mb-0"><i class="bi bi-building text-accent me-2"></i> Greenwich Facility (Bay #C-08)</h5>
+                                <span class="badge bg-success">Live Sensors</span>
+                            </div>
+                            <div class="row g-3 my-3">
+                                <div class="col-6">
+                                    <div class="p-3 bg-secondary rounded-3 text-center border border-color">
+                                        <div class="text-secondary small fw-bold mb-1">Temperature</div>
+                                        <div class="display-6 fw-bold text-accent">67.9°F</div>
+                                        <div class="text-success small"><i class="bi bi-check-circle-fill"></i> Steady &plusmn;0.2°F</div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="p-3 bg-secondary rounded-3 text-center border border-color">
+                                        <div class="text-secondary small fw-bold mb-1">Relative Humidity</div>
+                                        <div class="display-6 fw-bold text-indigo">50.1%</div>
+                                        <div class="text-success small"><i class="bi bi-check-circle-fill"></i> Target 50% Spec</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-secondary small mb-0">Air Filtration: Active HEPA & carbon extraction operational. Battery Tender Telemetry: 13.5V steady float.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+    function switchTab(tabId, el) {
+        document.querySelectorAll('.tab-pane-dash').forEach(tab => tab.classList.remove('active'));
+        document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('active'));
+        
+        const target = document.getElementById(tabId);
+        if (target) target.classList.add('active');
+        if (el) el.classList.add('active');
+
+        // Close sidebar on mobile/tablet after item selection
+        const sidebar = document.querySelector('.sidebar');
+        const backdrop = document.querySelector('.sidebar-backdrop');
+        if (sidebar && sidebar.classList.contains('show')) {
+            sidebar.classList.remove('show');
+            if (backdrop) backdrop.classList.remove('show');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggleBtn = document.getElementById('dashSidebarToggle');
+        const closeBtn = document.getElementById('dashSidebarClose');
+        const sidebar = document.querySelector('.sidebar');
+        
+        let backdrop = document.querySelector('.sidebar-backdrop');
+        if (!backdrop) {
+            backdrop = document.createElement('div');
+            backdrop.className = 'sidebar-backdrop';
+            document.body.appendChild(backdrop);
+        }
+
+        if (toggleBtn && sidebar) {
+            toggleBtn.addEventListener('click', () => {
+                sidebar.classList.add('show');
+                backdrop.classList.add('show');
             });
-            observer.observe(document.documentElement, { attributes: true });
+        }
+
+        if (closeBtn && sidebar) {
+            closeBtn.addEventListener('click', () => {
+                sidebar.classList.remove('show');
+                backdrop.classList.remove('show');
+            });
+        }
+
+        backdrop.addEventListener('click', () => {
+            sidebar.classList.remove('show');
+            backdrop.classList.remove('show');
         });
-    </script>
+    });
+</script>
 </body>
 </html>

@@ -4,15 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Fix | Blog & Maintenance Tips</title>
+    <title>VaultX | Preservation Insights & Transport Guides</title>
+    <meta name="description" content="Expert articles from VaultX on preparing classic cars for enclosed shipping, why 50% humidity preserves vintage components, and understanding digital inspection reports.">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23E63946' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%23111827' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23D4AF37' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%230F172A' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Oswald:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,600&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -21,136 +20,39 @@
     <style>
         .blog-hero {
             padding: 160px 0 100px;
-            background: linear-gradient(rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.85)), url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-            border-bottom: 1px solid var(--border-color);
+            background: linear-gradient(rgba(7, 12, 22, 0.85), rgba(7, 12, 22, 0.85)), url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
             position: relative;
         }
 
-        /* Featured Article */
-        .featured-post {
+        .blog-card {
+            background: var(--bg-primary);
             border-radius: 20px;
-            overflow: hidden;
-            background: var(--bg-primary);
             border: 1px solid var(--border-color);
+            overflow: hidden;
             transition: all var(--transition-normal);
-            box-shadow: var(--shadow-sm);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
-        .featured-post:hover {
+        .blog-card:hover {
+            transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
-            transform: translateY(-5px);
+            border-color: var(--brand-accent);
         }
 
-        .featured-img-wrap {
-            height: 400px;
-            overflow: hidden;
-        }
-
-        .featured-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .featured-post:hover .featured-img {
-            transform: scale(1.05);
-        }
-
-        .featured-content {
-            padding: 40px;
-        }
-
-        @media (max-width: 767px) {
-            .featured-content {
-                padding: 20px;
-            }
-
-            .featured-content h2 {
-                font-size: 1.5rem !important;
-                line-height: 1.3;
-            }
-
-            .featured-content p {
-                font-size: 0.95rem;
-                margin-bottom: 1.5rem !important;
-            }
-
-            .post-meta {
-                font-size: 0.75rem !important;
-                margin-bottom: 10px;
-            }
-        }
-
-        /* Masonry Grid (Approximated with Flex/Grid for standard support) */
-        .grid-post {
-            background: var(--bg-primary);
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-            overflow: hidden;
-            transition: all var(--transition-normal);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .grid-post:hover {
-            transform: translateY(-10px);
-            /* Hover lift */
-            box-shadow: var(--shadow-md);
-            border-color: var(--brand-cyan-muted);
-        }
-
-        .grid-img {
-            height: 220px;
+        .blog-img {
+            height: 240px;
             object-fit: cover;
             width: 100%;
-        }
-
-        .grid-content {
-            padding: 25px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
         }
 
         .post-meta {
             font-size: 0.85rem;
-            color: var(--brand-indigo);
+            color: var(--brand-accent);
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        /* Newsletter */
-        .newsletter-box {
-            background: linear-gradient(135deg, var(--brand-indigo, #4F46E5) 0%, #1e293b 100%);
-            border-radius: 20px;
-            padding: 60px 40px;
-            color: white;
-            text-align: center;
-            box-shadow: var(--shadow-premium);
-        }
-
-        .newsletter-box .form-control {
-            background-color: rgba(255, 255, 255, 0.1) !important;
-            color: #ffffff !important;
-        }
-
-        .newsletter-box .form-control::placeholder {
-            color: rgba(255, 255, 255, 0.8) !important;
-        }
-
-        .newsletter-box .form-control:focus {
-            background-color: rgba(255, 255, 255, 0.2) !important;
-            color: #ffffff !important;
-            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
         }
     </style>
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23E63946' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%23111827' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 </head>
 
 <body>
@@ -159,33 +61,30 @@
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="logo">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                    style="margin-right: 8px;">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)"
-                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-                Auto <span>Fix</span>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                Vault<span>X</span>
             </a>
 
             <nav class="main-nav">
-                <a href="index.html" class="nav-link active">Home 1</a>
+                <a href="index.html" class="nav-link">Home 1</a>
                 <a href="index-2.html" class="nav-link">Home 2</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="services.html" class="nav-link">Services</a>
-                <a href="gallery.html" class="nav-link">Gallery</a>
-                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="blog.html" class="nav-link active">Blog</a>
                 <a href="contact.html" class="nav-link">Contact</a>
                 <a href="dashboard.html" class="nav-link">Dashboard</a>
 
                 <div class="mobile-only-actions d-xl-none d-flex flex-column gap-3 mt-3 pt-3 border-top border-secondary">
-                    <a href="signup.html" class="btn-premium primary w-100 text-center">Sign Up</a>
+                    <a href="login.html" class="btn-premium primary w-100 text-center">Login</a>
                     <div class="d-flex gap-3 justify-content-center">
-                        <button class="icon-btn theme-toggle-btn" title="Toggle Theme">
+                        <button class="icon-btn theme-toggle-btn" title="Toggle Theme" aria-label="Toggle theme">
                             <i class="bi bi-moon"></i>
                         </button>
-                        <button class="icon-btn rtl-toggle-btn" title="Toggle RTL">
+                        <button class="icon-btn rtl-toggle-btn" title="Toggle RTL" aria-label="Toggle text direction">
                             <i class="bi bi-arrow-left-right"></i>
                         </button>
                     </div>
@@ -193,14 +92,14 @@
             </nav>
 
             <div class="header-actions">
-                <button class="icon-btn theme-toggle-btn d-none d-xl-flex" title="Toggle Theme">
+                <button class="icon-btn theme-toggle-btn d-none d-xl-flex" title="Toggle Theme" aria-label="Toggle theme">
                     <i class="bi bi-moon"></i>
                 </button>
-                <button class="icon-btn rtl-toggle-btn d-none d-xl-flex" title="Toggle RTL">
+                <button class="icon-btn rtl-toggle-btn d-none d-xl-flex" title="Toggle RTL" aria-label="Toggle text direction">
                     <i class="bi bi-arrow-left-right"></i>
                 </button>
-                <a href="signup.html" class="btn-premium primary d-none d-xl-flex">Sign Up</a>
-                <button class="icon-btn mobile-toggle">
+                <a href="login.html" class="btn-premium primary d-none d-xl-flex">Login</a>
+                <button class="icon-btn mobile-toggle" aria-label="Toggle navigation">
                     <i class="bi bi-list"></i>
                 </button>
             </div>
@@ -209,147 +108,64 @@
 
     <!-- 1. Hero -->
     <section class="blog-hero text-center text-white">
-        <div class="container" data-aos="fade-up">
-            <h1 class="display-4 fw-bold mb-4 text-white">Maintenance Tips & Updates</h1>
-            <p class="lead text-light opacity-75 mx-auto" style="max-width: 600px;">Expert advice on keeping your
-                vehicle running smoothly, understanding common issues, and saving money on repairs.</p>
+        <div class="container" data-aos="zoom-in">
+            <span class="badge bg-warning text-dark badge-nitro px-3 py-2 rounded-pill fw-bold mb-3">Collector Guides & Insights</span>
+            <h1 class="display-3 fw-bold mb-4 text-white">VaultX Logistics Journal</h1>
+            <p class="lead mx-auto text-light opacity-75" style="max-width: 650px;">Practical guides on climate preservation science, enclosed carrier preparation, and vehicle transport safety.</p>
         </div>
     </section>
 
-    <!-- 2. Featured Articles -->
+    <!-- 2. Blog Grid -->
     <section class="section-padding">
         <div class="container">
-            <h3 class="mb-4 text-indigo">Featured Reading</h3>
-            <div class="row" data-aos="fade-up">
-                <div class="col-12">
-                    <div class="featured-post d-lg-flex">
-                        <div class="featured-img-wrap w-lg-50">
-                            <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1000&q=80"
-                                alt="Oil Change" class="featured-img">
-                        </div>
-                        <div class="featured-content w-lg-50 d-flex flex-column justify-content-center">
-                            <span class="post-meta">Maintenance Advice • Oct 12, 2026</span>
-                            <h2 class="mb-3">Why Regular Oil Changes Are the Secret to Engine Longevity</h2>
-                            <p class="text-secondary mb-4">A deep dive into how skipping regular oil changes affects
-                                your engine's moving parts and why synthetic oil is worth the investment.</p>
-                            <div>
-                                <a href="blog-details.html" class="btn-premium primary">Read Full Article</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. Patent News (Masonry/Grid) -->
-    <section class="section-padding bg-secondary">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-end mb-5" data-aos="fade-up">
-                <h2 class="mb-0">Latest Automotive News</h2>
-                <a href="#" class="text-indigo fw-bold">View All News &rarr;</a>
-            </div>
-
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="grid-post">
-                        <img src="https://images.pexels.com/photos/34800675/pexels-photo-34800675.jpeg" alt="EV"
-                            class="grid-img">
-                        <div class="grid-content">
-                            <span class="post-meta">EV Maintenance</span>
-                            <h4 class="mb-3">New Guidelines for EV Battery Care</h4>
-                            <p class="text-secondary mb-4">Electric vehicles require different care than combustion
-                                engines. Learn how to maximize your EV's battery life.
-                            </p>
-                            <a href="blog-details.html" class="text-indigo mt-auto fw-bold">Read More &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="grid-post">
-                        <img src="https://images.pexels.com/photos/36744351/pexels-photo-36744351.jpeg"
-                            alt="Diagnostics" class="grid-img">
-                        <div class="grid-content">
-                            <span class="post-meta">Diagnostics</span>
-                            <h4 class="mb-3">Understanding Your Car's Warning Lights</h4>
-                            <p class="text-secondary mb-4">Don't ignore the check engine light. Here's a quick guide to
-                                decoding common dashboard warning indicators.</p>
-                            <a href="blog-details.html" class="text-indigo mt-auto fw-bold">Read More &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="grid-post">
-                        <img src="https://images.pexels.com/photos/32560104/pexels-photo-32560104.jpeg" alt="Dashboard"
-                            class="grid-img">
-                        <div class="grid-content">
-                            <span class="post-meta">Shop Updates</span>
-                            <h4 class="mb-3">Auto Fix Dashboard 2.0 Released</h4>
-                            <p class="text-secondary mb-4">We've updated our client portal to include predictive
-                                maintenance scheduling and automated service history tracking.</p>
-                            <a href="blog-details.html" class="text-indigo mt-auto fw-bold">Read More &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. Industry Insights -->
-    <section class="section-padding">
-        <div class="container">
-            <h2 class="mb-5" data-aos="fade-right">Vehicle Specific Insights</h2>
-
             <div class="row g-4">
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="d-flex gap-4 p-4 border border-color rounded-4 align-items-center hover-lift"
-                        style="transition: transform 0.3s; cursor:pointer;"
-                        onmouseover="this.style.transform='translateY(-5px)'"
-                        onmouseout="this.style.transform='translateY(0)'">
-                        <i class="bi bi-car-front display-4 text-indigo"></i>
-                        <div>
-                            <h5>European & Luxury Vehicles</h5>
-                            <p class="text-secondary mb-0">Specialized maintenance routines for BMW, Audi, and Mercedes
-                                models.</p>
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80" alt="Enclosed Transport Guide" class="blog-img">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <div class="post-meta mb-2"><i class="bi bi-tag-fill me-1"></i> Logistics & Transport &bull; 6 min read</div>
+                            <h3 class="h4 mb-3">Preparing Your Classic Vehicle for Enclosed Nationwide Transport</h3>
+                            <p class="text-secondary flex-grow-1">A step-by-step pre-loading checklist covering fluid levels, battery disconnects, ground clearance measurements, and what to verify on your Bill of Lading.</p>
+                            <a href="#" class="text-accent fw-bold mt-auto" onclick="event.preventDefault(); alert('Opening article: Preparing Your Classic Vehicle for Enclosed Nationwide Transport');">Read Full Guide &rarr;</a>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="d-flex gap-4 p-4 border border-color rounded-4 align-items-center hover-lift"
-                        style="transition: transform 0.3s; cursor:pointer;"
-                        onmouseover="this.style.transform='translateY(-5px)'"
-                        onmouseout="this.style.transform='translateY(0)'">
-                        <i class="bi bi-ev-station display-4 text-indigo"></i>
-                        <div>
-                            <h5>Hybrids & Electric Vehicles</h5>
-                            <p class="text-secondary mb-0">Navigating high-voltage systems and specialized battery
-                                diagnostics.</p>
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" alt="Climate Control Science" class="blog-img">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <div class="post-meta mb-2"><i class="bi bi-tag-fill me-1"></i> Preservation Science &bull; 8 min read</div>
+                            <h3 class="h4 mb-3">The Science of 50% Humidity: Why Standard Garages Destroy Classic Cars</h3>
+                            <p class="text-secondary flex-grow-1">Understanding how ambient moisture cycling causes micro-rust beneath paint, dries out vintage leather seats, and embrittles rare carburetor gaskets over long storage periods.</p>
+                            <a href="#" class="text-accent fw-bold mt-auto" onclick="event.preventDefault(); alert('Opening article: The Science of 50% Humidity');">Read Full Guide &rarr;</a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 5. Newsletter CTA -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="newsletter-box" data-aos="zoom-in">
-                <i class="bi bi-envelope-paper display-4 text-indigo mb-3"></i>
-                <h2 class="text-white mb-3">Stay Ahead of the Curve</h2>
-                <p class="text-white lead opacity-75 mx-auto mb-5" style="max-width: 500px;">Get monthly updates on car
-                    maintenance tips, seasonal specials, and shop news delivered directly to your inbox.</p>
-
-                <form class="mx-auto" style="max-width: 500px;">
-                    <div class="d-flex flex-column flex-sm-row gap-2">
-                        <input type="email" class="form-control form-control-lg border-0 rounded-3 flex-grow-1"
-                            placeholder="Your Email Address" required>
-                        <button class="btn-premium primary rounded-3 px-4 fw-bold border-0"
-                            type="submit">Subscribe</button>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=800&q=80" alt="40-Point Condition Reports" class="blog-img">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <div class="post-meta mb-2"><i class="bi bi-tag-fill me-1"></i> Inspection & Verification &bull; 5 min read</div>
+                            <h3 class="h4 mb-3">Understanding 40-Point Digital Condition Reports in Auto Logistics</h3>
+                            <p class="text-secondary flex-grow-1">How high-resolution 360-degree digital manifests protect buyers and sellers during long-distance carrier handovers and auction consignments.</p>
+                            <a href="#" class="text-accent fw-bold mt-auto" onclick="event.preventDefault(); alert('Opening article: Understanding 40-Point Digital Condition Reports');">Read Full Guide &rarr;</a>
+                        </div>
                     </div>
-                </form>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80" alt="Battery Maintenance" class="blog-img">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <div class="post-meta mb-2"><i class="bi bi-tag-fill me-1"></i> Maintenance Concierge &bull; 4 min read</div>
+                            <h3 class="h4 mb-3">Microprocessor Tenders vs Battery Disconnects for Winter Storage</h3>
+                            <p class="text-secondary flex-grow-1">Examining the pros and cons of active multi-stage float charging versus complete mechanical disconnects on vintage 6V and 12V electrical systems.</p>
+                            <a href="#" class="text-accent fw-bold mt-auto" onclick="event.preventDefault(); alert('Opening article: Microprocessor Tenders vs Battery Disconnects');">Read Full Guide &rarr;</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -361,80 +177,83 @@
                 <div class="col-lg-4 footer-widget">
                     <div class="mb-4 d-inline-block">
                         <a href="index.html" class="logo">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)"
-                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                            Auto <span>Fix</span>
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            Vault<span>X</span>
                         </a>
                     </div>
-                    <p class="mb-4">Premium auto repair services combining specialized mechanics with a customer
-                        dashboard. Keep your vehicle healthy effortlessly.</p>
+                    <p class="mb-4">The nation's premier climate-controlled classic car storage facility and enclosed transport logistics network. Protecting prized automotive heritage with white-glove precision and real-time client tracking.</p>
                     <div class="d-flex gap-3 footer-social">
-                        <a href="#" class="fs-5"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="fs-5"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="fs-5"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="fs-5" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="fs-5" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="fs-5" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="fs-5" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
 
                 <div class="col-lg-2 footer-widget">
-                    <h4>Quick Links</h4>
+                    <h4>Logistics & Facility</h4>
                     <ul class="footer-links">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Our Services</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="gallery.html">Our Gallery</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="about.html">About Facility</a></li>
+                        <li><a href="services.html">Enclosed Transport</a></li>
+                        <li><a href="services.html">Climate Storage</a></li>
+                        <li><a href="pricing.html">Storage Rates</a></li>
+                        <li><a href="services.html">Specialized Logistics</a></li>
+                        <li><a href="contact.html">Dispatch Hotline</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-2 footer-widget">
-                    <h4>Resources</h4>
+                    <h4>Customer Portal</h4>
                     <ul class="footer-links">
-                        <li><a href="login.html">Customer Dashboard</a></li>
-                        <li><a href="blog.html">Maintenance Tips</a></li>
-                        <li><a href="#">Service Guide</a></li>
-                        <li><a href="booking.html">Book Appointment</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="dashboard.html">Client Dashboard</a></li>
+                        <li><a href="contact.html">Request a Quote</a></li>
+                        <li><a href="dashboard.html">Live GPS Tracking</a></li>
+                        <li><a href="dashboard.html">Inspection Reports</a></li>
+                        <li><a href="blog.html">Collector Guides</a></li>
+                        <li><a href="login.html">Portal Login</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-4 footer-widget">
-                    <h4>Newsletter</h4>
-                    <p class="mb-3">Subscribe for the latest car maintenance tips and exclusive offers.</p>
-                    <form class="d-flex position-relative footer-form">
+                    <h4>Logistics Newsletter</h4>
+                    <p class="mb-3">Subscribe for climate preservation reports, enclosed transport updates, and auction schedules.</p>
+                    <form class="d-flex position-relative footer-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to VaultX updates.');">
                         <input type="email" class="form-control rounded-pill py-3 px-4 w-100 border-color shadow-none"
-                            placeholder="Email address" required style="background: rgba(128,128,128,0.05);">
+                            placeholder="Enter your email" required style="background: rgba(128,128,128,0.05);">
                         <button type="submit"
                             class="btn-premium primary rounded-pill position-absolute end-0 top-0 bottom-0 m-1 px-4 border-0">Subscribe</button>
                     </form>
                     <div class="mt-4 d-flex gap-2 flex-wrap">
                         <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
-                                class="bi bi-wrench-adjustable-circle text-indigo me-1"></i> ASE Certified</span>
+                                class="bi bi-shield-lock-fill text-indigo me-1"></i> $5M Cargo Insurance</span>
                         <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
-                                class="bi bi-lock-fill text-indigo me-1"></i> Secure Booking</span>
+                                class="bi bi-thermometer-half text-indigo me-1"></i> 50% RH Regulated</span>
+                        <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
+                                class="bi bi-geo-alt-fill text-indigo me-1"></i> 50-State Coverage</span>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <div>&copy; 2026 Auto Fix Repair Center. All rights reserved.</div>
+                <div>&copy; 2026 VaultX. All rights reserved. Nationwide Vehicle Transport Logistics.</div>
                 <div class="d-flex gap-4">
                     <a href="#" class="text-decoration-none hover-white fs-4"
-                        onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"><i
+                        onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" aria-label="Back to top"><i
                             class="bi bi-arrow-up-circle-fill"></i></a>
-
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" aria-label="Back to Top"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
-
 </html>
