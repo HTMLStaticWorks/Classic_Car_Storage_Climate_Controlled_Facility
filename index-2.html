@@ -46,9 +46,6 @@
             .split-right {
                 min-height: 500px;
             }
-            .split-right .m-5 {
-                margin: 20px !important;
-            }
         }
 
         @media (max-width: 991px) {
@@ -73,15 +70,19 @@
 
             .split-right {
                 min-height: 380px;
-                margin: 10px 15px 40px;
+                width: calc(100% - 30px);
+                margin: 10px auto 40px;
                 border-radius: 20px;
                 overflow: hidden;
             }
+        }
 
-            .split-right .m-5 {
-                margin: 15px !important;
-                padding: 16px !important;
-                max-width: calc(100% - 30px) !important;
+        @media (max-width: 575.98px) {
+            .split-right {
+                min-height: 320px;
+                width: calc(100% - 24px);
+                margin: 10px auto 35px;
+                border-radius: 16px;
             }
         }
 
@@ -289,16 +290,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-12 split-right" data-aos="fade-left">
-                    <div class="position-absolute bottom-0 start-0 m-5 p-4 rounded-4" style="background: var(--glass-bg); backdrop-filter: blur(15px); border: 1px solid var(--glass-border); max-width: 420px; z-index: 5;">
-                        <div class="d-flex align-items-center gap-3 mb-2">
-                            <span class="badge bg-success text-white px-2 py-1"><i class="bi bi-circle-fill me-1" style="font-size: 0.6rem;"></i> Live En Route</span>
-                            <span class="text-secondary small">Carrier #CC-104</span>
-                        </div>
-                        <h6 class="mb-1 fw-bold">1963 Chevrolet Corvette Split-Window</h6>
-                        <p class="text-secondary small mb-0"><i class="bi bi-geo-alt-fill text-accent me-1"></i> Passing Nashville, TN &bull; Delivery Window: Tomorrow 14:00</p>
-                    </div>
-                </div>
+                <div class="col-lg-6 col-12 split-right" data-aos="fade-left"></div>
             </div>
         </div>
     </section>
