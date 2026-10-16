@@ -241,7 +241,21 @@ a:hover {
   animation: tachometer-pulse 2.5s infinite;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
+  max-width: 100%;
+}
+
+@media (max-width: 767.98px) {
+  .badge-nitro {
+    white-space: normal !important;
+    text-align: center;
+    line-height: 1.35;
+    font-size: 0.78rem;
+    padding: 6px 14px !important;
+    letter-spacing: 0.5px;
+    max-width: 94%;
+  }
 }
 
 .telemetry-dial {

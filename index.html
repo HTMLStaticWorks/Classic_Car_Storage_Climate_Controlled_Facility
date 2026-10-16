@@ -1,130 +1,456 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VaultX | Classic Car Storage & Climate-Controlled Facility</title>
-    <meta name="description" content="VaultX premier classic car storage, climate-controlled facility, and nationwide open & enclosed vehicle transport logistics with real-time tracking.">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23D4AF37' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%230F172A' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <meta name="description"
+        content="VaultX premier classic car storage and climate-controlled facility. Dedicated vehicle preservation, 24/7 environmental monitoring, battery maintenance, and white-glove care.">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23D4AF37' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%230F172A' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,600&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,600&family=Rajdhani:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        .hero-section { padding: 140px 0 80px; position: relative; overflow: hidden; background: var(--bg-primary); }
-        @media (max-width: 991px) { .hero-section { padding: 120px 0 60px; } }
-        @media (max-width: 767px) { 
-            .hero-section { padding: 110px 0 50px; } 
-            .hero-badge { 
-                display: inline-flex; 
-                flex-wrap: wrap; 
+        .hero-section {
+            padding: 140px 0 80px;
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-primary);
+        }
+
+        @media (max-width: 991px) {
+            .hero-section {
+                padding: 120px 0 60px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero-section {
+                padding: 110px 0 50px;
+            }
+
+            .hero-badge {
+                display: inline-flex;
+                flex-wrap: wrap;
                 align-items: center;
-                gap: 6px; 
-                padding: 6px 14px; 
-                font-size: 0.78rem; 
-                line-height: 1.35; 
-                margin-bottom: 1.25rem !important; 
-                max-width: 100%; 
+                gap: 6px;
+                padding: 6px 14px;
+                font-size: 0.78rem;
+                line-height: 1.35;
+                margin-bottom: 1.25rem !important;
+                max-width: 100%;
             }
-            .hero-content h1 { 
-                font-size: clamp(1.8rem, 6.5vw, 2.4rem); 
-                line-height: 1.2; 
-                margin-bottom: 1rem !important; 
+
+            .hero-content h1 {
+                font-size: clamp(1.8rem, 6.5vw, 2.4rem);
+                line-height: 1.2;
+                margin-bottom: 1rem !important;
             }
-            .hero-content p.lead { 
-                font-size: 0.95rem; 
-                line-height: 1.55; 
-                margin-bottom: 1.5rem !important; 
+
+            .hero-content p.lead {
+                font-size: 0.95rem;
+                line-height: 1.55;
+                margin-bottom: 1.5rem !important;
             }
-            .hero-content .d-flex.gap-3.flex-wrap { 
-                flex-direction: column; 
-                width: 100%; 
-                gap: 10px !important; 
+
+            .hero-content .d-flex.gap-3.flex-wrap {
+                flex-direction: column;
+                width: 100%;
+                gap: 10px !important;
             }
-            .hero-content .btn-premium { 
-                width: 100%; 
-                text-align: center; 
-                padding: 12px 20px; 
+
+            .hero-content .btn-premium {
+                width: 100%;
+                text-align: center;
+                padding: 12px 20px;
             }
-            .hero-content .border-top { 
-                margin-top: 1.5rem !important; 
-                padding-top: 1.25rem !important; 
+
+            .hero-content .border-top {
+                margin-top: 1.5rem !important;
+                padding-top: 1.25rem !important;
             }
         }
-        .hero-shapes { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
-        .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px; background: var(--glass-bg); backdrop-filter: blur(10px); color: var(--text-primary); border-radius: 50px; font-weight: 600; font-size: 0.85rem; margin-bottom: 2rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); }
-        .hero-badge i { color: var(--brand-accent); }
-        .hero-img-wrapper { position: relative; z-index: 2; }
-        .hero-img { width: 100%; border-radius: 24px; box-shadow: var(--shadow-premium); border: 1px solid var(--border-color); position: relative; z-index: 2; }
-        .hero-img-bg { position: absolute; top: 20px; right: -20px; width: 100%; height: 100%; background: var(--brand-accent); border-radius: 24px; z-index: 1; opacity: 0.12; }
-        .floating-stat { position: absolute; background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); padding: 10px 16px; border-radius: 12px; display: flex; align-items: center; gap: 10px; box-shadow: var(--shadow-lg); animation: float 6s infinite ease-in-out alternate; z-index: 3; }
-        .floating-stat h6 { font-size: 0.85rem; line-height: 1.2; letter-spacing: 0.5px; }
-        .floating-stat p { font-size: 0.78rem; }
-        .fs-1 { top: 8%; left: -25px; }
-        .fs-2 { bottom: 8%; right: -25px; animation-delay: 1.5s; }
-        @media (max-width: 991px) { .fs-1 { left: -10px; } .fs-2 { right: -10px; } }
-        @media (max-width: 767px) { 
-            .hero-img-wrapper { margin: 20px 0 0; } 
-            .hero-img-bg { display: none; } 
-            .floating-stat { 
-                position: static; 
-                width: 100%; 
-                margin-top: 10px; 
-                padding: 10px 14px; 
-                animation: none; 
-                box-shadow: var(--shadow-sm); 
-            } 
-            .fs-1, .fs-2 { 
-                top: auto; 
-                left: auto; 
-                right: auto; 
-                bottom: auto; 
-            } 
+
+        .hero-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
         }
-        .stat-icon { width: 34px; height: 34px; border-radius: 8px; background: var(--brand-primary); color: var(--brand-accent); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
-        [data-theme="dark"] .stat-icon { background: var(--brand-primary-muted); color: var(--brand-accent); border: 1px solid var(--border-color); }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            color: var(--text-primary);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .hero-badge i {
+            color: var(--brand-accent);
+        }
+
+        .hero-img-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: var(--shadow-premium);
+            border: 1px solid var(--border-color);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-img-bg {
+            position: absolute;
+            top: 20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            background: var(--brand-accent);
+            border-radius: 24px;
+            z-index: 1;
+            opacity: 0.12;
+        }
+
+        .floating-stat {
+            position: absolute;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            padding: 10px 16px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--shadow-lg);
+            animation: float 6s infinite ease-in-out alternate;
+            z-index: 3;
+        }
+
+        .floating-stat h6 {
+            font-size: 0.85rem;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+        }
+
+        .floating-stat p {
+            font-size: 0.78rem;
+        }
+
+        .fs-1 {
+            top: 8%;
+            left: -25px;
+        }
+
+        .fs-2 {
+            bottom: 8%;
+            right: -25px;
+            animation-delay: 1.5s;
+        }
+
+        @media (max-width: 991px) {
+            .fs-1 {
+                left: -10px;
+            }
+
+            .fs-2 {
+                right: -10px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero-img-wrapper {
+                margin: 20px 0 0;
+            }
+
+            .hero-img-bg {
+                display: none;
+            }
+
+            .floating-stat {
+                position: static;
+                width: 100%;
+                margin-top: 10px;
+                padding: 10px 14px;
+                animation: none;
+                box-shadow: var(--shadow-sm);
+            }
+
+            .fs-1,
+            .fs-2 {
+                top: auto;
+                left: auto;
+                right: auto;
+                bottom: auto;
+            }
+        }
+
+        .stat-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            background: var(--brand-primary);
+            color: var(--brand-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        [data-theme="dark"] .stat-icon {
+            background: var(--brand-primary-muted);
+            color: var(--brand-accent);
+            border: 1px solid var(--border-color);
+        }
+
         @media (max-width: 1199px) {
-            .chamber-innov-card { padding: 22px 16px; }
-            .chamber-innov-card h3 { font-size: 1.12rem; }
-            .chamber-innov-card .badge { font-size: 0.72rem; padding: 3px 6px !important; }
-            .chamber-innov-card a { font-size: 0.8rem !important; }
-            .bento-item h3 { font-size: 1.15rem; }
+            .chamber-innov-card {
+                padding: 22px 16px;
+            }
+
+            .chamber-innov-card h3 {
+                font-size: 1.12rem;
+            }
+
+            .chamber-innov-card .badge {
+                font-size: 0.72rem;
+                padding: 3px 6px !important;
+            }
+
+            .chamber-innov-card a {
+                font-size: 0.8rem !important;
+            }
+
+            .bento-item h3 {
+                font-size: 1.15rem;
+            }
         }
-        .timeline { position: relative; max-width: 800px; margin: 0 auto; }
-        .timeline::before { content: ''; position: absolute; top: 0; left: 40px; height: 100%; width: 2px; background: var(--border-color); }
-        .timeline-item { position: relative; margin-bottom: 60px; padding-left: 100px; }
-        .timeline-item:last-child { margin-bottom: 0; }
-        .timeline-number { position: absolute; left: 16px; top: 0; width: 50px; height: 50px; border-radius: 50%; background: var(--brand-primary); color: var(--brand-accent); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 700; font-family: var(--font-heading); box-shadow: 0 0 0 10px var(--bg-primary); z-index: 2; }
-        [data-theme="dark"] .timeline-number { background: var(--bg-tertiary); color: var(--brand-accent); border: 2px solid var(--brand-accent); }
-        @media (max-width: 767px) { .timeline-item { padding-left: 60px; margin-bottom: 40px; } .timeline::before { left: 20px; } .timeline-number { left: 0; width: 40px; height: 40px; font-size: 1rem; box-shadow: 0 0 0 6px var(--bg-primary); } }
-        .metrics-section { background: var(--bg-primary); }
-        .metrics-wrapper { background: var(--brand-primary); border-radius: 32px; padding: 80px 40px; position: relative; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); }
-        [data-theme="dark"] .metrics-wrapper { background: var(--bg-tertiary); }
-        .metric-card { text-align: center; position: relative; z-index: 2; }
-        .metric-number { font-size: 4rem; font-weight: 800; font-family: var(--font-heading); color: #ffffff; margin-bottom: 10px; line-height: 1; }
-        .metric-label { color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; }
-        @media (max-width: 991px) { .metric-number { font-size: 3rem; } .metric-label { font-size: 1rem; } }
-        @media (max-width: 767px) { .metric-number { font-size: 2.5rem; } .metric-label { font-size: 0.85rem; letter-spacing: 1px; } .metrics-wrapper { padding: 60px 20px; } }
-        .testimonial-card { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 20px; padding: 30px; display: flex; flex-direction: column; width: 100%; height: 100%; }
-        .client-info { display: flex; align-items: center; gap: 15px; margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--border-color); }
-        .client-img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 2px solid var(--brand-accent); flex-shrink: 0; }
-        .cta-section { background: var(--bg-secondary); position: relative; overflow: hidden; }
-        .cta-box { background: var(--brand-primary); border-radius: 32px; padding: 100px 40px; text-align: center; position: relative; overflow: hidden; box-shadow: var(--shadow-premium); margin: 0 auto; width: 100%; }
-        [data-theme="dark"] .cta-box { background: var(--bg-tertiary); border: 1px solid var(--border-color); }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 40px;
+            height: 100%;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 60px;
+            padding-left: 100px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-number {
+            position: absolute;
+            left: 16px;
+            top: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--brand-primary);
+            color: var(--brand-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            font-family: var(--font-heading);
+            box-shadow: 0 0 0 10px var(--bg-primary);
+            z-index: 2;
+        }
+
+        [data-theme="dark"] .timeline-number {
+            background: var(--bg-tertiary);
+            color: var(--brand-accent);
+            border: 2px solid var(--brand-accent);
+        }
+
+        @media (max-width: 767px) {
+            .timeline-item {
+                padding-left: 60px;
+                margin-bottom: 40px;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-number {
+                left: 0;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+                box-shadow: 0 0 0 6px var(--bg-primary);
+            }
+        }
+
+        .metrics-section {
+            background: var(--bg-primary);
+        }
+
+        .metrics-wrapper {
+            background: var(--brand-primary);
+            border-radius: 32px;
+            padding: 80px 40px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        [data-theme="dark"] .metrics-wrapper {
+            background: var(--bg-tertiary);
+        }
+
+        .metric-card {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .metric-number {
+            font-size: 4rem;
+            font-weight: 800;
+            font-family: var(--font-heading);
+            color: #ffffff;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .metric-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 991px) {
+            .metric-number {
+                font-size: 3rem;
+            }
+
+            .metric-label {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .metric-number {
+                font-size: 2.5rem;
+            }
+
+            .metric-label {
+                font-size: 0.85rem;
+                letter-spacing: 1px;
+            }
+
+            .metrics-wrapper {
+                padding: 60px 20px;
+            }
+        }
+
+        .testimonial-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .client-img {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--brand-accent);
+            flex-shrink: 0;
+        }
+
+        .cta-section {
+            background: var(--bg-secondary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box {
+            background: var(--brand-primary);
+            border-radius: 32px;
+            padding: 100px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-premium);
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        [data-theme="dark"] .cta-box {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+        }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="logo">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    style="margin-right: 8px;">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
                 Vault<span>X</span>
             </a>
 
@@ -138,7 +464,8 @@
                 <a href="contact.html" class="nav-link">Contact</a>
                 <a href="dashboard.html" class="nav-link">Dashboard</a>
 
-                <div class="mobile-only-actions d-xl-none d-flex flex-column gap-3 mt-3 pt-3 border-top border-secondary">
+                <div
+                    class="mobile-only-actions d-xl-none d-flex flex-column gap-3 mt-3 pt-3 border-top border-secondary">
                     <a href="login.html" class="btn-premium primary w-100 text-center">Login</a>
                     <div class="d-flex gap-3 justify-content-center">
                         <button class="icon-btn theme-toggle-btn" title="Toggle Theme" aria-label="Toggle theme">
@@ -152,10 +479,12 @@
             </nav>
 
             <div class="header-actions">
-                <button class="icon-btn theme-toggle-btn d-none d-xl-flex" title="Toggle Theme" aria-label="Toggle theme">
+                <button class="icon-btn theme-toggle-btn d-none d-xl-flex" title="Toggle Theme"
+                    aria-label="Toggle theme">
                     <i class="bi bi-moon"></i>
                 </button>
-                <button class="icon-btn rtl-toggle-btn d-none d-xl-flex" title="Toggle RTL" aria-label="Toggle text direction">
+                <button class="icon-btn rtl-toggle-btn d-none d-xl-flex" title="Toggle RTL"
+                    aria-label="Toggle text direction">
                     <i class="bi bi-arrow-left-right"></i>
                 </button>
                 <a href="login.html" class="btn-premium primary d-none d-xl-flex">Login</a>
@@ -177,25 +506,36 @@
             <div class="row align-items-center g-5">
                 <div class="col-lg-6 hero-content d-flex flex-column justify-content-center" data-aos="fade-right">
                     <div class="hero-badge">
-                        <i class="bi bi-shield-check"></i> <span class="badge bg-warning text-dark badge-nitro px-2 py-1 rounded-pill me-1">Nationwide</span> White-Glove Vehicle Logistics & Storage
+                        <i class="bi bi-shield-check"></i> <span
+                            class="badge bg-warning text-dark badge-nitro px-2 py-1 rounded-pill me-1">Climate
+                            Vault</span> Climate-Controlled Classic Car Storage
                     </div>
-                    <h1 class="mb-4">Protecting Your Collector Cars with <span class="text-gradient">Precision Logistics.</span></h1>
-                    <p class="lead mb-5">State-of-the-art climate-controlled storage suites combined with nationwide open and enclosed vehicle transport. Real-time GPS tracking, 40-point condition reports, and customer dashboard management.
+                    <h1 class="mb-4">Preserve Your Classic. <span class="text-gradient">Protect Its Legacy.</span></h1>
+                    <p class="lead mb-5">Discover premium classic-car storage designed around vehicle protection,
+                        climate management, security, and dedicated care. Precision 50% relative humidity regulation,
+                        active battery conditioning, and white-glove preservation suites.
                     </p>
                     <div class="d-flex gap-3 flex-wrap">
-                        <a href="contact.html" class="btn-premium primary">Contact Facility</a>
-                        <a href="services.html" class="btn-premium outline">Explore Services</a>
+                        <a href="services.html" class="btn-premium primary">Explore Storage Solutions</a>
+                        <a href="pricing.html" class="btn-premium outline">View Storage Plans</a>
                     </div>
 
                     <div class="d-flex align-items-center gap-4 mt-5 pt-4 border-top border-color">
                         <div class="d-flex -space-x-3">
-                            <img class="rounded-circle border border-2 border-white" width="40" height="40" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Collector">
-                            <img class="rounded-circle border border-2 border-white" width="40" height="40" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Collector" style="margin-left: -15px;">
-                            <img class="rounded-circle border border-2 border-white" width="40" height="40" src="https://randomuser.me/api/portraits/men/85.jpg" alt="Collector" style="margin-left: -15px;">
+                            <img class="rounded-circle border border-2 border-white" width="40" height="40"
+                                src="https://randomuser.me/api/portraits/men/32.jpg" alt="Collector">
+                            <img class="rounded-circle border border-2 border-white" width="40" height="40"
+                                src="https://randomuser.me/api/portraits/women/44.jpg" alt="Collector"
+                                style="margin-left: -15px;">
+                            <img class="rounded-circle border border-2 border-white" width="40" height="40"
+                                src="https://randomuser.me/api/portraits/men/85.jpg" alt="Collector"
+                                style="margin-left: -15px;">
                         </div>
                         <div>
                             <div class="text-accent fs-6 mb-1">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i>
                             </div>
                             <span class="text-secondary small fw-medium">Trusted by 1,200+ Classic Car Collectors</span>
                         </div>
@@ -205,7 +545,8 @@
                 <div class="col-lg-6 mt-5 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
                     <div class="hero-img-wrapper">
                         <div class="hero-img-bg"></div>
-                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" alt="Classic Car Climate Facility" class="hero-img">
+                        <img src="assets/images/hero-facility.jpg" alt="Classic Car Climate-Controlled Storage Facility"
+                            class="hero-img">
 
                         <div class="floating-stat fs-1">
                             <div class="stat-icon"><i class="bi bi-thermometer-sun"></i></div>
@@ -216,10 +557,10 @@
                         </div>
 
                         <div class="floating-stat fs-2">
-                            <div class="stat-icon"><i class="bi bi-truck"></i></div>
+                            <div class="stat-icon"><i class="bi bi-battery-charging"></i></div>
                             <div>
-                                <h6 class="mb-0 fw-bold">Enclosed Transport</h6>
-                                <p class="text-secondary small mb-0">50 States Direct Coverage</p>
+                                <h6 class="mb-0 fw-bold">Active Battery Care</h6>
+                                <p class="text-secondary small mb-0">Continuous CTEK Float</p>
                             </div>
                         </div>
                     </div>
@@ -228,55 +569,79 @@
         </div>
     </section>
 
-    <!-- 1.5 Comprehensive Storage & Logistics Solutions -->
+    <!-- 1.5 Comprehensive Storage & Preservation Solutions -->
     <section class="section-padding bg-secondary">
         <div class="container">
             <div class="text-center mb-5 pb-2" data-aos="fade-up">
-                <h2 class="display-6">Comprehensive Vehicle Care & Transport</h2>
-                <p class="text-secondary mx-auto mt-3" style="max-width: 700px;">Tailored solutions designed specifically for antique, vintage, exotic, and high-value collector automobiles.</p>
+                <h2 class="display-6">Comprehensive Vehicle Storage & Preservation Solutions</h2>
+                <p class="text-secondary mx-auto mt-3" style="max-width: 700px;">Tailored preservation solutions
+                    designed specifically for antique, vintage, exotic, and high-value collector automobiles.</p>
             </div>
 
             <div class="row g-4">
                 <div class="col-xl-3 col-lg-6 col-md-6 col-12" data-aos="fade-up" data-aos-delay="100">
                     <div class="premium-card car-hover-card p-0 h-100 d-flex flex-column border-color">
-                        <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=600&q=80" alt="Enclosed Vehicle Transport" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUvhxImCdkyssk_uHkqW-zD0MTmlzWFoRTY_jM89rIvg&s=10"
+                            alt="Climate-Controlled Storage Suites" class="img-fluid w-100"
+                            style="height: 200px; object-fit: cover;">
                         <div class="p-4 d-flex flex-column flex-grow-1">
-                            <h3 class="h5 mb-3">Enclosed Auto Transport</h3>
-                            <p class="text-secondary small mb-4 flex-grow-1">Air-ride suspension carriers with hydraulic lift gates offering zero road-grime exposure for priceless collector vehicles.</p>
-                            <a href="services.html" class="text-accent fw-bold mt-auto d-inline-flex align-items-center gap-2">Explore Enclosed <i class="bi bi-arrow-right"></i></a>
+                            <h3 class="h5 mb-3">Climate-Controlled Storage</h3>
+                            <p class="text-secondary small mb-4 flex-grow-1">Indoor dust-free suites with precision 50%
+                                relative humidity, 68°F thermal regulation, and continuous atmospheric filtration.</p>
+                            <a href="services.html"
+                                class="text-accent fw-bold mt-auto d-inline-flex align-items-center gap-2">Explore
+                                Storage <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-xl-3 col-lg-6 col-md-6 col-12" data-aos="fade-up" data-aos-delay="200">
                     <div class="premium-card car-hover-card p-0 h-100 d-flex flex-column border-color">
-                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80" alt="Open Carrier Logistics" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5PJ2ha0qkylwU5fk470oMIUl0duqjUpx8Kw4md5_xww&s=10"
+                            alt="Dedicated Preservation Suites" class="img-fluid w-100"
+                            style="height: 200px; object-fit: cover;">
                         <div class="p-4 d-flex flex-column flex-grow-1">
-                            <h3 class="h5 mb-3">Open Carrier Logistics</h3>
-                            <p class="text-secondary small mb-4 flex-grow-1">Cost-effective nationwide vehicle shipping with bonded drivers, complete cargo insurance, and scheduled delivery windows.</p>
-                            <a href="services.html" class="text-accent fw-bold mt-auto d-inline-flex align-items-center gap-2">Explore Open Carrier <i class="bi bi-arrow-right"></i></a>
+                            <h3 class="h5 mb-3">Dedicated Preservation Suites</h3>
+                            <p class="text-secondary small mb-4 flex-grow-1">Private vehicle storage bays featuring
+                                tailored breathable satin dust covers, isolated power connections, and museum-grade
+                                care.</p>
+                            <a href="pricing.html"
+                                class="text-accent fw-bold mt-auto d-inline-flex align-items-center gap-2">View Suites
+                                <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-xl-3 col-lg-6 col-md-6 col-12" data-aos="fade-up" data-aos-delay="300">
                     <div class="premium-card car-hover-card p-0 h-100 d-flex flex-column border-color">
-                        <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=600&q=80" alt="Climate-Controlled Storage" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQIg3YMKmQul0F_tMweH_NttwLk9GG0DdqXvb9rbA-0g&s=10"
+                            alt="Battery Care & Maintenance" class="img-fluid w-100"
+                            style="height: 200px; object-fit: cover;">
                         <div class="p-4 d-flex flex-column flex-grow-1">
-                            <h3 class="h5 mb-3">Climate-Controlled Storage</h3>
-                            <p class="text-secondary small mb-4 flex-grow-1">Indoor dust-free suites with precision 50% relative humidity, battery maintenance tenders, and strict environmental stability.</p>
-                            <a href="services.html" class="text-accent fw-bold mt-auto d-inline-flex align-items-center gap-2">Explore Storage <i class="bi bi-arrow-right"></i></a>
+                            <h3 class="h5 mb-3">Battery Care & Maintenance</h3>
+                            <p class="text-secondary small mb-4 flex-grow-1">Continuous CTEK microprocessor trickle
+                                charging, float voltage diagnostics, and periodic electrical system health monitoring.
+                            </p>
+                            <a href="services.html"
+                                class="text-accent fw-bold mt-auto d-inline-flex align-items-center gap-2">Explore
+                                Battery Care <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-xl-3 col-lg-6 col-md-6 col-12" data-aos="fade-up" data-aos-delay="400">
                     <div class="premium-card car-hover-card p-0 h-100 d-flex flex-column border-color">
-                        <img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=600&q=80" alt="Condition & Inspection Reports" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRgR1qfAjkfpWrqyv_J-dPtvsUjl53mrNrieQVs-GLQw&s=10"
+                            alt="Condition & Inspection Reports" class="img-fluid w-100"
+                            style="height: 200px; object-fit: cover;">
                         <div class="p-4 d-flex flex-column flex-grow-1">
-                            <h3 class="h5 mb-3">40-Point Condition Reports</h3>
-                            <p class="text-secondary small mb-4 flex-grow-1">High-resolution 360-degree digital photo inspections, tire tread checks, and e-signed bill of lading documents stored in your portal.</p>
-                            <a href="services.html" class="text-accent fw-bold mt-auto d-inline-flex align-items-center gap-2">View Reports <i class="bi bi-arrow-right"></i></a>
+                            <h3 class="h5 mb-3">Inspection & Detailing</h3>
+                            <p class="text-secondary small mb-4 flex-grow-1">Exhaustive 40-point photographic intake
+                                audits, paint thickness mapping, fluid condition logs, and preservation hand detailing.
+                            </p>
+                            <a href="services.html"
+                                class="text-accent fw-bold mt-auto d-inline-flex align-items-center gap-2">View
+                                Inspection Care <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -288,35 +653,55 @@
     <section class="section-padding">
         <div class="container">
             <div class="text-center mb-5 pb-2" data-aos="fade-up">
-                <h2 class="display-6">Specialized Care Across <span class="text-gradient">Every Mile & Bay</span></h2>
-                <p class="text-secondary mx-auto mt-3" style="max-width: 600px;">From door-to-door enclosed shipping to long-term climate vault preservation, our infrastructure gives collectors complete peace of mind.</p>
+                <h2 class="display-6">Dedicated Care Across <span class="text-gradient">Every Bay & Suite</span></h2>
+                <p class="text-secondary mx-auto mt-3" style="max-width: 600px;">From climate vault preservation and
+                    active battery maintenance to owner dashboard controls, our facility gives collectors complete
+                    confidence.</p>
             </div>
 
             <div class="row g-4 justify-content-center">
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="bento-item h-100 d-flex flex-column">
-                        <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=600&q=80" alt="Live GPS Fleet Tracking" class="img-fluid rounded-4 mb-4" style="height: 180px; width: 100%; object-fit: cover; box-shadow: var(--shadow-sm);">
-                        <h3 class="h5">Live GPS Fleet Tracking</h3>
-                        <p class="text-secondary small mb-4 flex-grow-1">Real-time driver location tracking, milestone notifications, and accurate pickup/delivery appointment windows via your customer portal.</p>
-                        <a href="dashboard.html" class="text-accent fw-bold mt-auto d-inline-flex align-items-center gap-2">Track Shipment <i class="bi bi-arrow-right"></i></a>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIyek721ca-ubO7iyC4O4pDUtGcVtdQSPF1cSkkpqjiQ&s"
+                            alt="24/7 Facility Security & Access" class="img-fluid rounded-4 mb-4"
+                            style="height: 180px; width: 100%; object-fit: cover; box-shadow: var(--shadow-sm);">
+                        <h3 class="h5">24/7 Facility Security & Access</h3>
+                        <p class="text-secondary small mb-4 flex-grow-1">Multi-factor biometric credentials, laser
+                            perimeter sensors, continuous CCTV monitoring, and structured private owner check-in
+                            procedures.</p>
+                        <a href="services.html"
+                            class="text-accent fw-bold mt-auto d-inline-flex align-items-center gap-2">Security
+                            Protocols <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="bento-item h-100 d-flex flex-column">
-                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80" alt="Concierge Battery & Tire Cycling" class="img-fluid rounded-4 mb-4" style="height: 180px; width: 100%; object-fit: cover; box-shadow: var(--shadow-sm);">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDs9h-tU-xxHXlhzHWPI6GggkP_bmrCZHmCrrNFdDv8g&s=10"
+                            alt="Battery & Tire Maintenance" class="img-fluid rounded-4 mb-4"
+                            style="height: 180px; width: 100%; object-fit: cover; box-shadow: var(--shadow-sm);">
                         <h3 class="h5">Battery & Tire Maintenance</h3>
-                        <p class="text-secondary small mb-4 flex-grow-1">Continuous micro-processor battery tending, scheduled tire pressure calibration, and gentle wheel rotation to prevent flat spots during storage.</p>
-                        <a href="services.html" class="text-accent fw-bold mt-auto d-inline-flex align-items-center gap-2">Learn More <i class="bi bi-arrow-right"></i></a>
+                        <p class="text-secondary small mb-4 flex-grow-1">Continuous micro-processor battery tending,
+                            scheduled tire pressure calibration, and gentle wheel rotation to prevent flat spots during
+                            storage.</p>
+                        <a href="services.html"
+                            class="text-accent fw-bold mt-auto d-inline-flex align-items-center gap-2">Learn More <i
+                                class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="bento-item h-100 d-flex flex-column">
-                        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=600&q=80" alt="Customer Management Portal" class="img-fluid rounded-4 mb-4" style="height: 180px; width: 100%; object-fit: cover; box-shadow: var(--shadow-sm);">
-                        <h3 class="h5">Client Portal & Payment Center</h3>
-                        <p class="text-secondary small mb-4 flex-grow-1">Book transport requests with one click, review inspection photos, view pickup and delivery windows, and manage storage billing in one place.</p>
-                        <a href="dashboard.html" class="text-accent fw-bold mt-auto d-inline-flex align-items-center gap-2">Open Portal <i class="bi bi-arrow-right"></i></a>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq54orBxR-fieMq-mrTfQLXxy9crSCB69PwEIvCffPEA&s=10s"
+                            alt="Collector Storage Dashboard" class="img-fluid rounded-4 mb-4"
+                            style="height: 180px; width: 100%; object-fit: cover; box-shadow: var(--shadow-sm);">
+                        <h3 class="h5">Collector Storage Dashboard</h3>
+                        <p class="text-secondary small mb-4 flex-grow-1">Monitor chamber temperature and humidity
+                            telemetry in real time, review routine inspection records, and manage storage billing in one
+                            place.</p>
+                        <a href="dashboard.html"
+                            class="text-accent fw-bold mt-auto d-inline-flex align-items-center gap-2">Open Portal <i
+                                class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -334,7 +719,9 @@
                     </span>
                 </div>
                 <h2 class="display-6 fw-bold">Engineered Beyond Storage: Real-Time Chamber Diagnostics</h2>
-                <p class="text-secondary mx-auto" style="max-width: 680px;">Experience aerospace-grade humidity stabilization, active CTEK trickle telemetry, and multi-layer biometric containment — fully interactive and monitored 24/7.</p>
+                <p class="text-secondary mx-auto" style="max-width: 680px;">Experience aerospace-grade humidity
+                    stabilization, active CTEK trickle telemetry, and multi-layer biometric containment — fully
+                    interactive and monitored 24/7.</p>
             </div>
 
             <!-- Interactive Diagnostic Console -->
@@ -348,7 +735,8 @@
                                 </div>
                                 <div>
                                     <h4 class="h6 fw-bold mb-1">Atmosphere & Humidity Lock</h4>
-                                    <p class="text-secondary small mb-0">Regulated 50% relative humidity and 68°F core environment prevents leather drying, rust formation, and gasket cracking.</p>
+                                    <p class="text-secondary small mb-0">Regulated 50% relative humidity and 68°F core
+                                        environment prevents leather drying, rust formation, and gasket cracking.</p>
                                 </div>
                             </div>
                         </div>
@@ -360,7 +748,9 @@
                                 </div>
                                 <div>
                                     <h4 class="h6 fw-bold mb-1">Class-1 Biometric & Laser Shield</h4>
-                                    <p class="text-secondary small mb-0">Multi-factor biometric access, thermal perimeter scanning, seismic floor sensors, and 24/7 armed dispatch monitoring.</p>
+                                    <p class="text-secondary small mb-0">Multi-factor biometric access, thermal
+                                        perimeter scanning, seismic floor sensors, and 24/7 armed dispatch monitoring.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -372,7 +762,9 @@
                                 </div>
                                 <div>
                                     <h4 class="h6 fw-bold mb-1">Active Battery & Fluid Cycling</h4>
-                                    <p class="text-secondary small mb-0">Continuous CTEK microprocessor trickle charging, tire flat-spot mitigation pads, and scheduled fuel stabilizer cycling.</p>
+                                    <p class="text-secondary small mb-0">Continuous CTEK microprocessor trickle
+                                        charging, tire flat-spot mitigation pads, and scheduled fuel stabilizer cycling.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -384,7 +776,8 @@
                                 </div>
                                 <div>
                                     <h4 class="h6 fw-bold mb-1">Live Cockpit Optics & Telemetry</h4>
-                                    <p class="text-secondary small mb-0">Encrypted 4K optical stream of your vehicle's private bay with instant voltage, ambient readouts, and one-click dispatch.</p>
+                                    <p class="text-secondary small mb-0">Encrypted 4K optical stream of your vehicle's
+                                        private bay with instant voltage, ambient readouts, and one-click dispatch.</p>
                                 </div>
                             </div>
                         </div>
@@ -399,42 +792,55 @@
                                 <span id="chamberBayName" class="fw-bold text-accent">BAY #07-OMEGA</span>
                             </div>
                             <div class="text-secondary small d-none d-sm-block">
-                                SYSTEM STATUS: <span id="chamberModeStatus" class="text-success fw-bold">ATMOSPHERIC LOCK ACTIVE</span>
+                                SYSTEM STATUS: <span id="chamberModeStatus" class="text-success fw-bold">ATMOSPHERIC
+                                    LOCK ACTIVE</span>
                             </div>
-                            <div class="badge bg-dark border border-secondary text-secondary px-3 py-1">LIVE TELEMETRY</div>
+                            <div class="badge bg-dark border border-secondary text-secondary px-3 py-1">LIVE TELEMETRY
+                            </div>
                         </div>
 
                         <div class="chamber-vehicle-frame">
-                            <img id="chamberVehicleImg" src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=900&q=80" alt="VaultX Real-Time Chamber Vehicle" style="transition: opacity 0.3s ease;">
-                            <div class="chamber-radar-pin" style="top: 35%; left: 45%;" title="Optical Sensor Grid"></div>
-                            <div class="chamber-radar-pin" style="top: 65%; left: 25%;" title="CTEK Battery Link Active"></div>
+                            <img id="chamberVehicleImg"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS55yVxWVDOvP6drp2N8EIjDzXTyTIp6R_HE9f_rD2tBQ&s=10"
+                                alt="VaultX Real-Time Chamber Vehicle" style="transition: opacity 0.3s ease;">
+                            <div class="chamber-radar-pin" style="top: 35%; left: 45%;" title="Optical Sensor Grid">
+                            </div>
+                            <div class="chamber-radar-pin" style="top: 65%; left: 25%;"
+                                title="CTEK Battery Link Active"></div>
                             <div class="chamber-radar-pin" style="top: 70%; left: 75%;" title="Humidity Probe #3"></div>
                         </div>
 
                         <div class="chamber-telemetry-grid mb-4">
                             <div class="chamber-telemetry-item">
-                                <div class="chamber-telemetry-label"><i class="bi bi-thermometer-half text-accent me-1"></i> Chamber Temp</div>
+                                <div class="chamber-telemetry-label"><i
+                                        class="bi bi-thermometer-half text-accent me-1"></i> Chamber Temp</div>
                                 <div class="chamber-telemetry-value" id="telTemp">68.2°F</div>
                             </div>
                             <div class="chamber-telemetry-item">
-                                <div class="chamber-telemetry-label"><i class="bi bi-droplet-half text-info me-1"></i> Relative Humidity</div>
+                                <div class="chamber-telemetry-label"><i class="bi bi-droplet-half text-info me-1"></i>
+                                    Relative Humidity</div>
                                 <div class="chamber-telemetry-value" id="telHum">50.1% RH</div>
                             </div>
                             <div class="chamber-telemetry-item">
-                                <div class="chamber-telemetry-label"><i class="bi bi-lightning-charge-fill text-warning me-1"></i> Float Voltage</div>
+                                <div class="chamber-telemetry-label"><i
+                                        class="bi bi-lightning-charge-fill text-warning me-1"></i> Float Voltage</div>
                                 <div class="chamber-telemetry-value" id="telVolt">13.6V</div>
                             </div>
                             <div class="chamber-telemetry-item">
-                                <div class="chamber-telemetry-label"><i class="bi bi-wind text-success me-1"></i> HEPA Purity</div>
+                                <div class="chamber-telemetry-label"><i class="bi bi-wind text-success me-1"></i> HEPA
+                                    Purity</div>
                                 <div class="chamber-telemetry-value" id="telAir">99.98%</div>
                             </div>
                         </div>
 
-                        <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 pt-3 border-top border-secondary border-opacity-25">
+                        <div
+                            class="d-flex flex-wrap align-items-center justify-content-between gap-3 pt-3 border-top border-secondary border-opacity-25">
                             <div class="small text-secondary">
-                                <i class="bi bi-shield-lock-fill text-accent me-1"></i> Encrypted 256-Bit Telemetry Channel
+                                <i class="bi bi-shield-lock-fill text-accent me-1"></i> Encrypted 256-Bit Telemetry
+                                Channel
                             </div>
-                            <a href="dashboard.html" class="btn-premium primary py-2 px-4 small">Open Portal Console <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+                            <a href="dashboard.html" class="btn-premium primary py-2 px-4 small">Open Portal Console <i
+                                    class="bi bi-box-arrow-up-right ms-1"></i></a>
                         </div>
                     </div>
                 </div>
@@ -445,13 +851,18 @@
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="chamber-innov-card">
                         <div class="chamber-innov-icon">
-                            <i class="bi bi-truck-flatbed"></i>
+                            <i class="bi bi-shield-check"></i>
                         </div>
-                        <h3 class="h5 fw-bold mb-2">Zero-Angle Enclosed Haulers</h3>
-                        <p class="text-secondary small mb-4">Custom pneumatic hydraulic liftgates that maintain a genuine 0° approach angle, preventing underbody scrape on ultra-low supercars and vintage race machinery.</p>
-                        <div class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top border-color">
-                            <span class="badge text-secondary border border-color px-2 py-1 small text-nowrap">Air-Ride Spec</span>
-                            <a href="services.html" class="text-accent fw-bold small text-decoration-none text-nowrap">Explore Fleet &rarr;</a>
+                        <h3 class="h5 fw-bold mb-2">Concierge Collection & Delivery</h3>
+                        <p class="text-secondary small mb-4">White-glove enclosed transport available exclusively for
+                            facility check-in, event staging, and door-to-door vehicle transfer with hydraulic
+                            zero-angle liftgates.</p>
+                        <div
+                            class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top border-color">
+                            <span class="badge text-secondary border border-color px-2 py-1 small text-nowrap">Concierge
+                                Care</span>
+                            <a href="services.html"
+                                class="text-accent fw-bold small text-decoration-none text-nowrap">Learn More &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -462,10 +873,16 @@
                             <i class="bi bi-gem"></i>
                         </div>
                         <h3 class="h5 fw-bold mb-2">Private Collector Vault Suites</h3>
-                        <p class="text-secondary small mb-4">Partitioned glass-enclosed suites with individual biometric credentials, custom museum lighting, dedicated lounge access, and private detailing wash bays.</p>
-                        <div class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top border-color">
-                            <span class="badge text-secondary border border-color px-2 py-1 small text-nowrap">VIP Keycard</span>
-                            <a href="pricing.html" class="text-accent fw-bold small text-decoration-none text-nowrap">View Suites &rarr;</a>
+                        <p class="text-secondary small mb-4">Partitioned glass-enclosed suites with individual biometric
+                            credentials, custom museum lighting, dedicated lounge access, and private detailing wash
+                            bays.</p>
+                        <div
+                            class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top border-color">
+                            <span class="badge text-secondary border border-color px-2 py-1 small text-nowrap">VIP
+                                Keycard</span>
+                            <a href="pricing.html"
+                                class="text-accent fw-bold small text-decoration-none text-nowrap">View Suites
+                                &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -475,11 +892,17 @@
                         <div class="chamber-innov-icon">
                             <i class="bi bi-clock-history"></i>
                         </div>
-                        <h3 class="h5 fw-bold mb-2">2-Hour Rapid Concierge Dispatch</h3>
-                        <p class="text-secondary small mb-4">Need your vehicle for a weekend tour or auction? Request through the app and our team performs tire calibration, exterior wash, and delivered directly to your destination.</p>
-                        <div class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top border-color">
-                            <span class="badge text-secondary border border-color px-2 py-1 small text-nowrap">White-Glove</span>
-                            <a href="contact.html" class="text-accent fw-bold small text-decoration-none text-nowrap">Dispatch &rarr;</a>
+                        <h3 class="h5 fw-bold mb-2">Rapid Vehicle Retrieval & Prep</h3>
+                        <p class="text-secondary small mb-4">Need your vehicle for a weekend tour, rally, or private
+                            showing? Request through the app and our custodians perform tire calibration, fluid checks,
+                            and detailing.</p>
+                        <div
+                            class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top border-color">
+                            <span
+                                class="badge text-secondary border border-color px-2 py-1 small text-nowrap">White-Glove</span>
+                            <a href="contact.html"
+                                class="text-accent fw-bold small text-decoration-none text-nowrap">Request Prep
+                                &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -491,25 +914,29 @@
     <section class="metrics-section section-padding">
         <div class="container">
             <div class="metrics-wrapper" data-aos="zoom-in">
-                <div style="position:absolute; top:-20%; right:-10%; width:500px; height:500px; background:var(--brand-accent); border-radius:50%; filter:blur(150px); opacity:0.15;"></div>
-                <div style="position:absolute; bottom:-20%; left:-10%; width:400px; height:400px; background:#ffffff; border-radius:50%; filter:blur(150px); opacity:0.05;"></div>
+                <div
+                    style="position:absolute; top:-20%; right:-10%; width:500px; height:500px; background:var(--brand-accent); border-radius:50%; filter:blur(150px); opacity:0.15;">
+                </div>
+                <div
+                    style="position:absolute; bottom:-20%; left:-10%; width:400px; height:400px; background:#ffffff; border-radius:50%; filter:blur(150px); opacity:0.05;">
+                </div>
 
                 <div class="row g-5">
                     <div class="col-md-3 col-6 metric-card">
-                        <div class="metric-number"><span class="counter-val" data-target="15000">0</span>+</div>
-                        <div class="metric-label">Vehicles Transported</div>
+                        <div class="metric-number"><span class="counter-val" data-target="1500">0</span>+</div>
+                        <div class="metric-label">Vehicles Preserved</div>
                     </div>
                     <div class="col-md-3 col-6 metric-card">
                         <div class="metric-number"><span class="counter-val" data-target="100">0</span>%</div>
                         <div class="metric-label">Climate Regulated</div>
                     </div>
                     <div class="col-md-3 col-6 metric-card">
-                        <div class="metric-number"><span class="counter-val" data-target="50">0</span></div>
-                        <div class="metric-label">States Covered</div>
+                        <div class="metric-number"><span class="counter-val" data-target="24">0</span>/7</div>
+                        <div class="metric-label">Monitored Security</div>
                     </div>
                     <div class="col-md-3 col-6 metric-card">
                         <div class="metric-number"><span class="counter-val" data-target="99">0</span>.9%</div>
-                        <div class="metric-label">On-Time Deliveries</div>
+                        <div class="metric-label">Climate Stability Index</div>
                     </div>
                 </div>
             </div>
@@ -521,7 +948,8 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col-12 text-center" data-aos="fade-up">
-                    <h2 class="display-6 mb-0">Trusted by Premier <span class="text-gradient">Collectors & Auction Houses</span></h2>
+                    <h2 class="display-6 mb-0">Trusted by Premier <span class="text-gradient">Collectors & Auction
+                            Houses</span></h2>
                 </div>
             </div>
 
@@ -529,11 +957,16 @@
                 <div class="col-lg-4 col-md-6 d-flex flex-column">
                     <div class="testimonial-card flex-grow-1" data-aos="fade-up" data-aos-delay="100">
                         <div class="text-accent mb-3 fs-5">
-                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i>
                         </div>
-                        <p class="fs-5 fw-medium text-primary-brand mb-0">"Transporting my 1967 Shelby GT500 from Scottsdale to Greenwich was completely stress-free. The real-time GPS tracking and pre-loading inspection photos were immaculate."</p>
+                        <p class="fs-5 fw-medium text-primary-brand mb-0">"Storing my 1967 Shelby GT500 at VaultX gives
+                            me complete confidence. The spotless climate-controlled bay, battery maintenance, and
+                            thorough intake inspection photos are truly world-class."</p>
                         <div class="client-info mt-auto pt-4">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alexander Vance" class="client-img">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alexander Vance"
+                                class="client-img">
                             <div>
                                 <h6 class="mb-0 fw-bold">Alexander Vance</h6>
                                 <small class="text-secondary">Classic Mustang Collector, AZ</small>
@@ -545,11 +978,16 @@
                 <div class="col-lg-4 col-md-6 d-flex flex-column">
                     <div class="testimonial-card flex-grow-1" data-aos="fade-up" data-aos-delay="200">
                         <div class="text-accent mb-3 fs-5">
-                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i>
                         </div>
-                        <p class="fs-5 fw-medium text-primary-brand mb-0">"The climate control in their storage suites is the best in the industry. Knowing my Porsche 356 is at a steady 50% humidity with active trickle charge lets me sleep easy."</p>
+                        <p class="fs-5 fw-medium text-primary-brand mb-0">"The climate control in their storage suites
+                            is the best in the industry. Knowing my Porsche 356 is at a steady 50% humidity with active
+                            trickle charge lets me sleep easy."</p>
                         <div class="client-info mt-auto pt-4">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Eleanor Hughes" class="client-img">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Eleanor Hughes"
+                                class="client-img">
                             <div>
                                 <h6 class="mb-0 fw-bold">Eleanor Hughes</h6>
                                 <small class="text-secondary">Vintage Concours Entrant, CT</small>
@@ -561,11 +999,16 @@
                 <div class="col-lg-4 col-md-6 d-flex flex-column">
                     <div class="testimonial-card flex-grow-1" data-aos="fade-up" data-aos-delay="300">
                         <div class="text-accent mb-3 fs-5">
-                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i>
                         </div>
-                        <p class="fs-5 fw-medium text-primary-brand mb-0">"Their customer dashboard makes managing payments, reviewing bills of lading, and scheduling enclosed carriers faster and more reliable than any freight broker."</p>
+                        <p class="fs-5 fw-medium text-primary-brand mb-0">"Their customer dashboard makes managing
+                            stored vehicles, reviewing routine inspection reports, and scheduling concierge prep
+                            effortless and reliable."</p>
                         <div class="client-info mt-auto pt-4">
-                            <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Julian Sterling" class="client-img">
+                            <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Julian Sterling"
+                                class="client-img">
                             <div>
                                 <h6 class="mb-0 fw-bold">Julian Sterling</h6>
                                 <small class="text-secondary">European Classic Dealer, FL</small>
@@ -581,14 +1024,17 @@
     <section class="cta-section section-padding pb-0">
         <div class="container position-relative z-2">
             <div class="cta-box" data-aos="fade-up">
-                <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:800px; height:800px; background:radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%); pointer-events:none;"></div>
-                <h2 class="text-white display-5 fw-bold mb-4 position-relative z-2">Ready to Secure Your Classic Vehicle?</h2>
+                <div
+                    style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:800px; height:800px; background:radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%); pointer-events:none;">
+                </div>
+                <h2 class="text-white display-5 fw-bold mb-4 position-relative z-2">Ready to Protect Your Classic
+                    Vehicle?</h2>
                 <p class="text-white opacity-75 fs-5 mb-5 mx-auto position-relative z-2" style="max-width: 650px;">
-                    Request an instant transport quote or reserve your dedicated climate-controlled storage suite today.
+                    Request a storage consultation or reserve your dedicated climate-controlled storage suite today.
                 </p>
                 <div class="d-flex justify-content-center gap-4 flex-wrap position-relative z-2">
-                    <a href="contact.html" class="btn-premium primary">Contact Facility Dispatch</a>
-                    <a href="services.html" class="btn-premium outline text-white">Explore Services</a>
+                    <a href="contact.html" class="btn-premium primary">Request a Storage Consultation</a>
+                    <a href="pricing.html" class="btn-premium outline text-white">Explore Storage Plans</a>
                 </div>
             </div>
         </div>
@@ -601,14 +1047,19 @@
                 <div class="col-lg-4 footer-widget">
                     <div class="mb-4 d-inline-block">
                         <a href="index.html" class="logo">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
                             Vault<span>X</span>
                         </a>
                     </div>
-                    <p class="mb-4">The nation's premier climate-controlled classic car storage facility and enclosed transport logistics network. Protecting prized automotive heritage with white-glove precision and real-time client tracking.</p>
+                    <p class="mb-4">The nation's premier climate-controlled classic car storage facility and
+                        preservation network. Protecting prized automotive heritage with museum-grade environmental
+                        care, battery maintenance, and client dashboard management.</p>
                     <div class="d-flex gap-3 footer-social">
                         <a href="#" class="fs-5" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
                         <a href="#" class="fs-5" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
@@ -618,23 +1069,23 @@
                 </div>
 
                 <div class="col-lg-2 footer-widget">
-                    <h4>Logistics & Facility</h4>
+                    <h4>Storage & Preservation</h4>
                     <ul class="footer-links">
                         <li><a href="about.html">About Facility</a></li>
-                        <li><a href="services.html">Enclosed Transport</a></li>
                         <li><a href="services.html">Climate Storage</a></li>
+                        <li><a href="services.html">Preservation Care</a></li>
                         <li><a href="pricing.html">Storage Rates</a></li>
-                        <li><a href="services.html">Specialized Logistics</a></li>
-                        <li><a href="contact.html">Dispatch Hotline</a></li>
+                        <li><a href="services.html">Concierge Transport</a></li>
+                        <li><a href="contact.html">Facility Inquiries</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-2 footer-widget">
                     <h4>Customer Portal</h4>
                     <ul class="footer-links">
-                        <li><a href="dashboard.html">Client Dashboard</a></li>
-                        <li><a href="contact.html">Request a Quote</a></li>
-                        <li><a href="dashboard.html">Live GPS Tracking</a></li>
+                        <li><a href="dashboard.html">Storage Dashboard</a></li>
+                        <li><a href="pricing.html">Reserve a Suite</a></li>
+                        <li><a href="dashboard.html">Telemetry & Sensor Logs</a></li>
                         <li><a href="dashboard.html">Inspection Reports</a></li>
                         <li><a href="blog.html">Collector Guides</a></li>
                         <li><a href="login.html">Portal Login</a></li>
@@ -642,9 +1093,11 @@
                 </div>
 
                 <div class="col-lg-4 footer-widget">
-                    <h4>Logistics Newsletter</h4>
-                    <p class="mb-3">Subscribe for climate preservation reports, enclosed transport updates, and auction schedules.</p>
-                    <form class="d-flex position-relative footer-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to VaultX updates.');">
+                    <h4>Preservation Newsletter</h4>
+                    <p class="mb-3">Subscribe for climate preservation reports, facility updates, and collector care
+                        guides.</p>
+                    <form class="d-flex position-relative footer-form"
+                        onsubmit="event.preventDefault(); alert('Thank you for subscribing to VaultX updates.');">
                         <input type="email" class="form-control rounded-pill py-3 px-4 w-100 border-color shadow-none"
                             placeholder="Enter your email" required style="background: rgba(128,128,128,0.05);">
                         <button type="submit"
@@ -652,21 +1105,22 @@
                     </form>
                     <div class="mt-4 d-flex gap-2 flex-wrap">
                         <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
-                                class="bi bi-shield-lock-fill text-indigo me-1"></i> $5M Cargo Insurance</span>
+                                class="bi bi-shield-lock-fill text-indigo me-1"></i> 24/7 Monitored Security</span>
                         <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
                                 class="bi bi-thermometer-half text-indigo me-1"></i> 50% RH Regulated</span>
                         <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
-                                class="bi bi-geo-alt-fill text-indigo me-1"></i> 50-State Coverage</span>
+                                class="bi bi-battery-charging text-indigo me-1"></i> CTEK Battery Tending</span>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <div>&copy; 2026 VaultX. All rights reserved. Nationwide Vehicle Transport Logistics.</div>
+                <div>&copy; 2026 VaultX. All rights reserved. Climate-Controlled Classic Car Storage & Preservation
+                    Facility.</div>
                 <div class="d-flex gap-4">
                     <a href="#" class="text-decoration-none hover-white fs-4"
-                        onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" aria-label="Back to top"><i
-                            class="bi bi-arrow-up-circle-fill"></i></a>
+                        onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
+                        aria-label="Back to top"><i class="bi bi-arrow-up-circle-fill"></i></a>
                 </div>
             </div>
         </div>
@@ -680,4 +1134,5 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VaultX | Customer Logistics & Storage Dashboard</title>
-    <meta name="description" content="Manage vehicle transport requests, track live shipment status, view pickup and delivery windows, access 40-point inspection reports, and handle payments.">
+    <title>VaultX | Classic Car Storage & Climate Facility Dashboard</title>
+    <meta name="description" content="Manage your stored vehicles, review chamber climate telemetry, monitor battery maintenance, and track concierge transit in your collector dashboard.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23D4AF37' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%230F172A' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
@@ -171,14 +171,16 @@
         .stat-card {
             background: var(--bg-primary);
             border-radius: 16px;
-            padding: 22px 24px;
+            padding: 20px;
             border: 1px solid var(--border-color);
             box-shadow: var(--shadow-sm);
-            height: 100%;
+            width: 100%;
+            min-height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             transition: all var(--transition-normal);
+            box-sizing: border-box;
         }
         
         .stat-card:hover {
@@ -189,37 +191,46 @@
         
         .stat-card-title {
             color: var(--text-secondary);
-            font-size: 0.78rem;
+            font-size: 0.74rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.6px;
-            min-height: 34px;
+            letter-spacing: 0.5px;
+            min-height: 28px;
             display: flex;
             align-items: center;
             margin-bottom: 4px;
+            line-height: 1.25;
         }
         
         .stat-card-value {
             font-family: var(--font-heading);
-            font-size: 1.85rem;
+            font-size: clamp(1.22rem, 1.45vw, 1.7rem);
             font-weight: 800;
-            line-height: 1.1;
+            line-height: 1.15;
             margin: 0;
             color: var(--text-primary);
+            white-space: nowrap;
         }
         
         .stat-card-footer {
-            margin-top: 16px;
-            padding-top: 12px;
+            margin-top: auto;
+            padding-top: 14px;
             border-top: 1px solid var(--border-color);
             display: flex;
             align-items: center;
+            font-size: 0.8rem;
+        }
+        
+        .stat-card-footer .badge-in-vault,
+        .stat-card-footer .badge-scheduled {
+            font-size: 0.76rem;
+            max-width: 100%;
             white-space: nowrap;
         }
         
         .stat-icon {
-            width: 46px;
-            height: 46px;
+            width: 44px;
+            height: 44px;
             border-radius: 12px;
             background: var(--brand-accent-muted);
             color: var(--brand-accent);
@@ -363,31 +374,31 @@
         <div class="sidebar-menu">
             <div class="menu-item active" onclick="switchTab('tab-overview', this)">
                 <i class="bi bi-grid-1x2-fill"></i>
-                <span>Portal Overview</span>
+                <span>Storage Overview</span>
             </div>
             <div class="menu-item" onclick="switchTab('tab-booking', this)">
                 <i class="bi bi-plus-circle-fill"></i>
-                <span>Book Transport Request</span>
+                <span>Concierge Intake Request</span>
             </div>
             <div class="menu-item" onclick="switchTab('tab-tracking', this)">
                 <i class="bi bi-geo-alt-fill"></i>
-                <span>Live GPS Tracking</span>
+                <span>Vehicle Transit & Location</span>
             </div>
             <div class="menu-item" onclick="switchTab('tab-windows', this)">
                 <i class="bi bi-calendar-range-fill"></i>
-                <span>Pickup & Delivery Windows</span>
+                <span>Scheduled Care Windows</span>
             </div>
             <div class="menu-item" onclick="switchTab('tab-inspections', this)">
                 <i class="bi bi-clipboard2-check-fill"></i>
-                <span>40-Point Inspection Reports</span>
+                <span>40-Point Condition Audits</span>
             </div>
             <div class="menu-item" onclick="switchTab('tab-payments', this)">
                 <i class="bi bi-credit-card-2-front-fill"></i>
-                <span>Payments & Invoices</span>
+                <span>Storage Plans & Billing</span>
             </div>
             <div class="menu-item" onclick="switchTab('tab-telemetry', this)">
                 <i class="bi bi-thermometer-half"></i>
-                <span>Facility Bay Telemetry</span>
+                <span>Chamber Climate Telemetry</span>
             </div>
             <div class="menu-item" onclick="location.href='index.html'">
                 <i class="bi bi-box-arrow-up-right"></i>
@@ -415,8 +426,9 @@
                 <button type="button" class="icon-btn d-lg-none flex-shrink-0" id="dashSidebarToggle" title="Open Menu" aria-label="Toggle navigation">
                     <i class="bi bi-list fs-4"></i>
                 </button>
-                <h5 class="fw-bold mb-0 text-truncate" id="dash-title">Customer Logistics & Storage Portal</h5>
-                <span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-50 px-3 py-1 rounded-pill small d-none d-xl-inline-flex align-items-center flex-shrink-0"><i class="bi bi-shield-check me-1"></i> Active Cargo Policy: $5M</span>
+                <h5 class="fw-bold mb-0 text-truncate" id="dash-title">Classic Car Storage & Preservation Dashboard</h5>
+                <span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-50 px-3 py-1 rounded-pill small d-none d-xl-inline-flex align-items-center flex-shrink-0"><i class="bi bi-shield-check me-1"></i> Active Preservation Status: Monitored</span>
+                <span class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 px-2 py-1 rounded-pill small d-none d-xxl-inline-flex align-items-center flex-shrink-0">Demo Account Preview</span>
             </div>
             
             <div class="d-flex align-items-center gap-2 flex-shrink-0">
@@ -430,8 +442,8 @@
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end p-2" style="min-width: 280px; background: var(--bg-primary); border-color: var(--border-color);">
                         <li class="p-2 border-bottom border-color small">
-                            <span class="text-accent fw-bold d-block">Transport Dispatched</span>
-                            <span class="text-secondary">Enclosed carrier en route to Greenwich (ETA: 4h 20m)</span>
+                            <span class="text-accent fw-bold d-block">Storage Climate Regulated</span>
+                            <span class="text-secondary">Scottsdale Bay #A-14: 68.2°F, 49.8% RH optimal</span>
                         </li>
                         <li class="p-2 small">
                             <span class="text-success fw-bold d-block">40-Point Inspection Signed</span>
@@ -447,60 +459,66 @@
             
             <!-- 1. OVERVIEW TAB -->
             <div class="tab-pane-dash active" id="tab-overview">
+                <!-- Welcome Banner -->
+                <div class="mb-4">
+                    <h4 class="fw-bold mb-1">Welcome Back to Your Classic Car Storage Dashboard</h4>
+                    <p class="text-secondary small mb-0">Manage your stored vehicles, review available storage information, and keep track of your vehicle-care activities.</p>
+                </div>
+
                 <div class="row g-4 mb-4">
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-12 d-flex">
                         <div class="stat-card car-hover-card">
                             <div class="d-flex justify-content-between align-items-start mb-2">
                                 <div class="flex-grow-1 pe-2">
-                                    <span class="stat-card-title">Active Transports</span>
-                                    <h3 class="stat-card-value">1</h3>
+                                    <span class="stat-card-title">Total Vehicles in Storage</span>
+                                    <h3 class="stat-card-value">3</h3>
                                 </div>
-                                <div class="stat-icon"><i class="bi bi-truck"></i></div>
+                                <div class="stat-icon"><i class="bi bi-car-front-fill"></i></div>
                             </div>
                             <div class="stat-card-footer">
-                                <span class="badge-in-transit px-2 py-1 rounded small fw-bold d-inline-flex align-items-center"><i class="bi bi-broadcast me-1"></i> Live GPS En Route</span>
+                                <span class="badge-in-vault px-2 py-1 rounded small fw-bold d-inline-flex align-items-center"><i class="bi bi-shield-check me-1"></i> Active Preservation</span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-12 d-flex">
                         <div class="stat-card car-hover-card">
                             <div class="d-flex justify-content-between align-items-start mb-2">
                                 <div class="flex-grow-1 pe-2">
-                                    <span class="stat-card-title">Vehicles in Vault</span>
-                                    <h3 class="stat-card-value">3</h3>
+                                    <span class="stat-card-title">Current Storage Plan</span>
+                                    <h3 class="stat-card-value">Platinum VIP</h3>
                                 </div>
                                 <div class="stat-icon"><i class="bi bi-shield-shaded"></i></div>
                             </div>
                             <div class="stat-card-footer">
-                                <span class="badge-in-vault px-2 py-1 rounded small fw-bold d-inline-flex align-items-center"><i class="bi bi-thermometer-half me-1"></i> 68°F & 50% RH</span>
+                                <span class="badge-in-vault px-2 py-1 rounded small fw-bold d-inline-flex align-items-center"><i class="bi bi-thermometer-half me-1"></i> 68°F &amp; 50% Constant RH</span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-12 d-flex">
                         <div class="stat-card car-hover-card">
                             <div class="d-flex justify-content-between align-items-start mb-2">
                                 <div class="flex-grow-1 pe-2">
-                                    <span class="stat-card-title">Next Delivery Window</span>
-                                    <h3 class="stat-card-value">Sep 24</h3>
+                                    <span class="stat-card-title">Upcoming Vehicle Care</span>
+                                    <h3 class="stat-card-value">Sep 28</h3>
                                 </div>
-                                <div class="stat-icon"><i class="bi bi-calendar-check"></i></div>
+                                <div class="stat-icon"><i class="bi bi-wrench-adjustable"></i></div>
                             </div>
                             <div class="stat-card-footer">
-                                <span class="badge-scheduled px-2 py-1 rounded small fw-bold d-inline-flex align-items-center"><i class="bi bi-clock me-1"></i> 10:00 - 14:00 EDT</span>
+                                <span class="badge-scheduled px-2 py-1 rounded small fw-bold d-inline-flex align-items-center"><i class="bi bi-clock me-1"></i> Battery &amp; Tire Cycle</span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-12 d-flex">
                         <div class="stat-card car-hover-card">
                             <div class="d-flex justify-content-between align-items-start mb-2">
                                 <div class="flex-grow-1 pe-2">
-                                    <span class="stat-card-title">Account Balance</span>
-                                    <h3 class="stat-card-value">$0.00</h3>
+                                    <span class="stat-card-title">Storage Account Status</span>
+                                    <h3 class="stat-card-value">Current</h3>
                                 </div>
                                 <div class="stat-icon"><i class="bi bi-check2-circle text-success"></i></div>
                             </div>
                             <div class="stat-card-footer">
-                                <span class="text-success small fw-bold d-inline-flex align-items-center"><i class="bi bi-check-circle-fill me-1"></i> All Invoices Paid</span>
+                                <span class="text-success small fw-bold d-inline-flex align-items-center"><i class="bi bi-check-circle-fill me-1"></i> All Storage Invoices Paid</span>
                             </div>
                         </div>
                     </div>
@@ -508,13 +526,13 @@
 
                 <!-- Active Fleet Table -->
                 <div class="premium-card car-hover-card p-4 mb-4">
-                    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center align-items-start gap-3 mb-4">
+                    <div class="d-flex flex-column flex-lg-row justify-content-between align-items-start align-items-lg-center gap-3 mb-4 flex-wrap">
                         <div>
-                            <h5 class="fw-bold mb-1">Your Registered Vehicles & Status</h5>
-                            <p class="text-secondary small mb-0">Manage vehicle shipments, view digital reports, and inspect bay telemetry.</p>
+                            <h5 class="fw-bold mb-1">Your Stored Vehicles & Preservation Status</h5>
+                            <p class="text-secondary small mb-0">Manage stored vehicles, review battery float condition, and inspect facility bay telemetry.</p>
                         </div>
-                        <button class="btn-premium primary py-2 px-3 small text-nowrap" onclick="switchTab('tab-booking', document.querySelectorAll('.menu-item')[1])">
-                            <i class="bi bi-plus-lg me-1"></i> Request New Transport
+                        <button class="btn-premium primary py-2 px-3 small text-nowrap flex-shrink-0" onclick="switchTab('tab-booking', document.querySelectorAll('.menu-item')[1])">
+                            <i class="bi bi-plus-lg me-1"></i> Request Concierge Transit
                         </button>
                     </div>
 
@@ -533,29 +551,29 @@
                                 <tr>
                                     <td>
                                         <div class="d-flex align-items-center gap-3">
-                                            <img src="https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?auto=format&fit=crop&w=120&q=80" class="rounded-3" width="60" height="42" style="object-fit:cover;">
+                                            <img src="assets/images/vault-bays.jpg" class="rounded-3" width="60" height="42" style="object-fit:cover;">
                                             <div>
                                                 <div class="fw-bold">1967 Shelby GT500 Fastback</div>
                                                 <div class="text-secondary small">VIN: #67-400F-8921</div>
                                             </div>
                                         </div>
                                     </td>
-                                    <td><span class="badge bg-primary">White-Glove Enclosed</span></td>
+                                    <td><span class="badge bg-primary">Concierge Transit / Inbound</span></td>
                                     <td>
                                         <span class="badge-in-transit px-2 py-1 rounded small fw-bold d-inline-flex align-items-center gap-1">
-                                            <i class="bi bi-broadcast"></i> En Route (I-80 E, PA)
+                                            <i class="bi bi-truck"></i> Inbound Transit to Greenwich
                                         </span>
-                                        <div class="text-secondary small mt-1">Delivery: Greenwich Vault (Sep 24)</div>
+                                        <div class="text-secondary small mt-1">Arrival: Greenwich Vault (Sep 24)</div>
                                     </td>
-                                    <td><span class="text-success fw-bold small"><i class="bi bi-check-circle-fill"></i> 40/40 Verified</span></td>
+                                    <td><span class="text-success fw-bold small"><i class="bi bi-check-circle-fill"></i> 40/40 Intake Verified</span></td>
                                     <td>
-                                        <button class="btn-premium outline py-1 px-3 small" onclick="switchTab('tab-tracking', document.querySelectorAll('.menu-item')[2])">Track GPS</button>
+                                        <button class="btn-premium outline py-1 px-3 small" onclick="switchTab('tab-tracking', document.querySelectorAll('.menu-item')[2])">Track Transit</button>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <div class="d-flex align-items-center gap-3">
-                                            <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=120&q=80" class="rounded-3" width="60" height="42" style="object-fit:cover;">
+                                            <img src="assets/images/car-dust-cover.jpg" class="rounded-3" width="60" height="42" style="object-fit:cover;">
                                             <div>
                                                 <div class="fw-bold">1958 Mercedes-Benz 300SL Roadster</div>
                                                 <div class="text-secondary small">VIN: #198-042-8500</div>
@@ -567,7 +585,7 @@
                                         <span class="badge-in-vault px-2 py-1 rounded small fw-bold d-inline-flex align-items-center gap-1">
                                             <i class="bi bi-shield-check"></i> Scottsdale Bay #A-14
                                         </span>
-                                        <div class="text-secondary small mt-1">68.2°F | 49.8% RH | Float Charged</div>
+                                        <div class="text-secondary small mt-1">68.2°F | 49.8% RH | CTEK Float Charged</div>
                                     </td>
                                     <td><span class="text-success fw-bold small"><i class="bi bi-check-circle-fill"></i> Bi-Weekly Audit Passed</span></td>
                                     <td>
@@ -577,7 +595,7 @@
                                 <tr>
                                     <td>
                                         <div class="d-flex align-items-center gap-3">
-                                            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" class="rounded-3" width="60" height="42" style="object-fit:cover;">
+                                            <img src="assets/images/classic-db5.jpg" class="rounded-3" width="60" height="42" style="object-fit:cover;">
                                             <div>
                                                 <div class="fw-bold">1973 Porsche 911 Carrera RS 2.7</div>
                                                 <div class="text-secondary small">VIN: #911-360-0419</div>
@@ -589,7 +607,7 @@
                                         <span class="badge-in-vault px-2 py-1 rounded small fw-bold d-inline-flex align-items-center gap-1">
                                             <i class="bi bi-shield-check"></i> Greenwich Bay #C-08
                                         </span>
-                                        <div class="text-secondary small mt-1">67.9°F | 50.1% RH | Float Charged</div>
+                                        <div class="text-secondary small mt-1">67.9°F | 50.1% RH | CTEK Float Charged</div>
                                     </td>
                                     <td><span class="text-success fw-bold small"><i class="bi bi-check-circle-fill"></i> 40/40 Verified</span></td>
                                     <td>
@@ -605,10 +623,10 @@
             <!-- 2. BOOK TRANSPORT TAB -->
             <div class="tab-pane-dash" id="tab-booking">
                 <div class="premium-card car-hover-card p-4 p-md-5 mb-4">
-                    <h4 class="fw-bold mb-2">Book Vehicle Transport Request</h4>
-                    <p class="text-secondary mb-4">Submit a dispatch booking directly into our carrier dispatch queue with priority customer SLA.</p>
+                    <h4 class="fw-bold mb-2">Request Concierge Vehicle Intake or Dispatch</h4>
+                    <p class="text-secondary mb-4">Submit a white-glove collection or return request for your stored vehicles with dedicated enclosed carrier dispatch.</p>
                     
-                    <form onsubmit="event.preventDefault(); alert('Transport request submitted successfully! Dispatch assignment in progress.'); switchTab('tab-tracking', document.querySelectorAll('.menu-item')[2]);">
+                    <form onsubmit="event.preventDefault(); alert('Concierge transit request submitted successfully! Custodial assignment in progress.'); switchTab('tab-tracking', document.querySelectorAll('.menu-item')[2]);">
                         <div class="row g-4">
                             <div class="col-md-6">
                                 <label class="form-label text-secondary small fw-bold">Select Vehicle from Vault / Garage</label>
@@ -644,7 +662,7 @@
                                 <input type="date" class="form-control" value="2026-10-01">
                             </div>
                             <div class="col-md-4">
-                                <label class="form-label text-secondary small fw-bold">Cargo Insurance Add-on</label>
+                                <label class="form-label text-secondary small fw-bold">Transit Insurance Coverage Add-on</label>
                                 <select class="form-select">
                                     <option>$5,000,000 Included Policy</option>
                                     <option>$10,000,000 High-Value Policy (+$250)</option>
@@ -655,7 +673,7 @@
                                 <textarea class="form-control" rows="3" placeholder="Special loading protocols, concours tags, or contact on arrival..."></textarea>
                             </div>
                             <div class="col-12 text-end">
-                                <button type="submit" class="btn-premium primary px-5 py-3">Confirm & Dispatch Transport</button>
+                                <button type="submit" class="btn-premium primary px-5 py-3">Confirm & Dispatch Concierge Carrier</button>
                             </div>
                         </div>
                     </form>
@@ -773,7 +791,7 @@
             <!-- 5. 40-POINT INSPECTION REPORTS TAB -->
             <div class="tab-pane-dash" id="tab-inspections">
                 <div class="premium-card car-hover-card p-4 mb-4">
-                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-4">
+                    <div class="d-flex flex-column flex-lg-row justify-content-between align-items-start align-items-lg-center gap-3 mb-4 flex-wrap">
                         <div>
                             <h5 class="fw-bold mb-1">Digital 40-Point Condition Report Vault</h5>
                             <p class="text-secondary small mb-0">High-resolution photographic documentation, paint depth mapping, and electronic timestamp verification.</p>
@@ -830,7 +848,7 @@
             <!-- 6. PAYMENTS & INVOICES TAB -->
             <div class="tab-pane-dash" id="tab-payments">
                 <div class="premium-card car-hover-card p-4 mb-4">
-                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-4">
+                    <div class="d-flex flex-column flex-lg-row justify-content-between align-items-start align-items-lg-center gap-3 mb-4 flex-wrap">
                         <div>
                             <h5 class="fw-bold mb-1">Billing & Payment Management</h5>
                             <p class="text-secondary small mb-0">Review past invoices, download tax receipts, and update corporate billing accounts.</p>
@@ -855,7 +873,7 @@
                             <tbody>
                                 <tr>
                                     <td><strong>INV-2026-8941</strong></td>
-                                    <td>Enclosed Transcontinental Transport (AZ to CT)</td>
+                                    <td>Supporting Concierge Enclosed Intake (AZ to CT)</td>
                                     <td>Sep 21, 2026</td>
                                     <td class="fw-bold">$2,185.00</td>
                                     <td><span class="badge bg-success"><i class="bi bi-check-circle-fill me-1"></i> Paid (Stripe)</span></td>
@@ -878,55 +896,61 @@
             <!-- 7. FACILITY BAY TELEMETRY TAB -->
             <div class="tab-pane-dash" id="tab-telemetry">
                 <div class="row g-4">
-                    <div class="col-md-6">
-                        <div class="premium-card car-hover-card p-4 h-100">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h5 class="fw-bold mb-0"><i class="bi bi-building text-accent me-2"></i> Scottsdale Facility (Bay #A-14)</h5>
-                                <span class="badge bg-success">Live Sensors</span>
+                    <div class="col-xl-6 col-12">
+                        <div class="premium-card car-hover-card p-3 p-sm-4 h-100 d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+                                <h5 class="fw-bold mb-0 d-flex align-items-center flex-wrap gap-2">
+                                    <span><i class="bi bi-building text-accent me-1"></i> Scottsdale Facility</span>
+                                    <span class="badge bg-secondary-subtle text-secondary border border-secondary fw-normal px-2 py-1" style="font-size: 0.75rem;">Bay #A-14</span>
+                                </h5>
+                                <span class="badge bg-success flex-shrink-0"><i class="bi bi-broadcast me-1"></i> Live Sensors</span>
                             </div>
-                            <div class="row g-3 my-3">
-                                <div class="col-6">
-                                    <div class="p-3 bg-secondary rounded-3 text-center border border-color">
-                                        <div class="text-secondary small fw-bold mb-1">Temperature</div>
-                                        <div class="display-6 fw-bold text-accent">68.2°F</div>
-                                        <div class="text-success small"><i class="bi bi-check-circle-fill"></i> Steady &plusmn;0.3°F</div>
+                            <div class="row g-2 g-sm-3 my-2 flex-grow-1 align-items-stretch">
+                                <div class="col-6 d-flex">
+                                    <div class="p-2 p-sm-3 bg-secondary rounded-3 text-center border border-color w-100 d-flex flex-column justify-content-between">
+                                        <div class="text-secondary small fw-bold mb-1" style="font-size: 0.8rem;">Temperature</div>
+                                        <div class="fw-bold text-accent my-2" style="font-size: clamp(1.6rem, 5vw, 2.2rem); line-height: 1.1;">68.2°F</div>
+                                        <div class="text-success fw-medium mt-auto text-nowrap" style="font-size: 0.75rem;"><i class="bi bi-check-circle-fill me-1"></i> Steady &plusmn;0.3°F</div>
                                     </div>
                                 </div>
-                                <div class="col-6">
-                                    <div class="p-3 bg-secondary rounded-3 text-center border border-color">
-                                        <div class="text-secondary small fw-bold mb-1">Relative Humidity</div>
-                                        <div class="display-6 fw-bold text-indigo">49.8%</div>
-                                        <div class="text-success small"><i class="bi bi-check-circle-fill"></i> Target 50% Spec</div>
+                                <div class="col-6 d-flex">
+                                    <div class="p-2 p-sm-3 bg-secondary rounded-3 text-center border border-color w-100 d-flex flex-column justify-content-between">
+                                        <div class="text-secondary small fw-bold mb-1" style="font-size: 0.8rem;">Relative Humidity</div>
+                                        <div class="fw-bold text-indigo my-2" style="font-size: clamp(1.6rem, 5vw, 2.2rem); line-height: 1.1;">49.8%</div>
+                                        <div class="text-success fw-medium mt-auto text-nowrap" style="font-size: 0.75rem;"><i class="bi bi-check-circle-fill me-1"></i> Target 50% Spec</div>
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-secondary small mb-0">Air Filtration: Active HEPA & carbon extraction operational. Battery Tender Telemetry: 13.4V steady float.</p>
+                            <p class="text-secondary small mb-0 mt-3 pt-2 border-top border-color">Air Filtration: Active HEPA &amp; carbon extraction operational. Battery Tender Telemetry: 13.4V steady float.</p>
                         </div>
                     </div>
 
-                    <div class="col-md-6">
-                        <div class="premium-card car-hover-card p-4 h-100">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h5 class="fw-bold mb-0"><i class="bi bi-building text-accent me-2"></i> Greenwich Facility (Bay #C-08)</h5>
-                                <span class="badge bg-success">Live Sensors</span>
+                    <div class="col-xl-6 col-12">
+                        <div class="premium-card car-hover-card p-3 p-sm-4 h-100 d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+                                <h5 class="fw-bold mb-0 d-flex align-items-center flex-wrap gap-2">
+                                    <span><i class="bi bi-building text-accent me-1"></i> Greenwich Facility</span>
+                                    <span class="badge bg-secondary-subtle text-secondary border border-secondary fw-normal px-2 py-1" style="font-size: 0.75rem;">Bay #C-08</span>
+                                </h5>
+                                <span class="badge bg-success flex-shrink-0"><i class="bi bi-broadcast me-1"></i> Live Sensors</span>
                             </div>
-                            <div class="row g-3 my-3">
-                                <div class="col-6">
-                                    <div class="p-3 bg-secondary rounded-3 text-center border border-color">
-                                        <div class="text-secondary small fw-bold mb-1">Temperature</div>
-                                        <div class="display-6 fw-bold text-accent">67.9°F</div>
-                                        <div class="text-success small"><i class="bi bi-check-circle-fill"></i> Steady &plusmn;0.2°F</div>
+                            <div class="row g-2 g-sm-3 my-2 flex-grow-1 align-items-stretch">
+                                <div class="col-6 d-flex">
+                                    <div class="p-2 p-sm-3 bg-secondary rounded-3 text-center border border-color w-100 d-flex flex-column justify-content-between">
+                                        <div class="text-secondary small fw-bold mb-1" style="font-size: 0.8rem;">Temperature</div>
+                                        <div class="fw-bold text-accent my-2" style="font-size: clamp(1.6rem, 5vw, 2.2rem); line-height: 1.1;">67.9°F</div>
+                                        <div class="text-success fw-medium mt-auto text-nowrap" style="font-size: 0.75rem;"><i class="bi bi-check-circle-fill me-1"></i> Steady &plusmn;0.2°F</div>
                                     </div>
                                 </div>
-                                <div class="col-6">
-                                    <div class="p-3 bg-secondary rounded-3 text-center border border-color">
-                                        <div class="text-secondary small fw-bold mb-1">Relative Humidity</div>
-                                        <div class="display-6 fw-bold text-indigo">50.1%</div>
-                                        <div class="text-success small"><i class="bi bi-check-circle-fill"></i> Target 50% Spec</div>
+                                <div class="col-6 d-flex">
+                                    <div class="p-2 p-sm-3 bg-secondary rounded-3 text-center border border-color w-100 d-flex flex-column justify-content-between">
+                                        <div class="text-secondary small fw-bold mb-1" style="font-size: 0.8rem;">Relative Humidity</div>
+                                        <div class="fw-bold text-indigo my-2" style="font-size: clamp(1.6rem, 5vw, 2.2rem); line-height: 1.1;">50.1%</div>
+                                        <div class="text-success fw-medium mt-auto text-nowrap" style="font-size: 0.75rem;"><i class="bi bi-check-circle-fill me-1"></i> Target 50% Spec</div>
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-secondary small mb-0">Air Filtration: Active HEPA & carbon extraction operational. Battery Tender Telemetry: 13.5V steady float.</p>
+                            <p class="text-secondary small mb-0 mt-3 pt-2 border-top border-color">Air Filtration: Active HEPA &amp; carbon extraction operational. Battery Tender Telemetry: 13.5V steady float.</p>
                         </div>
                     </div>
                 </div>

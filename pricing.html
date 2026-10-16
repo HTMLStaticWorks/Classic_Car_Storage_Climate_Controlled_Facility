@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VaultX | Transparent Storage & Transport Pricing</title>
-    <meta name="description" content="VaultX transparent pricing tiers for climate-controlled classic car storage suites and nationwide enclosed vehicle transport services.">
+    <title>VaultX | Transparent Classic Car Storage Plans & Rates</title>
+    <meta name="description" content="VaultX transparent pricing tiers for climate-controlled classic car storage suites, preservation maintenance, and optional concierge collection services.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23D4AF37' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%230F172A' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
@@ -20,8 +20,25 @@
     <style>
         .pricing-hero {
             padding: 160px 0 100px;
-            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-rbTqYZ27mAv8CBCzfwNO6KS-N8-8tBq6SytsZf63vQ&s=10') center/cover no-repeat;
+            position: relative;
             text-align: center;
+        }
+
+        .pricing-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(7, 12, 22, 0.82);
+            pointer-events: none;
+        }
+
+        .pricing-hero .container {
+            position: relative;
+            z-index: 2;
         }
         
         /* Pricing Cards */
@@ -236,11 +253,12 @@
     </header>
 
     <!-- 1. Hero -->
-    <section class="pricing-hero">
+    <section class="pricing-hero text-center text-white">
         <div class="container" data-aos="fade-up">
-            <span class="badge bg-warning text-dark badge-nitro px-3 py-2 rounded-pill fw-bold mb-3">Transparent Rates</span>
-            <h1 class="display-3 fw-bold mb-4">Climate Storage & Transport Pricing</h1>
-            <p class="lead text-secondary mx-auto" style="max-width: 650px;">Museum-grade climate storage suites and insured nationwide vehicle transport with no hidden fees.</p>
+            <span class="badge bg-warning text-dark badge-nitro px-3 py-2 rounded-pill fw-bold mb-3">Transparent Storage Plans</span>
+            <h1 class="display-3 fw-bold mb-4 text-white">Classic Car Storage Plans & Rates</h1>
+            <p class="lead text-light opacity-75 mx-auto mb-2" style="max-width: 650px;">Museum-grade climate storage suites, dedicated battery care, and white-glove vehicle preservation with clear, predictable monthly pricing.</p>
+            <p class="text-light opacity-50 small fst-italic mb-0">*Sample baseline tiers shown for illustrative and planning purposes; custom facility storage agreements and final pricing are tailored to vehicle dimensions and custodial requirements.</p>
         </div>
     </section>
 
@@ -257,13 +275,13 @@
                             <div class="price-amount">$349<span class="fs-6 text-secondary fw-normal"> / mo</span></div>
                         </div>
                         <ul class="pricing-features">
-                            <li><i class="bi bi-check2"></i> Temperature regulated indoor bay</li>
-                            <li><i class="bi bi-check2"></i> 24/7 Monitored video surveillance</li>
-                            <li><i class="bi bi-check2"></i> CTEK battery tender connection</li>
-                            <li><i class="bi bi-check2"></i> Initial 40-point condition report</li>
-                            <li class="text-secondary opacity-50"><i class="bi bi-dash"></i> <del>Active 50% relative humidity control</del></li>
-                            <li class="text-secondary opacity-50"><i class="bi bi-dash"></i> <del>Bi-weekly tire roll & exercise</del></li>
-                            <li class="text-secondary opacity-50"><i class="bi bi-dash"></i> <del>Free enclosed transport pickup</del></li>
+                            <li><i class="bi bi-check2"></i> Temperature regulated indoor storage bay</li>
+                            <li><i class="bi bi-check2"></i> 24/7 Monitored biometric & video surveillance</li>
+                            <li><i class="bi bi-check2"></i> Dedicated CTEK battery float tender connection</li>
+                            <li><i class="bi bi-check2"></i> Initial 40-point photographic condition intake report</li>
+                            <li class="text-secondary opacity-50"><i class="bi bi-dash"></i> <del>Precision 50% relative humidity regulation</del></li>
+                            <li class="text-secondary opacity-50"><i class="bi bi-dash"></i> <del>Bi-weekly tire roll & exercise cycle</del></li>
+                            <li class="text-secondary opacity-50"><i class="bi bi-dash"></i> <del>Dedicated VIP private enclosed suite</del></li>
                         </ul>
                         <a href="contact.html" class="btn-premium outline w-100 text-center">Inquire for Silver Bay</a>
                     </div>
@@ -275,19 +293,19 @@
                         <span class="popular-badge">Most Popular</span>
                         <div class="text-center">
                             <h3 class="fw-bold mb-1 text-white">Gold Climate Suite</h3>
-                            <p class="text-light opacity-75 small">Full atmospheric climate control</p>
+                            <p class="text-light opacity-75 small">Full atmospheric climate & humidity control</p>
                             <div class="price-amount">$595<span class="fs-6 text-light opacity-75 fw-normal"> / mo</span></div>
                         </div>
                         <ul class="pricing-features text-light">
-                            <li><i class="bi bi-check2"></i> 68°F & 50% Relative humidity chamber</li>
-                            <li><i class="bi bi-check2"></i> HEPA air purification & dust barrier</li>
-                            <li><i class="bi bi-check2"></i> Microprocessor float battery charge</li>
-                            <li><i class="bi bi-check2"></i> Bi-weekly tire rotation & tire pressure check</li>
-                            <li><i class="bi bi-check2"></i> Full 40-point photo inspection in dashboard</li>
-                            <li><i class="bi bi-check2"></i> 10% Discount on enclosed transport</li>
-                            <li class="text-light opacity-50"><i class="bi bi-dash"></i> <del>Dedicated VIP enclosed bay</del></li>
+                            <li><i class="bi bi-check2"></i> Constant 68°F & precision 50% relative humidity chamber</li>
+                            <li><i class="bi bi-check2"></i> HEPA air purification & active carbon dust filtration</li>
+                            <li><i class="bi bi-check2"></i> Continuous CTEK microprocessor float charging</li>
+                            <li><i class="bi bi-check2"></i> Bi-weekly tire roll rotation & pressure logging</li>
+                            <li><i class="bi bi-check2"></i> Full 40-point photographic audit scans in client dashboard</li>
+                            <li><i class="bi bi-check2"></i> Breathable tailored soft satin dust cover</li>
+                            <li class="text-light opacity-50"><i class="bi bi-dash"></i> <del>Private glass partitioned VIP vault</del></li>
                         </ul>
-                        <a href="contact.html" class="btn-premium primary w-100 text-center">Inquire Climate Suite</a>
+                        <a href="contact.html" class="btn-premium primary w-100 text-center">Reserve Climate Suite</a>
                     </div>
                 </div>
                 
@@ -296,19 +314,19 @@
                     <div class="pricing-card car-hover-card">
                         <div class="text-center">
                             <h3 class="fw-bold mb-1">Platinum Vault VIP</h3>
-                            <p class="text-secondary small">Private suite & nationwide concierge</p>
+                            <p class="text-secondary small">Private VIP suite & comprehensive stewardship</p>
                             <div class="price-amount">$895<span class="fs-6 text-secondary fw-normal"> / mo</span></div>
                         </div>
                         <ul class="pricing-features">
-                            <li><i class="bi bi-check2"></i> Private glass partitioned storage suite</li>
-                            <li><i class="bi bi-check2"></i> Custom tailored satin dust cover</li>
-                            <li><i class="bi bi-check2"></i> Bi-weekly engine turnover & fluid warming</li>
-                            <li><i class="bi bi-check2"></i> Dedicated 4K live security camera stream</li>
-                            <li><i class="bi bi-check2"></i> Priority nationwide enclosed transport dispatch</li>
-                            <li><i class="bi bi-check2"></i> Unlimited hand detail prep & showroom wash</li>
-                            <li><i class="bi bi-check2"></i> $10,000,000 Facility umbrella protection</li>
+                            <li><i class="bi bi-check2"></i> Private partitioned climate vault with custom LED lighting</li>
+                            <li><i class="bi bi-check2"></i> Custom tailored indoor satin dust cover with monogramming</li>
+                            <li><i class="bi bi-check2"></i> Bi-weekly warm-up cycle, fluid warming & tire exercise</li>
+                            <li><i class="bi bi-check2"></i> Dedicated 24/7 live private camera stream in dashboard</li>
+                            <li><i class="bi bi-check2"></i> Unlimited hand wash, paint decon & concourse prep</li>
+                            <li><i class="bi bi-check2"></i> Priority concierge enclosed vehicle collection & delivery</li>
+                            <li><i class="bi bi-check2"></i> $10,000,000 Facility umbrella protection & agreed value care</li>
                         </ul>
-                        <a href="contact.html" class="btn-premium outline w-100 text-center">Inquire for Platinum</a>
+                        <a href="contact.html" class="btn-premium outline w-100 text-center">Inquire for Platinum VIP</a>
                     </div>
                 </div>
             </div>
@@ -319,9 +337,9 @@
     <section class="section-padding bg-secondary">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
-                <span class="badge bg-warning text-dark badge-nitro px-3 py-2 rounded-pill fw-bold mb-2">Logistics Guide</span>
-                <h2 class="display-6">Enclosed vs Open Transport Pricing Guide</h2>
-                <p class="text-secondary mx-auto" style="max-width: 650px;">Estimated nationwide vehicle transport rates based on mileage and carrier specification.</p>
+                <span class="badge bg-warning text-dark badge-nitro px-3 py-2 rounded-pill fw-bold mb-2">Supporting Concierge Service</span>
+                <h2 class="display-6">Concierge Vehicle Collection & Delivery Rates</h2>
+                <p class="text-secondary mx-auto" style="max-width: 650px;">For facility intake, auction relocations, or rally dispatch, VaultX provides optional white-glove transport as a supporting concierge service.</p>
             </div>
             
             <div class="row g-4">
@@ -330,11 +348,11 @@
                         <div class="d-flex align-items-center gap-3 mb-3">
                             <div class="bento-icon m-0"><i class="bi bi-shield-shaded"></i></div>
                             <div>
-                                <h4 class="fw-bold mb-0">Enclosed Carrier Shipping</h4>
-                                <span class="text-accent small fw-bold">Museum-Grade Protection</span>
+                                <h4 class="fw-bold mb-0">Dedicated Enclosed Carrier Transport</h4>
+                                <span class="text-accent small fw-bold">White-Glove Intake & Return</span>
                             </div>
                         </div>
-                        <p class="text-secondary mb-4">Hard-sided trailers with zero road exposure, air-ride suspension, and hydraulic lift gates.</p>
+                        <p class="text-secondary mb-4">Hard-sided, air-ride enclosed transport with hydraulic lift gates ensuring zero road exposure or rock-chip hazard.</p>
                         <div class="d-flex justify-content-between py-2 border-bottom border-color">
                             <span>Short Haul (0 - 500 Miles):</span>
                             <span class="fw-bold text-accent">$750 - $1,200</span>
@@ -355,11 +373,11 @@
                         <div class="d-flex align-items-center gap-3 mb-3">
                             <div class="bento-icon m-0"><i class="bi bi-truck"></i></div>
                             <div>
-                                <h4 class="fw-bold mb-0">Open Carrier Shipping</h4>
-                                <span class="text-indigo small fw-bold">Economical Nationwide Fleet</span>
+                                <h4 class="fw-bold mb-0">Standard Regional Carrier Transport</h4>
+                                <span class="text-indigo small fw-bold">Economical Vehicle Relocation</span>
                             </div>
                         </div>
-                        <p class="text-secondary mb-4">Standard multi-car carrier transport across all 50 states with DOT certified safety operators.</p>
+                        <p class="text-secondary mb-4">Multi-car transport across the continental US for multi-vehicle intake or scheduled dealer collection.</p>
                         <div class="d-flex justify-content-between py-2 border-bottom border-color">
                             <span>Short Haul (0 - 500 Miles):</span>
                             <span class="fw-bold text-indigo">$450 - $750</span>
@@ -453,7 +471,7 @@
                             Vault<span>X</span>
                         </a>
                     </div>
-                    <p class="mb-4">The nation's premier climate-controlled classic car storage facility and enclosed transport logistics network. Protecting prized automotive heritage with white-glove precision and real-time client tracking.</p>
+                    <p class="mb-4">The nation's premier climate-controlled classic car storage facility and vehicle preservation network. Protecting prized automotive heritage with 50% RH climate regulation, battery float care, and 24/7 client telemetry.</p>
                     <div class="d-flex gap-3 footer-social">
                         <a href="#" class="fs-5" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
                         <a href="#" class="fs-5" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
@@ -463,32 +481,32 @@
                 </div>
 
                 <div class="col-lg-2 footer-widget">
-                    <h4>Logistics & Facility</h4>
+                    <h4>Facility & Storage</h4>
                     <ul class="footer-links">
-                        <li><a href="about.html">About Facility</a></li>
-                        <li><a href="services.html">Enclosed Transport</a></li>
-                        <li><a href="services.html">Climate Storage</a></li>
+                        <li><a href="about.html">About VaultX</a></li>
+                        <li><a href="services.html">Climate Vault Suites</a></li>
+                        <li><a href="services.html">Preservation Protocols</a></li>
                         <li><a href="pricing.html">Storage Rates</a></li>
-                        <li><a href="services.html">Specialized Logistics</a></li>
-                        <li><a href="contact.html">Dispatch Hotline</a></li>
+                        <li><a href="services.html">Concierge Collection</a></li>
+                        <li><a href="contact.html">Facility Security</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-2 footer-widget">
                     <h4>Customer Portal</h4>
                     <ul class="footer-links">
-                        <li><a href="dashboard.html">Client Dashboard</a></li>
-                        <li><a href="contact.html">Request a Quote</a></li>
-                        <li><a href="dashboard.html">Live GPS Tracking</a></li>
-                        <li><a href="dashboard.html">Inspection Reports</a></li>
-                        <li><a href="blog.html">Collector Guides</a></li>
-                        <li><a href="login.html">Portal Login</a></li>
+                        <li><a href="dashboard.html">Storage Dashboard</a></li>
+                        <li><a href="contact.html">Reserve Storage Bay</a></li>
+                        <li><a href="dashboard.html">Chamber Telemetry</a></li>
+                        <li><a href="dashboard.html">Inspection Audits</a></li>
+                        <li><a href="blog.html">Preservation Guides</a></li>
+                        <li><a href="login.html">Client Login</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-4 footer-widget">
-                    <h4>Logistics Newsletter</h4>
-                    <p class="mb-3">Subscribe for climate preservation reports, enclosed transport updates, and auction schedules.</p>
+                    <h4>Preservation Newsletter</h4>
+                    <p class="mb-3">Subscribe for climate preservation insights, storage facility updates, and seasonal classic car care guides.</p>
                     <form class="d-flex position-relative footer-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to VaultX updates.');">
                         <input type="email" class="form-control rounded-pill py-3 px-4 w-100 border-color shadow-none"
                             placeholder="Enter your email" required style="background: rgba(128,128,128,0.05);">
@@ -497,17 +515,17 @@
                     </form>
                     <div class="mt-4 d-flex gap-2 flex-wrap">
                         <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
-                                class="bi bi-shield-lock-fill text-indigo me-1"></i> $5M Cargo Insurance</span>
+                                class="bi bi-shield-lock-fill text-indigo me-1"></i> VESDA Fire Protection</span>
                         <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
                                 class="bi bi-thermometer-half text-indigo me-1"></i> 50% RH Regulated</span>
                         <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
-                                class="bi bi-geo-alt-fill text-indigo me-1"></i> 50-State Coverage</span>
+                                class="bi bi-lock-fill text-indigo me-1"></i> 24/7 Security Monitored</span>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <div>&copy; 2026 VaultX. All rights reserved. Nationwide Vehicle Transport Logistics.</div>
+                <div>&copy; 2026 VaultX. All rights reserved. Classic Car Storage & Climate-Controlled Facility.</div>
                 <div class="d-flex gap-4">
                     <a href="#" class="text-decoration-none hover-white fs-4"
                         onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" aria-label="Back to top"><i

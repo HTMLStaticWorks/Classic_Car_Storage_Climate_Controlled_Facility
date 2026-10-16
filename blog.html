@@ -4,14 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VaultX | Preservation Insights & Transport Guides</title>
-    <meta name="description" content="Expert articles from VaultX on preparing classic cars for enclosed shipping, why 50% humidity preserves vintage components, and understanding digital inspection reports.">
+    <title>VaultX | Classic Car Preservation & Climate Storage Journal</title>
+    <meta name="description"
+        content="Expert articles from VaultX on climate-controlled classic car storage, humidity science, battery maintenance, and 40-point condition inspection reports.">
 
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23D4AF37' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%230F172A' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23D4AF37' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%230F172A' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,600&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,600&family=Rajdhani:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -20,7 +24,7 @@
     <style>
         .blog-hero {
             padding: 160px 0 100px;
-            background: linear-gradient(rgba(7, 12, 22, 0.85), rgba(7, 12, 22, 0.85)), url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(7, 12, 22, 0.80), rgba(7, 12, 22, 0.80)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwqahP8pu-ZjCDcnZeRC_yZm9vz2z53BWNmPgKqiw7fg&s=10') center/cover no-repeat;
             position: relative;
         }
 
@@ -52,6 +56,28 @@
             color: var(--brand-accent);
             font-weight: 600;
         }
+
+        @media (max-width: 767px) {
+            .blog-hero {
+                padding: 120px 0 60px;
+            }
+
+            .blog-hero .badge-nitro {
+                white-space: normal !important;
+                display: inline-block !important;
+                text-align: center;
+                line-height: 1.35;
+                font-size: 0.78rem;
+                padding: 6px 14px !important;
+                max-width: 92%;
+                margin: 0 auto 1.25rem !important;
+            }
+
+            .blog-hero h1 {
+                font-size: clamp(1.8rem, 6.5vw, 2.3rem);
+                line-height: 1.25;
+            }
+        }
     </style>
 </head>
 
@@ -61,10 +87,13 @@
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="logo">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    style="margin-right: 8px;">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
                 Vault<span>X</span>
             </a>
 
@@ -78,7 +107,8 @@
                 <a href="contact.html" class="nav-link">Contact</a>
                 <a href="dashboard.html" class="nav-link">Dashboard</a>
 
-                <div class="mobile-only-actions d-xl-none d-flex flex-column gap-3 mt-3 pt-3 border-top border-secondary">
+                <div
+                    class="mobile-only-actions d-xl-none d-flex flex-column gap-3 mt-3 pt-3 border-top border-secondary">
                     <a href="login.html" class="btn-premium primary w-100 text-center">Login</a>
                     <div class="d-flex gap-3 justify-content-center">
                         <button class="icon-btn theme-toggle-btn" title="Toggle Theme" aria-label="Toggle theme">
@@ -92,10 +122,12 @@
             </nav>
 
             <div class="header-actions">
-                <button class="icon-btn theme-toggle-btn d-none d-xl-flex" title="Toggle Theme" aria-label="Toggle theme">
+                <button class="icon-btn theme-toggle-btn d-none d-xl-flex" title="Toggle Theme"
+                    aria-label="Toggle theme">
                     <i class="bi bi-moon"></i>
                 </button>
-                <button class="icon-btn rtl-toggle-btn d-none d-xl-flex" title="Toggle RTL" aria-label="Toggle text direction">
+                <button class="icon-btn rtl-toggle-btn d-none d-xl-flex" title="Toggle RTL"
+                    aria-label="Toggle text direction">
                     <i class="bi bi-arrow-left-right"></i>
                 </button>
                 <a href="login.html" class="btn-premium primary d-none d-xl-flex">Login</a>
@@ -109,9 +141,11 @@
     <!-- 1. Hero -->
     <section class="blog-hero text-center text-white">
         <div class="container" data-aos="zoom-in">
-            <span class="badge bg-warning text-dark badge-nitro px-3 py-2 rounded-pill fw-bold mb-3">Collector Guides & Insights</span>
-            <h1 class="display-3 fw-bold mb-4 text-white">VaultX Logistics Journal</h1>
-            <p class="lead mx-auto text-light opacity-75" style="max-width: 650px;">Practical guides on climate preservation science, enclosed carrier preparation, and vehicle transport safety.</p>
+            <span class="badge bg-warning text-dark badge-nitro px-3 py-2 rounded-pill fw-bold mb-3">Collector Guides &
+                Preservation Insights</span>
+            <h1 class="display-3 fw-bold mb-4 text-white">VaultX Preservation Journal</h1>
+            <p class="lead mx-auto text-light opacity-75" style="max-width: 650px;">Practical guides on climate storage
+                science, atmospheric humidity control, battery maintenance, and classic vehicle preservation.</p>
         </div>
     </section>
 
@@ -121,48 +155,74 @@
             <div class="row g-4">
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="blog-card">
-                        <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80" alt="Enclosed Transport Guide" class="blog-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRogq0fhEnd-lSRP0Dxh7EVmCRvHg_45h_8VER895zypQ&s=10"
+                            alt="Classic Car Storage Preparation" class="blog-img">
                         <div class="p-4 d-flex flex-column flex-grow-1">
-                            <div class="post-meta mb-2"><i class="bi bi-tag-fill me-1"></i> Logistics & Transport &bull; 6 min read</div>
-                            <h3 class="h4 mb-3">Preparing Your Classic Vehicle for Enclosed Nationwide Transport</h3>
-                            <p class="text-secondary flex-grow-1">A step-by-step pre-loading checklist covering fluid levels, battery disconnects, ground clearance measurements, and what to verify on your Bill of Lading.</p>
-                            <a href="#" class="text-accent fw-bold mt-auto" onclick="event.preventDefault(); alert('Opening article: Preparing Your Classic Vehicle for Enclosed Nationwide Transport');">Read Full Guide &rarr;</a>
+                            <div class="post-meta mb-2"><i class="bi bi-tag-fill me-1"></i> Storage & Preservation
+                                &bull; 6 min read</div>
+                            <h3 class="h4 mb-3">Preparing Your Classic Vehicle for Long-Term Climate Storage</h3>
+                            <p class="text-secondary flex-grow-1">A step-by-step pre-storage checklist covering fluid
+                                levels, tire pressure adjustments, battery float connections, and tailored satin dust
+                                cover installation.</p>
+                            <a href="#" class="text-accent fw-bold mt-auto"
+                                onclick="event.preventDefault(); alert('Opening article: Preparing Your Classic Vehicle for Long-Term Climate Storage');">Read
+                                Full Guide &rarr;</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="blog-card">
-                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" alt="Climate Control Science" class="blog-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC3nUN6nS0KyvcaBqtt_hlj76JS3oekNSnOhoa68P7IQ&s=10"
+                            alt="Climate Control Science" class="blog-img">
                         <div class="p-4 d-flex flex-column flex-grow-1">
-                            <div class="post-meta mb-2"><i class="bi bi-tag-fill me-1"></i> Preservation Science &bull; 8 min read</div>
-                            <h3 class="h4 mb-3">The Science of 50% Humidity: Why Standard Garages Destroy Classic Cars</h3>
-                            <p class="text-secondary flex-grow-1">Understanding how ambient moisture cycling causes micro-rust beneath paint, dries out vintage leather seats, and embrittles rare carburetor gaskets over long storage periods.</p>
-                            <a href="#" class="text-accent fw-bold mt-auto" onclick="event.preventDefault(); alert('Opening article: The Science of 50% Humidity');">Read Full Guide &rarr;</a>
+                            <div class="post-meta mb-2"><i class="bi bi-tag-fill me-1"></i> Preservation Science &bull;
+                                8 min read</div>
+                            <h3 class="h4 mb-3">The Science of 50% Humidity: Why Standard Garages Destroy Classic Cars
+                            </h3>
+                            <p class="text-secondary flex-grow-1">Understanding how ambient moisture cycling causes
+                                micro-rust beneath paint, dries out vintage leather seats, and embrittles rare
+                                carburetor gaskets over long storage periods.</p>
+                            <a href="#" class="text-accent fw-bold mt-auto"
+                                onclick="event.preventDefault(); alert('Opening article: The Science of 50% Humidity');">Read
+                                Full Guide &rarr;</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="blog-card">
-                        <img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=800&q=80" alt="40-Point Condition Reports" class="blog-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSqFJCGCx_uMEjuWHLIy0a7ZdNNMvUIPbUqxQx-sRHtg&s=10"
+                            alt="40-Point Condition Reports" class="blog-img">
                         <div class="p-4 d-flex flex-column flex-grow-1">
-                            <div class="post-meta mb-2"><i class="bi bi-tag-fill me-1"></i> Inspection & Verification &bull; 5 min read</div>
-                            <h3 class="h4 mb-3">Understanding 40-Point Digital Condition Reports in Auto Logistics</h3>
-                            <p class="text-secondary flex-grow-1">How high-resolution 360-degree digital manifests protect buyers and sellers during long-distance carrier handovers and auction consignments.</p>
-                            <a href="#" class="text-accent fw-bold mt-auto" onclick="event.preventDefault(); alert('Opening article: Understanding 40-Point Digital Condition Reports');">Read Full Guide &rarr;</a>
+                            <div class="post-meta mb-2"><i class="bi bi-tag-fill me-1"></i> Inspection & Verification
+                                &bull; 5 min read</div>
+                            <h3 class="h4 mb-3">Understanding 40-Point Digital Condition Reports in Vehicle Storage</h3>
+                            <p class="text-secondary flex-grow-1">How high-resolution 360-degree digital condition
+                                audits protect collectors during facility intake, maintenance reviews, and seasonal
+                                checkout.</p>
+                            <a href="#" class="text-accent fw-bold mt-auto"
+                                onclick="event.preventDefault(); alert('Opening article: Understanding 40-Point Digital Condition Reports');">Read
+                                Full Guide &rarr;</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
                     <div class="blog-card">
-                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80" alt="Battery Maintenance" class="blog-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyzfvY13P0UvpOOm7bpuYtbzzPqfRq0Sk1hRtCb40_Lw&s=10"
+                            alt="Battery Maintenance in Storage" class="blog-img">
                         <div class="p-4 d-flex flex-column flex-grow-1">
-                            <div class="post-meta mb-2"><i class="bi bi-tag-fill me-1"></i> Maintenance Concierge &bull; 4 min read</div>
-                            <h3 class="h4 mb-3">Microprocessor Tenders vs Battery Disconnects for Winter Storage</h3>
-                            <p class="text-secondary flex-grow-1">Examining the pros and cons of active multi-stage float charging versus complete mechanical disconnects on vintage 6V and 12V electrical systems.</p>
-                            <a href="#" class="text-accent fw-bold mt-auto" onclick="event.preventDefault(); alert('Opening article: Microprocessor Tenders vs Battery Disconnects');">Read Full Guide &rarr;</a>
+                            <div class="post-meta mb-2"><i class="bi bi-tag-fill me-1"></i> Maintenance & Care &bull; 4
+                                min read</div>
+                            <h3 class="h4 mb-3">Microprocessor Tenders vs Battery Disconnects for Classic Car Storage
+                            </h3>
+                            <p class="text-secondary flex-grow-1">Examining the pros and cons of active multi-stage
+                                float charging versus mechanical disconnects on vintage 6V and 12V automotive electrical
+                                systems.</p>
+                            <a href="#" class="text-accent fw-bold mt-auto"
+                                onclick="event.preventDefault(); alert('Opening article: Microprocessor Tenders vs Battery Disconnects');">Read
+                                Full Guide &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -175,9 +235,11 @@
         <div class="container">
             <div class="row align-items-center mb-5 pb-2">
                 <div class="col-lg-8" data-aos="fade-right">
-                    <span class="badge bg-warning text-dark badge-nitro px-3 py-2 rounded-pill fw-bold mb-2">Technical Whitepapers</span>
-                    <h2 class="display-6 fw-bold mb-2">Collector Handbooks & Logistics Blueprints</h2>
-                    <p class="text-secondary mb-0">Free authoritative reference documents curated by certified vintage automobile restoration judges and commercial freight specialists.</p>
+                    <span class="badge bg-warning text-dark badge-nitro px-3 py-2 rounded-pill fw-bold mb-2">Technical
+                        Whitepapers</span>
+                    <h2 class="display-6 fw-bold mb-2">Collector Handbooks & Preservation Blueprints</h2>
+                    <p class="text-secondary mb-0">Free authoritative reference documents curated by certified vintage
+                        automobile custodians and facility climate specialists.</p>
                 </div>
                 <div class="col-lg-4 text-lg-end mt-4 mt-lg-0" data-aos="fade-left">
                     <a href="contact.html" class="btn-premium outline">Request Custom Protocol</a>
@@ -191,13 +253,18 @@
                             <div class="bento-icon m-0">
                                 <i class="bi bi-file-earmark-pdf-fill"></i>
                             </div>
-                            <span class="badge bg-secondary text-secondary border border-color">PDF &bull; 14 Pages</span>
+                            <span class="badge bg-secondary text-secondary border border-color">PDF &bull; 14
+                                Pages</span>
                         </div>
                         <h4 class="h5 mb-3">Vintage Vehicle Winterization & Storage Protocol</h4>
-                        <p class="text-secondary small mb-4 flex-grow-1">Comprehensive checklist for carb preservation, antifreeze specific gravity testing, seal lubrication, and tire unloading methods.</p>
+                        <p class="text-secondary small mb-4 flex-grow-1">Comprehensive checklist for carb preservation,
+                            antifreeze specific gravity testing, seal lubrication, and tire unloading methods.</p>
                         <div class="pt-3 border-top border-color d-flex align-items-center justify-content-between">
-                            <span class="small text-secondary"><i class="bi bi-download text-accent me-1"></i> 2,420+ Downloads</span>
-                            <a href="#" class="text-accent fw-bold small" onclick="alert('Downloading VaultX Winterization Guide (PDF)...'); return false;">Download <i class="bi bi-arrow-down-circle ms-1"></i></a>
+                            <span class="small text-secondary"><i class="bi bi-download text-accent me-1"></i> 2,420+
+                                Downloads</span>
+                            <a href="#" class="text-accent fw-bold small"
+                                onclick="alert('Downloading VaultX Winterization Guide (PDF)...'); return false;">Download
+                                <i class="bi bi-arrow-down-circle ms-1"></i></a>
                         </div>
                     </div>
                 </div>
@@ -208,13 +275,18 @@
                             <div class="bento-icon m-0">
                                 <i class="bi bi-shield-check"></i>
                             </div>
-                            <span class="badge bg-secondary text-secondary border border-color">PDF &bull; 18 Pages</span>
+                            <span class="badge bg-secondary text-secondary border border-color">PDF &bull; 18
+                                Pages</span>
                         </div>
-                        <h4 class="h5 mb-3">Collector Auto Transport & Insurance Guide</h4>
-                        <p class="text-secondary small mb-4 flex-grow-1">Detailed evaluation of carrier primary liability, declared value cargo policies, eBOL claims documentation, and hydraulic gate limits.</p>
+                        <h4 class="h5 mb-3">Collector Storage Intake & Insurance Guide</h4>
+                        <p class="text-secondary small mb-4 flex-grow-1">Detailed evaluation of facility agreed-value
+                            protection, climate regulation guarantees, eBOL intake, and custodial access protocols.</p>
                         <div class="pt-3 border-top border-color d-flex align-items-center justify-content-between">
-                            <span class="small text-secondary"><i class="bi bi-download text-accent me-1"></i> 1,890+ Downloads</span>
-                            <a href="#" class="text-accent fw-bold small" onclick="alert('Downloading VaultX Transport Insurance Guide (PDF)...'); return false;">Download <i class="bi bi-arrow-down-circle ms-1"></i></a>
+                            <span class="small text-secondary"><i class="bi bi-download text-accent me-1"></i> 1,890+
+                                Downloads</span>
+                            <a href="#" class="text-accent fw-bold small"
+                                onclick="alert('Downloading VaultX Storage Insurance Guide (PDF)...'); return false;">Download
+                                <i class="bi bi-arrow-down-circle ms-1"></i></a>
                         </div>
                     </div>
                 </div>
@@ -225,13 +297,19 @@
                             <div class="bento-icon m-0">
                                 <i class="bi bi-award-fill"></i>
                             </div>
-                            <span class="badge bg-secondary text-secondary border border-color">PDF &bull; 22 Pages</span>
+                            <span class="badge bg-secondary text-secondary border border-color">PDF &bull; 22
+                                Pages</span>
                         </div>
-                        <h4 class="h5 mb-3">Concourse d'Elegance Pre-Show Logistics Handbook</h4>
-                        <p class="text-secondary small mb-4 flex-grow-1">Pebble Beach and Amelia Island arrival schedules, paint protection film transit wraps, zero-grit loading, and judges checklist prep.</p>
+                        <h4 class="h5 mb-3">Concours d'Elegance Pre-Show Preparation Handbook</h4>
+                        <p class="text-secondary small mb-4 flex-grow-1">Pebble Beach and Amelia Island preservation
+                            routines, paint depth documentation, clean bay storage prep, and judges checklist
+                            inspection.</p>
                         <div class="pt-3 border-top border-color d-flex align-items-center justify-content-between">
-                            <span class="small text-secondary"><i class="bi bi-download text-accent me-1"></i> 3,150+ Downloads</span>
-                            <a href="#" class="text-accent fw-bold small" onclick="alert('Downloading VaultX Concourse Logistics Handbook (PDF)...'); return false;">Download <i class="bi bi-arrow-down-circle ms-1"></i></a>
+                            <span class="small text-secondary"><i class="bi bi-download text-accent me-1"></i> 3,150+
+                                Downloads</span>
+                            <a href="#" class="text-accent fw-bold small"
+                                onclick="alert('Downloading VaultX Concours Preparation Handbook (PDF)...'); return false;">Download
+                                <i class="bi bi-arrow-down-circle ms-1"></i></a>
                         </div>
                     </div>
                 </div>
@@ -246,14 +324,19 @@
                 <div class="col-lg-4 footer-widget">
                     <div class="mb-4 d-inline-block">
                         <a href="index.html" class="logo">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--brand-accent)"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
                             Vault<span>X</span>
                         </a>
                     </div>
-                    <p class="mb-4">The nation's premier climate-controlled classic car storage facility and enclosed transport logistics network. Protecting prized automotive heritage with white-glove precision and real-time client tracking.</p>
+                    <p class="mb-4">The nation's premier climate-controlled classic car storage facility and vehicle
+                        preservation network. Protecting prized automotive heritage with 50% RH climate regulation,
+                        battery float care, and 24/7 client telemetry.</p>
                     <div class="d-flex gap-3 footer-social">
                         <a href="#" class="fs-5" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
                         <a href="#" class="fs-5" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
@@ -263,33 +346,35 @@
                 </div>
 
                 <div class="col-lg-2 footer-widget">
-                    <h4>Logistics & Facility</h4>
+                    <h4>Facility & Storage</h4>
                     <ul class="footer-links">
-                        <li><a href="about.html">About Facility</a></li>
-                        <li><a href="services.html">Enclosed Transport</a></li>
-                        <li><a href="services.html">Climate Storage</a></li>
+                        <li><a href="about.html">About VaultX</a></li>
+                        <li><a href="services.html">Climate Vault Suites</a></li>
+                        <li><a href="services.html">Preservation Protocols</a></li>
                         <li><a href="pricing.html">Storage Rates</a></li>
-                        <li><a href="services.html">Specialized Logistics</a></li>
-                        <li><a href="contact.html">Dispatch Hotline</a></li>
+                        <li><a href="services.html">Concierge Collection</a></li>
+                        <li><a href="contact.html">Facility Security</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-2 footer-widget">
                     <h4>Customer Portal</h4>
                     <ul class="footer-links">
-                        <li><a href="dashboard.html">Client Dashboard</a></li>
-                        <li><a href="contact.html">Request a Quote</a></li>
-                        <li><a href="dashboard.html">Live GPS Tracking</a></li>
-                        <li><a href="dashboard.html">Inspection Reports</a></li>
-                        <li><a href="blog.html">Collector Guides</a></li>
-                        <li><a href="login.html">Portal Login</a></li>
+                        <li><a href="dashboard.html">Storage Dashboard</a></li>
+                        <li><a href="contact.html">Reserve Storage Bay</a></li>
+                        <li><a href="dashboard.html">Chamber Telemetry</a></li>
+                        <li><a href="dashboard.html">Inspection Audits</a></li>
+                        <li><a href="blog.html">Preservation Guides</a></li>
+                        <li><a href="login.html">Client Login</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-4 footer-widget">
-                    <h4>Logistics Newsletter</h4>
-                    <p class="mb-3">Subscribe for climate preservation reports, enclosed transport updates, and auction schedules.</p>
-                    <form class="d-flex position-relative footer-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to VaultX updates.');">
+                    <h4>Preservation Newsletter</h4>
+                    <p class="mb-3">Subscribe for climate preservation insights, storage facility updates, and seasonal
+                        classic car care guides.</p>
+                    <form class="d-flex position-relative footer-form"
+                        onsubmit="event.preventDefault(); alert('Thank you for subscribing to VaultX updates.');">
                         <input type="email" class="form-control rounded-pill py-3 px-4 w-100 border-color shadow-none"
                             placeholder="Enter your email" required style="background: rgba(128,128,128,0.05);">
                         <button type="submit"
@@ -297,21 +382,21 @@
                     </form>
                     <div class="mt-4 d-flex gap-2 flex-wrap">
                         <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
-                                class="bi bi-shield-lock-fill text-indigo me-1"></i> $5M Cargo Insurance</span>
+                                class="bi bi-shield-lock-fill text-indigo me-1"></i> VESDA Fire Protection</span>
                         <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
                                 class="bi bi-thermometer-half text-indigo me-1"></i> 50% RH Regulated</span>
                         <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
-                                class="bi bi-geo-alt-fill text-indigo me-1"></i> 50-State Coverage</span>
+                                class="bi bi-lock-fill text-indigo me-1"></i> 24/7 Security Monitored</span>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <div>&copy; 2026 VaultX. All rights reserved. Nationwide Vehicle Transport Logistics.</div>
+                <div>&copy; 2026 VaultX. All rights reserved. Classic Car Storage & Climate-Controlled Facility.</div>
                 <div class="d-flex gap-4">
                     <a href="#" class="text-decoration-none hover-white fs-4"
-                        onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" aria-label="Back to top"><i
-                            class="bi bi-arrow-up-circle-fill"></i></a>
+                        onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
+                        aria-label="Back to top"><i class="bi bi-arrow-up-circle-fill"></i></a>
                 </div>
             </div>
         </div>
@@ -325,4 +410,5 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>

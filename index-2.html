@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VaultX | Nationwide Enclosed Auto Transport & Logistics Network</title>
-    <meta name="description" content="VaultX nationwide enclosed carrier transport logistics and climate-controlled storage network. Live route tracking, instant freight estimates, and verified inspection reporting.">
+    <title>VaultX | Climate-Controlled Classic Car Storage Facility Network</title>
+    <meta name="description" content="VaultX premier climate-controlled classic car storage facilities, dedicated preservation suites, and white-glove collection support.">
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' stroke='%23D4AF37' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='%230F172A' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 
@@ -19,43 +19,59 @@
 
     <style>
         .hero-split {
-            min-height: 90vh;
-            padding-top: 84px;
-            display: flex;
-            align-items: center;
+            padding: 130px 0 70px;
             background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
             position: relative;
             overflow: hidden;
         }
 
         .split-left {
-            padding: 80px 60px;
+            padding: 30px 40px 30px 60px;
         }
 
         .split-right {
             position: relative;
-            min-height: 550px;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            min-height: 520px;
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: var(--shadow-premium);
+            border: 1px solid var(--border-color);
+            background: url('assets/images/facility-vault-hero.jpg') center/cover no-repeat;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            padding: 24px;
+        }
+
+        .facility-hero-telemetry-badge {
+            display: inline-flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            background: rgba(15, 23, 42, 0.82);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 10px 16px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            z-index: 2;
         }
 
         @media (max-width: 1199px) {
             .split-left {
-                padding: 60px 30px;
+                padding: 20px 30px;
             }
             .split-right {
-                min-height: 500px;
+                min-height: 460px;
             }
         }
 
         @media (max-width: 991px) {
             .hero-split {
-                min-height: auto;
-                padding-top: 95px;
+                padding: 110px 0 50px;
             }
 
             .split-left {
-                padding: 40px 20px 30px;
+                padding: 20px 20px 30px;
             }
             
             .split-left h1 {
@@ -70,19 +86,18 @@
 
             .split-right {
                 min-height: 380px;
-                width: calc(100% - 30px);
-                margin: 10px auto 40px;
                 border-radius: 20px;
-                overflow: hidden;
             }
         }
 
         @media (max-width: 575.98px) {
+            .hero-split {
+                padding: 100px 0 40px;
+            }
             .split-right {
-                min-height: 320px;
-                width: calc(100% - 24px);
-                margin: 10px auto 35px;
+                min-height: 290px;
                 border-radius: 16px;
+                padding: 16px;
             }
         }
 
@@ -107,35 +122,68 @@
             overflow: hidden;
         }
 
+        .hub-grid {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
         .map-marker {
             position: relative;
-            display: inline-block;
-            margin: 15px;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            height: 100%;
+            margin: 0;
             cursor: pointer;
             transition: all var(--transition-fast);
             background: var(--bg-primary);
-            padding: 12px 18px;
-            border-radius: 12px;
+            padding: 16px 22px;
+            border-radius: 14px;
             border: 1px solid var(--border-color);
             box-shadow: var(--shadow-sm);
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            text-align: left;
         }
 
         .map-marker:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
             border-color: var(--brand-accent);
             box-shadow: var(--shadow-md);
         }
 
         .marker-dot {
-            width: 14px;
-            height: 14px;
+            width: 12px;
+            height: 12px;
             background: var(--brand-accent);
             border-radius: 50%;
             display: inline-block;
-            margin-right: 8px;
+            margin-right: 14px;
+            flex-shrink: 0;
             box-shadow: 0 0 10px var(--brand-accent);
             animation: pulseMap 2s infinite;
+        }
+
+        .marker-sep {
+            margin: 0 8px;
+            color: var(--brand-accent);
+            font-weight: 600;
+        }
+
+        .marker-desc {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        @media (max-width: 575.98px) {
+            .map-marker {
+                padding: 14px 16px;
+                font-size: 0.88rem;
+            }
+            .marker-dot {
+                margin-right: 10px;
+            }
         }
 
         @keyframes pulseMap {
@@ -266,31 +314,38 @@
             <div class="row g-0 align-items-center">
                 <div class="col-lg-6 col-12 split-left" data-aos="fade-right">
                     <div class="hero-badge">
-                        <i class="bi bi-truck-flatbed"></i> Nationwide Transport & Climate Hubs
+                        <i class="bi bi-shield-check"></i> Climate-Controlled Storage & Preservation Hubs
                     </div>
-                    <h1 class="display-4 fw-bold mb-4">Dedicated Enclosed Vehicle <span class="text-gradient">Logistics Network.</span></h1>
-                    <p class="lead mb-5 text-secondary">Door-to-door enclosed shipping for classic, vintage, and high-line collector automobiles with live carrier telemetry, scheduled pickup windows, and insured climate vaults.</p>
+                    <h1 class="display-4 fw-bold mb-4">Dedicated Classic Car Storage & <span class="text-gradient">Preservation Facility.</span></h1>
+                    <p class="lead mb-5 text-secondary">Private climate-controlled storage suites for classic, vintage, and high-line collector automobiles with continuous environmental monitoring, battery maintenance, and concierge collection support.</p>
                     <div class="d-flex gap-3 flex-wrap mb-5">
-                        <a href="contact.html" class="btn-premium primary">Request Transport Quote</a>
-                        <a href="dashboard.html" class="btn-premium outline">Track Active Shipment</a>
+                        <a href="pricing.html" class="btn-premium primary">Explore Storage Plans</a>
+                        <a href="contact.html" class="btn-premium outline">Schedule Facility Tour</a>
                     </div>
 
                     <div class="row g-3 pt-4 border-top border-color">
                         <div class="col-sm-4">
-                            <h4 class="mb-1 text-accent fw-bold">50 States</h4>
-                            <small class="text-secondary">Direct Coast-to-Coast</small>
+                            <h4 class="mb-1 text-accent fw-bold">50% RH</h4>
+                            <small class="text-secondary">Constant Humidity Regulated</small>
                         </div>
                         <div class="col-sm-4">
-                            <h4 class="mb-1 text-accent fw-bold">$5,000,000</h4>
-                            <small class="text-secondary">Carrier Cargo Coverage</small>
+                            <h4 class="mb-1 text-accent fw-bold">68°F</h4>
+                            <small class="text-secondary">Precision Climate Control</small>
                         </div>
                         <div class="col-sm-4">
                             <h4 class="mb-1 text-accent fw-bold">24/7 Live</h4>
-                            <small class="text-secondary">GPS Dispatch Tracking</small>
+                            <small class="text-secondary">Sensor & CCTV Telemetry</small>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-12 split-right" data-aos="fade-left"></div>
+                <div class="col-lg-6 col-12 p-3 p-xl-4" data-aos="fade-left">
+                    <div class="split-right" role="img" aria-label="Classic Car Storage & Climate-Controlled Facility Warehouse" title="Classic Car Storage & Climate-Controlled Facility">
+                        <div class="facility-hero-telemetry-badge">
+                            <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill"><i class="bi bi-shield-check me-1"></i> Vault Bay #4 Active</span>
+                            <span class="badge bg-dark text-white border border-secondary px-3 py-2 rounded-pill"><i class="bi bi-thermometer-half text-accent me-1"></i> 68°F &bull; 50% RH Regulated</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -299,30 +354,56 @@
     <section class="map-section bg-secondary">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="display-6">Strategic Regional Hubs & Nationwide Logistics</h2>
-                <p class="text-secondary mx-auto" style="max-width: 650px;">Our dedicated transport carriers run weekly enclosed routes connecting collectors, luxury auctions, and our climate storage facilities.</p>
+                <h2 class="display-6">Strategic Regional Climate Facilities & Storage Hubs</h2>
+                <p class="text-secondary mx-auto" style="max-width: 650px;">Our secure, climate-controlled facilities provide dedicated preservation suites, battery maintenance, and white-glove concierge vehicle intake.</p>
             </div>
 
-            <div class="row g-4 justify-content-center text-center">
-                <div class="col-12" data-aos="zoom-in">
-                    <div class="d-flex flex-wrap justify-content-center gap-3">
-                        <div class="map-marker">
-                            <span class="marker-dot"></span><strong>Scottsdale, AZ</strong> &bull; Primary Climate Vault
+            <div class="row g-3 justify-content-center hub-grid" data-aos="zoom-in">
+                <div class="col-md-6 col-12">
+                    <div class="map-marker">
+                        <span class="marker-dot"></span>
+                        <div class="flex-grow-1">
+                            <strong>Scottsdale, AZ</strong> <span class="marker-sep">&bull;</span> <span class="marker-desc">Primary Climate Vault</span>
                         </div>
-                        <div class="map-marker">
-                            <span class="marker-dot"></span><strong>Greenwich, CT</strong> &bull; Northeast Facility
+                    </div>
+                </div>
+                <div class="col-md-6 col-12">
+                    <div class="map-marker">
+                        <span class="marker-dot"></span>
+                        <div class="flex-grow-1">
+                            <strong>Greenwich, CT</strong> <span class="marker-sep">&bull;</span> <span class="marker-desc">Northeast Facility</span>
                         </div>
-                        <div class="map-marker">
-                            <span class="marker-dot"></span><strong>Monterey / Los Angeles, CA</strong> &bull; West Hub
+                    </div>
+                </div>
+                <div class="col-md-6 col-12">
+                    <div class="map-marker">
+                        <span class="marker-dot"></span>
+                        <div class="flex-grow-1">
+                            <strong>Monterey / Los Angeles, CA</strong> <span class="marker-sep">&bull;</span> <span class="marker-desc">West Coast Vault</span>
                         </div>
-                        <div class="map-marker">
-                            <span class="marker-dot"></span><strong>Dallas / Fort Worth, TX</strong> &bull; Central Depot
+                    </div>
+                </div>
+                <div class="col-md-6 col-12">
+                    <div class="map-marker">
+                        <span class="marker-dot"></span>
+                        <div class="flex-grow-1">
+                            <strong>Dallas / Fort Worth, TX</strong> <span class="marker-sep">&bull;</span> <span class="marker-desc">Central Climate Suite</span>
                         </div>
-                        <div class="map-marker">
-                            <span class="marker-dot"></span><strong>Chicago, IL</strong> &bull; Midwest Terminal
+                    </div>
+                </div>
+                <div class="col-md-6 col-12">
+                    <div class="map-marker">
+                        <span class="marker-dot"></span>
+                        <div class="flex-grow-1">
+                            <strong>Chicago, IL</strong> <span class="marker-sep">&bull;</span> <span class="marker-desc">Midwest Storage Center</span>
                         </div>
-                        <div class="map-marker">
-                            <span class="marker-dot"></span><strong>Miami / Palm Beach, FL</strong> &bull; Southeast Terminal
+                    </div>
+                </div>
+                <div class="col-md-6 col-12">
+                    <div class="map-marker">
+                        <span class="marker-dot"></span>
+                        <div class="flex-grow-1">
+                            <strong>Palm Beach / Miami, FL</strong> <span class="marker-sep">&bull;</span> <span class="marker-desc">Southeast Facility</span>
                         </div>
                     </div>
                 </div>
@@ -332,40 +413,40 @@
             <div class="row justify-content-center mt-5" data-aos="fade-up">
                 <div class="col-lg-10">
                     <div class="calculator-box">
-                        <h4 class="mb-4 text-center"><i class="bi bi-calculator text-accent me-2"></i> Quick Transit & Cost Estimator</h4>
+                        <h4 class="mb-4 text-center"><i class="bi bi-calculator text-accent me-2"></i> Quick Storage Plan & Concierge Transit Estimator</h4>
                         <div class="row g-3 align-items-end">
                             <div class="col-md-3">
-                                <label class="form-label text-secondary small fw-bold">Origin (City / State)</label>
+                                <label class="form-label text-secondary small fw-bold">Your Location (City / State)</label>
                                 <input type="text" class="form-control" id="calc-origin" value="Scottsdale, AZ">
                             </div>
                             <div class="col-md-3">
-                                <label class="form-label text-secondary small fw-bold">Destination (City / State)</label>
-                                <input type="text" class="form-control" id="calc-dest" value="Greenwich, CT">
+                                <label class="form-label text-secondary small fw-bold">Target Storage Facility</label>
+                                <input type="text" class="form-control" id="calc-dest" value="Scottsdale Climate Vault">
                             </div>
                             <div class="col-md-3">
-                                <label class="form-label text-secondary small fw-bold">Carrier Type</label>
+                                <label class="form-label text-secondary small fw-bold">Storage Plan Tier</label>
                                 <select class="form-select" id="calc-type">
-                                    <option value="enclosed">Enclosed White-Glove</option>
-                                    <option value="open">Open Carrier</option>
-                                    <option value="storage">Storage Bay Only</option>
-                                    <option value="combo">Transport + Storage</option>
+                                    <option value="gold">Gold Climate Suite ($595/mo)</option>
+                                    <option value="silver">Silver Bay Storage ($349/mo)</option>
+                                    <option value="platinum">Platinum Vault VIP ($895/mo)</option>
+                                    <option value="combo">Concierge Intake + Gold Suite</option>
                                 </select>
                             </div>
                             <div class="col-md-3">
-                                <button type="button" class="btn-premium primary w-100" onclick="calculateEstimate()">Estimate Transit</button>
+                                <button type="button" class="btn-premium primary w-100" onclick="calculateEstimate()">Calculate Rate Window</button>
                             </div>
                         </div>
                         <div id="calc-result" class="mt-4 p-3 bg-primary rounded-3 border border-color d-none">
                             <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
                                 <div>
-                                    <span class="text-secondary small d-block">Estimated Distance & Transit Time:</span>
-                                    <strong class="text-primary-brand" id="calc-dist">2,410 Miles &bull; 3 - 4 Transit Days</strong>
+                                    <span class="text-secondary small d-block">Selected Facility Plan & Inclusions:</span>
+                                    <strong class="text-primary-brand" id="calc-dist">Gold Climate Suite &bull; 68°F & 50% RH + CTEK Tender</strong>
                                 </div>
                                 <div>
-                                    <span class="text-secondary small d-block">Estimated Rate Window:</span>
-                                    <strong class="text-accent fs-5" id="calc-price">$1,750 - $1,980</strong>
+                                    <span class="text-secondary small d-block">Monthly Storage Rate:</span>
+                                    <strong class="text-accent fs-5" id="calc-price">$595 / Month</strong>
                                 </div>
-                                <a href="contact.html" class="btn-premium primary btn-sm">Inquire & Book</a>
+                                <a href="contact.html" class="btn-premium primary btn-sm">Reserve & Inquire</a>
                             </div>
                         </div>
                     </div>
@@ -374,24 +455,24 @@
         </div>
     </section>
 
-    <!-- 3. Specialized Logistics Fleet -->
+    <!-- 3. Specialized Storage Infrastructure -->
     <section class="expertise-section">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="display-6">Our Specialized Fleet & Equipment</h2>
-                <p class="text-secondary mx-auto" style="max-width: 600px;">Every carrier in our network is purpose-built to haul low-clearance, vintage, and irreplaceable vehicles.</p>
+                <h2 class="display-6">Specialized Storage Infrastructure & Vehicle Care</h2>
+                <p class="text-secondary mx-auto" style="max-width: 600px;">Every bay in our facility network is purpose-built to protect low-clearance, vintage, and irreplaceable collector vehicles.</p>
             </div>
 
             <div class="row g-4 justify-content-center">
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="expertise-item">
-                        <div class="bento-icon"><i class="bi bi-shield-shaded"></i></div>
-                        <h4 class="mb-3">Enclosed Multi-Car Rigs</h4>
-                        <p class="text-secondary">Fully enclosed hard-side trailers with horizontal air-ride suspensions and hydraulic lift gates. Eliminates ramp incline angles for low-ground-clearance exotics.</p>
+                        <div class="bento-icon"><i class="bi bi-thermometer-sun"></i></div>
+                        <h4 class="mb-3">Climate-Controlled Storage Suites</h4>
+                        <p class="text-secondary">Purpose-built indoor facilities featuring industrial HVAC with continuous 50% relative humidity, HEPA air scrubbing, and active dust filtration.</p>
                         <ul class="list-unstyled text-secondary small mt-3">
-                            <li class="mb-2"><i class="bi bi-check2 text-accent me-2"></i> Zero road debris or moisture exposure</li>
-                            <li class="mb-2"><i class="bi bi-check2 text-accent me-2"></i> Soft nylon wheel tie-down system</li>
-                            <li><i class="bi bi-check2 text-accent me-2"></i> Climate-dampened interior trailer cargo</li>
+                            <li class="mb-2"><i class="bi bi-check2 text-accent me-2"></i> Zero humidity swings or condensation</li>
+                            <li class="mb-2"><i class="bi bi-check2 text-accent me-2"></i> Precision 68°F temperature regulation</li>
+                            <li><i class="bi bi-check2 text-accent me-2"></i> Breathable tailored soft satin dust covers</li>
                         </ul>
                     </div>
                 </div>
@@ -399,24 +480,24 @@
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="expertise-item">
                         <div class="bento-icon"><i class="bi bi-lightning-charge"></i></div>
-                        <h4 class="mb-3">Single-Car Dedicated Hotshots</h4>
-                        <p class="text-secondary">Express single-vehicle enclosed transport for time-sensitive auction consignments, concourse entries, or private collector transfers requiring direct non-stop transit.</p>
+                        <h4 class="mb-3">Battery & Fluid Care Protocol</h4>
+                        <p class="text-secondary">Continuous microprocessor trickle charging, periodic fluid inspections, and scheduled engine spin protocols to keep vintage drivetrains conditioned.</p>
                         <ul class="list-unstyled text-secondary small mt-3">
-                            <li class="mb-2"><i class="bi bi-check2 text-accent me-2"></i> Expedited door-to-door delivery</li>
-                            <li class="mb-2"><i class="bi bi-check2 text-accent me-2"></i> Dedicated single-driver oversight</li>
-                            <li><i class="bi bi-check2 text-accent me-2"></i> Flexible pickup and delivery windows</li>
+                            <li class="mb-2"><i class="bi bi-check2 text-accent me-2"></i> Active CTEK float charging telemetry</li>
+                            <li class="mb-2"><i class="bi bi-check2 text-accent me-2"></i> Routine tire pressure and roll protocol</li>
+                            <li><i class="bi bi-check2 text-accent me-2"></i> Fuel stabilization and vapor barrier</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="expertise-item">
-                        <div class="bento-icon"><i class="bi bi-building-check"></i></div>
-                        <h4 class="mb-3">Climate Vault Storage Suites</h4>
-                        <p class="text-secondary">50,000 sq ft secure facilities featuring industrial HVAC with 50% constant relative humidity, HEPA dust scrubbing, and continuous microprocessor battery maintenance.</p>
+                        <div class="bento-icon"><i class="bi bi-shield-lock"></i></div>
+                        <h4 class="mb-3">24/7 Security & Concierge Intake</h4>
+                        <p class="text-secondary">Multi-tier biometric access, laser perimeter monitoring, and optional white-glove enclosed carrier support for safe door-to-door vehicle intake.</p>
                         <ul class="list-unstyled text-secondary small mt-3">
                             <li class="mb-2"><i class="bi bi-check2 text-accent me-2"></i> 24/7 Biometric and CCTV security</li>
-                            <li class="mb-2"><i class="bi bi-check2 text-accent me-2"></i> Routine tire pressure and roll protocol</li>
+                            <li class="mb-2"><i class="bi bi-check2 text-accent me-2"></i> Air-ride enclosed transport support</li>
                             <li><i class="bi bi-check2 text-accent me-2"></i> Integrated customer dashboard telemetry</li>
                         </ul>
                     </div>
@@ -429,13 +510,13 @@
     <section class="cta-section">
         <div class="container position-relative z-2">
             <div class="cta-box" data-aos="fade-up">
-                <h2 class="text-white display-5 fw-bold mb-4 position-relative z-2">Schedule Enclosed Transport or Vault Storage</h2>
+                <h2 class="text-white display-5 fw-bold mb-4 position-relative z-2">Reserve Your Climate-Controlled Storage Suite</h2>
                 <p class="text-white opacity-75 fs-5 mb-5 mx-auto position-relative z-2" style="max-width: 650px;">
-                    Speak with our dedicated classic automobile dispatch coordinator or request an instant quote online.
+                    Speak with our classic automobile storage coordinator or request a private facility consultation online.
                 </p>
                 <div class="d-flex justify-content-center gap-4 flex-wrap position-relative z-2">
-                    <a href="contact.html" class="btn-premium primary">Contact Dispatch</a>
-                    <a href="contact.html" class="btn-premium outline text-white">Call Dispatch 24/7</a>
+                    <a href="contact.html" class="btn-premium primary">Reserve Storage Suite</a>
+                    <a href="contact.html" class="btn-premium outline text-white">Contact Facility 24/7</a>
                 </div>
             </div>
         </div>
@@ -455,7 +536,7 @@
                             Vault<span>X</span>
                         </a>
                     </div>
-                    <p class="mb-4">The nation's premier climate-controlled classic car storage facility and enclosed transport logistics network. Protecting prized automotive heritage with white-glove precision and real-time client tracking.</p>
+                    <p class="mb-4">The nation's premier climate-controlled classic car storage facility and preservation network. Protecting prized automotive heritage with museum-grade environmental care, battery maintenance, and client dashboard management.</p>
                     <div class="d-flex gap-3 footer-social">
                         <a href="#" class="fs-5" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
                         <a href="#" class="fs-5" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
@@ -465,23 +546,23 @@
                 </div>
 
                 <div class="col-lg-2 footer-widget">
-                    <h4>Logistics & Facility</h4>
+                    <h4>Storage & Preservation</h4>
                     <ul class="footer-links">
                         <li><a href="about.html">About Facility</a></li>
-                        <li><a href="services.html">Enclosed Transport</a></li>
                         <li><a href="services.html">Climate Storage</a></li>
+                        <li><a href="services.html">Preservation Care</a></li>
                         <li><a href="pricing.html">Storage Rates</a></li>
-                        <li><a href="services.html">Specialized Logistics</a></li>
-                        <li><a href="contact.html">Dispatch Hotline</a></li>
+                        <li><a href="services.html">Concierge Transport</a></li>
+                        <li><a href="contact.html">Facility Inquiries</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-2 footer-widget">
                     <h4>Customer Portal</h4>
                     <ul class="footer-links">
-                        <li><a href="dashboard.html">Client Dashboard</a></li>
-                        <li><a href="contact.html">Request a Quote</a></li>
-                        <li><a href="dashboard.html">Live GPS Tracking</a></li>
+                        <li><a href="dashboard.html">Storage Dashboard</a></li>
+                        <li><a href="pricing.html">Reserve a Suite</a></li>
+                        <li><a href="dashboard.html">Telemetry & Sensor Logs</a></li>
                         <li><a href="dashboard.html">Inspection Reports</a></li>
                         <li><a href="blog.html">Collector Guides</a></li>
                         <li><a href="login.html">Portal Login</a></li>
@@ -489,8 +570,8 @@
                 </div>
 
                 <div class="col-lg-4 footer-widget">
-                    <h4>Logistics Newsletter</h4>
-                    <p class="mb-3">Subscribe for climate preservation reports, enclosed transport updates, and auction schedules.</p>
+                    <h4>Preservation Newsletter</h4>
+                    <p class="mb-3">Subscribe for climate preservation reports, facility updates, and collector care guides.</p>
                     <form class="d-flex position-relative footer-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to VaultX updates.');">
                         <input type="email" class="form-control rounded-pill py-3 px-4 w-100 border-color shadow-none"
                             placeholder="Enter your email" required style="background: rgba(128,128,128,0.05);">
@@ -499,17 +580,17 @@
                     </form>
                     <div class="mt-4 d-flex gap-2 flex-wrap">
                         <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
-                                class="bi bi-shield-lock-fill text-indigo me-1"></i> $5M Cargo Insurance</span>
+                                class="bi bi-shield-lock-fill text-indigo me-1"></i> 24/7 Monitored Security</span>
                         <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
                                 class="bi bi-thermometer-half text-indigo me-1"></i> 50% RH Regulated</span>
                         <span class="badge text-secondary border border-color fw-normal px-3 py-2 rounded-pill"><i
-                                class="bi bi-geo-alt-fill text-indigo me-1"></i> 50-State Coverage</span>
+                                class="bi bi-battery-charging text-indigo me-1"></i> CTEK Battery Tending</span>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <div>&copy; 2026 VaultX. All rights reserved. Nationwide Vehicle Transport Logistics.</div>
+                <div>&copy; 2026 VaultX. All rights reserved. Climate-Controlled Classic Car Storage & Preservation Facility.</div>
                 <div class="d-flex gap-4">
                     <a href="#" class="text-decoration-none hover-white fs-4"
                         onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" aria-label="Back to top"><i
@@ -534,16 +615,18 @@
             const type = document.getElementById('calc-type').value;
             const res = document.getElementById('calc-result');
             
-            let priceText = "$1,750 - $1,980";
-            let distText = "2,410 Miles &bull; 3 - 4 Transit Days";
+            let priceText = "$595 / Month";
+            let distText = "Gold Climate Suite &bull; 68°F & 50% RH + CTEK Tender";
             
-            if(type === 'open') {
-                priceText = "$1,150 - $1,350";
-            } else if(type === 'storage') {
-                priceText = "$350 / Month";
-                distText = "Facility Bay Reservation &bull; Immediate Check-in";
+            if(type === 'silver') {
+                priceText = "$349 / Month";
+                distText = "Silver Bay Storage &bull; Temperature Regulated + 24/7 CCTV";
+            } else if(type === 'platinum') {
+                priceText = "$895 / Month";
+                distText = "Platinum Vault VIP &bull; Private Suite + 4K Camera + Detailing";
             } else if(type === 'combo') {
-                priceText = "$1,650 Transport + $320/mo Storage";
+                priceText = "$595/mo + White-Glove Concierge Intake";
+                distText = "Gold Suite Reservation &bull; Enclosed Door-to-Door Intake";
             }
             
             document.getElementById('calc-price').innerHTML = priceText;

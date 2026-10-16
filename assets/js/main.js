@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'climate': {
             bay: 'BAY #07-OMEGA',
             status: 'ATMOSPHERIC LOCK ACTIVE',
-            img: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=900&q=80',
+            img: 'assets/images/hero-facility.jpg',
             temp: '68.2°F',
             hum: '50.1% RH',
             volt: '13.6V',
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'security': {
             bay: 'VAULT SECTOR 04-APEX',
             status: 'BIOMETRIC & LASER ARMED',
-            img: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80',
+            img: 'assets/images/vault-bays.jpg',
             temp: '68.0°F',
             hum: '49.8% RH',
             volt: '13.4V',
@@ -191,16 +191,16 @@ document.addEventListener('DOMContentLoaded', () => {
         'power': {
             bay: 'TRICKLE STATION #12',
             status: 'CTEK FLOAT OPTIMIZED',
-            img: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=80',
+            img: 'assets/images/battery-tender.jpg',
             temp: '68.5°F',
             hum: '50.0% RH',
             volt: '13.8V',
             air: '99.95%'
         },
         'telemetry': {
-            bay: 'COCKPIT TELEMETRY LIVE',
+            bay: 'PRESERVATION SUITE #03',
             status: '4K OPTICS STREAMING',
-            img: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=80',
+            img: 'assets/images/car-dust-cover.jpg',
             temp: '68.1°F',
             hum: '50.3% RH',
             volt: '13.7V',
