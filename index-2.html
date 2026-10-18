@@ -18,26 +18,33 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
     <style>
+        /* 1. Hero 2 - Centered Panoramic Showcase Layout */
         .hero-split {
-            padding: 130px 0 70px;
-            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            padding: 135px 0 75px;
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
             position: relative;
             overflow: hidden;
         }
 
-        .split-left {
-            padding: 30px 40px 30px 60px;
+        .hero-center-showcase h1 {
+            font-size: clamp(2.1rem, 4.4vw, 3.6rem);
+            line-height: 1.15;
+            letter-spacing: -0.5px;
         }
 
-        .split-right {
-            position: relative;
-            min-height: 520px;
-            width: 100%;
+        .panoramic-showcase-frame {
             border-radius: 24px;
-            box-shadow: var(--shadow-premium);
-            border: 1px solid var(--border-color);
-            background: url('assets/images/facility-vault-hero.jpg') center/cover no-repeat;
             overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+            box-shadow: var(--shadow-premium);
+        }
+
+        .panoramic-media {
+            position: relative;
+            height: 460px;
+            width: 100%;
+            background: url('assets/images/facility-vault-hero.jpg') center 40%/cover no-repeat;
             display: flex;
             align-items: flex-end;
             padding: 24px;
@@ -47,7 +54,7 @@
             display: inline-flex;
             gap: 10px;
             flex-wrap: wrap;
-            background: rgba(15, 23, 42, 0.82);
+            background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             padding: 10px 16px;
@@ -56,64 +63,74 @@
             z-index: 2;
         }
 
-        @media (max-width: 1199px) {
-            .split-left {
-                padding: 20px 30px;
-            }
-            .split-right {
-                min-height: 460px;
+        .hero2-metrics-bar {
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border-color);
+            padding: 20px 30px;
+        }
+
+        .metric-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: var(--brand-accent-muted);
+            color: var(--brand-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+            border: 1px solid var(--border-color);
+        }
+
+        @media (min-width: 768px) {
+            .border-md-start {
+                border-left: 1px solid var(--border-color);
             }
         }
 
         @media (max-width: 991px) {
             .hero-split {
-                padding: 110px 0 50px;
+                padding: 115px 0 50px;
             }
 
-            .split-left {
-                padding: 20px 20px 30px;
-            }
-            
-            .split-left h1 {
-                font-size: clamp(1.85rem, 6.5vw, 2.5rem);
-                line-height: 1.2;
-            }
-            
-            .split-left .btn-premium {
-                width: 100%;
-                text-align: center;
+            .panoramic-media {
+                height: 360px;
             }
 
-            .split-right {
-                min-height: 380px;
-                border-radius: 20px;
+            .hero2-metrics-bar {
+                padding: 18px 20px;
             }
         }
 
         @media (max-width: 575.98px) {
             .hero-split {
-                padding: 100px 0 40px;
+                padding: 105px 0 40px;
             }
-            .split-right {
-                min-height: 290px;
-                border-radius: 16px;
+
+            .panoramic-media {
+                height: 270px;
                 padding: 16px;
             }
-        }
 
-        .split-right::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: none;
-            pointer-events: none;
-        }
+            .facility-hero-telemetry-badge {
+                padding: 6px 10px;
+                gap: 6px;
+            }
 
-        [data-theme="dark"] .split-right::after {
-            background: linear-gradient(90deg, var(--bg-primary) 0%, transparent 28%);
+            .facility-hero-telemetry-badge .badge {
+                font-size: 0.72rem;
+                padding: 4px 8px !important;
+            }
+
+            .hero2-metrics-bar {
+                padding: 16px;
+            }
+
+            .hero2-metrics-bar .metric-item:not(:last-child) {
+                border-bottom: 1px solid var(--border-color);
+                padding-bottom: 12px;
+            }
         }
 
         .map-section {
@@ -308,41 +325,66 @@
         </div>
     </header>
 
-    <!-- 1. Hero Split-screen -->
-    <section class="hero-split">
-        <div class="container-fluid p-0">
-            <div class="row g-0 align-items-center">
-                <div class="col-lg-6 col-12 split-left" data-aos="fade-right">
-                    <div class="hero-badge">
+    <!-- 1. Hero Centered Panoramic Showcase (Differentiated Layout for Home 2) -->
+    <section class="hero-split hero-center-showcase">
+        <div class="container position-relative z-2">
+            <!-- Centered Header & Content -->
+            <div class="row justify-content-center text-center mb-4 mb-lg-5">
+                <div class="col-lg-10 col-xl-9" data-aos="fade-up">
+                    <div class="hero-badge mx-auto mb-3">
                         <i class="bi bi-shield-check"></i> Climate-Controlled Storage & Preservation Hubs
                     </div>
                     <h1 class="display-4 fw-bold mb-4">Dedicated Classic Car Storage & <span class="text-gradient">Preservation Facility.</span></h1>
-                    <p class="lead mb-5 text-secondary">Private climate-controlled storage suites for classic, vintage, and high-line collector automobiles with continuous environmental monitoring, battery maintenance, and concierge collection support.</p>
-                    <div class="d-flex gap-3 flex-wrap mb-5">
+                    <p class="lead mb-4 text-secondary mx-auto" style="max-width: 760px;">Private climate-controlled storage suites for classic, vintage, and high-line collector automobiles with continuous environmental monitoring, battery maintenance, and concierge collection support.</p>
+                    <div class="d-flex gap-3 justify-content-center flex-wrap">
                         <a href="pricing.html" class="btn-premium primary">Explore Storage Plans</a>
                         <a href="contact.html" class="btn-premium outline">Schedule Facility Tour</a>
                     </div>
-
-                    <div class="row g-3 pt-4 border-top border-color">
-                        <div class="col-sm-4">
-                            <h4 class="mb-1 text-accent fw-bold">50% RH</h4>
-                            <small class="text-secondary">Constant Humidity Regulated</small>
-                        </div>
-                        <div class="col-sm-4">
-                            <h4 class="mb-1 text-accent fw-bold">68°F</h4>
-                            <small class="text-secondary">Precision Climate Control</small>
-                        </div>
-                        <div class="col-sm-4">
-                            <h4 class="mb-1 text-accent fw-bold">24/7 Live</h4>
-                            <small class="text-secondary">Sensor & CCTV Telemetry</small>
-                        </div>
-                    </div>
                 </div>
-                <div class="col-lg-6 col-12 p-3 p-xl-4" data-aos="fade-left">
-                    <div class="split-right" role="img" aria-label="Classic Car Storage & Climate-Controlled Facility Warehouse" title="Classic Car Storage & Climate-Controlled Facility">
-                        <div class="facility-hero-telemetry-badge">
-                            <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill"><i class="bi bi-shield-check me-1"></i> Vault Bay #4 Active</span>
-                            <span class="badge bg-dark text-white border border-secondary px-3 py-2 rounded-pill"><i class="bi bi-thermometer-half text-accent me-1"></i> 68°F &bull; 50% RH Regulated</span>
+            </div>
+
+            <!-- Panoramic Visual Showcase Frame -->
+            <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="150">
+                <div class="col-12 col-xl-11">
+                    <div class="panoramic-showcase-frame position-relative">
+                        <div class="panoramic-media" role="img" aria-label="Classic Car Storage & Climate-Controlled Facility Warehouse" title="Classic Car Storage & Climate-Controlled Facility">
+                            <div class="facility-hero-telemetry-badge">
+                                <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill"><i class="bi bi-shield-check me-1"></i> Vault Bay #4 Active</span>
+                                <span class="badge bg-dark text-white border border-secondary px-3 py-2 rounded-pill"><i class="bi bi-thermometer-half text-accent me-1"></i> 68°F &bull; 50% RH Regulated</span>
+                            </div>
+                        </div>
+
+                        <!-- 3-Column Telemetry Metrics Deck -->
+                        <div class="hero2-metrics-bar">
+                            <div class="row g-3 text-center align-items-center">
+                                <div class="col-md-4 col-12 metric-item">
+                                    <div class="d-flex align-items-center justify-content-center gap-3">
+                                        <div class="metric-icon"><i class="bi bi-moisture"></i></div>
+                                        <div class="text-start">
+                                            <h4 class="mb-0 text-accent fw-bold">50% RH</h4>
+                                            <small class="text-secondary">Constant Humidity Regulated</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-12 metric-item border-md-start">
+                                    <div class="d-flex align-items-center justify-content-center gap-3">
+                                        <div class="metric-icon"><i class="bi bi-thermometer-half"></i></div>
+                                        <div class="text-start">
+                                            <h4 class="mb-0 text-accent fw-bold">68°F</h4>
+                                            <small class="text-secondary">Precision Climate Control</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-12 metric-item border-md-start">
+                                    <div class="d-flex align-items-center justify-content-center gap-3">
+                                        <div class="metric-icon"><i class="bi bi-activity"></i></div>
+                                        <div class="text-start">
+                                            <h4 class="mb-0 text-accent fw-bold">24/7 Live</h4>
+                                            <small class="text-secondary">Sensor & CCTV Telemetry</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

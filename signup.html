@@ -78,15 +78,13 @@
                     <p class="text-secondary small">Access climate storage reservations, live telemetry, and inspection manifests.</p>
                 </div>
                 <form action="dashboard.html" method="GET">
-                    <div class="row g-2 mb-3">
-                        <div class="col-6">
-                            <label class="form-label text-secondary small fw-bold">First Name</label>
-                            <input type="text" class="form-control" required placeholder="Alexander">
-                        </div>
-                        <div class="col-6">
-                            <label class="form-label text-secondary small fw-bold">Last Name</label>
-                            <input type="text" class="form-control" required placeholder="Vance">
-                        </div>
+                    <div class="mb-3">
+                        <label class="form-label text-secondary small fw-bold">First Name</label>
+                        <input type="text" class="form-control" required placeholder="Alexander">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label text-secondary small fw-bold">Last Name</label>
+                        <input type="text" class="form-control" required placeholder="Vance">
                     </div>
                     <div class="mb-3">
                         <label class="form-label text-secondary small fw-bold">Email Address</label>
@@ -94,7 +92,12 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label text-secondary small fw-bold">Password</label>
-                        <input type="password" class="form-control" required placeholder="••••••••">
+                        <div class="position-relative">
+                            <input type="password" class="form-control pe-5" id="signupPassword" required placeholder="••••••••">
+                            <button type="button" class="btn password-toggle-btn position-absolute top-50 end-0 translate-middle-y me-2 p-1 border-0 bg-transparent" onclick="togglePasswordVisibility('signupPassword', this)" aria-label="Toggle password visibility">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                        </div>
                     </div>
                     <div class="form-check mb-4">
                         <input class="form-check-input" type="checkbox" id="terms" required checked>

@@ -87,7 +87,12 @@
                             <label class="form-label text-secondary small fw-bold">Password</label>
                             <a href="#" class="text-accent small" onclick="alert('Password reset link sent to your registered email.'); return false;">Forgot password?</a>
                         </div>
-                        <input type="password" class="form-control" required value="password123">
+                        <div class="position-relative">
+                            <input type="password" class="form-control pe-5" id="loginPassword" required value="password123">
+                            <button type="button" class="btn password-toggle-btn position-absolute top-50 end-0 translate-middle-y me-2 p-1 border-0 bg-transparent" onclick="togglePasswordVisibility('loginPassword', this)" aria-label="Toggle password visibility">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                        </div>
                     </div>
                     <div class="form-check mb-4">
                         <input class="form-check-input" type="checkbox" id="rememberMe" checked>
